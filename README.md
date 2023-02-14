@@ -22,7 +22,9 @@
 
 ## Profesor
 - J. Alejandro Álvarez. 
+  
   juaalvarezme@unal.edu.co
+  
   [![website](https://img.shields.io/badge/Website-46a2f1.svg?&style=flat-square&logo=Google-Chrome&logoColor=white&link=http://www.alejoalvarez.me/)](http://www.alejoalvarez.me/)
 
 ## Recursos
