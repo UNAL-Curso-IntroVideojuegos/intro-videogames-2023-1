@@ -21,7 +21,9 @@
 - Tarea #1 (Clase #1): Crear cuenta en GitHub y acceso al repositorio.
 
 ## Profesor
-- J. Alejandro Álvarez. juaalvarezme@unal.edu.co [![website](https://img.shields.io/badge/Website-46a2f1.svg?&style=flat-square&logo=Google-Chrome&logoColor=white&link=http://www.alejoalvarez.me/)](http://www.alejoalvarez.me/)
+- J. Alejandro Álvarez. 
+  juaalvarezme@unal.edu.co
+  [![website](https://img.shields.io/badge/Website-46a2f1.svg?&style=flat-square&logo=Google-Chrome&logoColor=white&link=http://www.alejoalvarez.me/)](http://www.alejoalvarez.me/)
 
 ## Recursos
 Todos los recursos (diapositivas, assets, trabajos, etc.) los puede encontrar en [Drive](https://drive.google.com/drive/u/2/folders/1yHNvKn3HkLmO19o1FgcFoLtH1D1WniuA).
