@@ -16,6 +16,12 @@
 	- Proceso de desarrollo
 	- Game Engines
 
+- **Clase 2:** Basics & Transform 
+	- Scripting y MonoBehaviour
+	- Transform: Movement y Rotation
+	- Inputs (básico)
+	- Prefabs y Instantiate
+
 
 ## Talleres semanales
 - Tarea #1 (Clase #1): Crear cuenta en GitHub y acceso al repositorio.
