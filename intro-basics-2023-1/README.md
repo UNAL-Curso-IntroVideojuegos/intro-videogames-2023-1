@@ -21,6 +21,6 @@ Guía paso a paso en [Notion](https://allie-joe.notion.site/Planets-3480381e638b
     - Import only one ship-sprite if you want.
 - Sun sprite from [https://v-ktor.itch.io/star-sprites](https://v-ktor.itch.io/star-sprites)
 
-![Planets](./git_resources/planets.mp4 "Planets")
+![](./git_resources/planets.mp4)
 
 ---
