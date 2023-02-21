@@ -3,6 +3,9 @@
 
 
 ## Clase #2
+
+### Temas
+
 - Scripting y MonoBehaviour
 - Transform: Movement y Rotation
 - Inputs (básico)
