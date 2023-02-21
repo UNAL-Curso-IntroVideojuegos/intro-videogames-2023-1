@@ -20,7 +20,7 @@
 	- Scripting y MonoBehaviour
 	- Transform: Movement y Rotation
 	- Inputs (básico)
-	- Prefabs y Instantiate
+	- Proyecto: [Planets](https://allie-joe.notion.site/Planets-3480381e638b4a7693166f41e27936bd)
 
 
 ## Talleres semanales
