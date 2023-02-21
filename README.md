@@ -20,7 +20,7 @@
 	- Scripting y MonoBehaviour
 	- Transform: Movement y Rotation
 	- Inputs (básico)
-	- Proyecto: [Planets](https://allie-joe.notion.site/Planets-3480381e638b4a7693166f41e27936bd)
+	- Proyecto: [Planetas](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-basics-2023-1#clase-2)
 
 
 ## Talleres semanales
