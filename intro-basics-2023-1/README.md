@@ -25,3 +25,20 @@ Guía paso a paso en [Notion](https://allie-joe.notion.site/Planets-3480381e638b
 https://user-images.githubusercontent.com/9322009/220226840-e816e379-22b4-44c1-beaf-f20b3121e0c1.mp4
 
 ---
+
+## Clase #3
+
+### Temas
+
+- Physics y Colisiones
+- RigidBody y Colliders
+- Prefabs e Instantiate
+
+### Guía
+
+Guía paso a paso en [Notion](https://allie-joe.notion.site/Tanks-9a6b94e666404d97ba22ea4bdbfb5149).
+
+### Recursos
+
+- [Top-down Tanks Redux by Kenney](https://www.kenney.nl/assets/topdown-tanks-redux)
+

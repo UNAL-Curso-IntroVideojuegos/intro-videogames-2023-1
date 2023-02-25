@@ -22,6 +22,12 @@
 	- Inputs (básico)
 	- Proyecto: [Planetas](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-basics-2023-1#clase-2)
 
+- **Clase 2:** Basics & Transform 
+	- Physics y Movimiento
+	- RigidBody y Colliders
+	- Prefabs e Instantiate
+	- Proyecto: [Planetas](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-basics-2023-1#clase-3)
+
 
 ## Talleres semanales
 - Tarea #1 (Clase #1): Crear cuenta en GitHub y acceso al repositorio.
