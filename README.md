@@ -26,7 +26,7 @@
 	- Physics y Movimiento
 	- RigidBody y Colliders
 	- Prefabs e Instantiate
-	- Proyecto: [Planetas](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-basics-2023-1#clase-3)
+	- Proyecto: [Tanks](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-basics-2023-1#clase-3)
 
 
 ## Talleres semanales
