@@ -42,3 +42,6 @@ Guía paso a paso en [Notion](https://allie-joe.notion.site/Tanks-9a6b94e666404d
 
 - [Top-down Tanks Redux by Kenney](https://www.kenney.nl/assets/topdown-tanks-redux)
 
+https://user-images.githubusercontent.com/9322009/221334751-fd683c90-462c-448d-ac7a-769c1f5756e2.mp4
+
+---
