@@ -18,10 +18,8 @@
         
 3. Hacer que cada cañon mire siempre al Jugador (*PlayerTank*).
     
-    <aside>
-    🆘 Deberá usar un Array (`[]`) o una Lista para manipularlos.
-    
-    </aside>
+    > 🆘 Deberá usar un Array (`[]`) o una Lista para manipularlos.
+
     
 
 ### Detector
@@ -31,10 +29,8 @@
 1. Actualice el script *TankEnemy* para que, al darle Play, este se apague. 
     1. Haremos que se active cuando el Jugador entre a nuestra zona roja.
     
-    <aside>
-    🆘 Recuerde el método **Start**. Y busque como activar/desactivar un objeto por código 😛
-    
-    </aside>
+    > 🆘 Recuerde el método **Start**. Y busque como activar/desactivar un objeto por código 😛
+
     
 2. Crear un nuevo Objeto llamado *EnemyDetection*.
     1. Ubicarlo como muestra la imagen (GIF). 
@@ -45,17 +41,13 @@
 3. Crear el script *TriggerDetection* y agregar el código y componentes necesarios para que cuando el jugador entre la zona, **active a nuestro tanque enemigo**.
     1. Además, este objeto debe ser **desactivado**, cuando se detecte que el Player entre a la zona.
     
-    <aside>
-    🆘 Recuerde los métodos **OnTriggerEnter2D** o **OnCollisionEnter2D**. Y que debe agregar un Collider al objeto.
+    > 🆘 Recuerde los métodos **OnTriggerEnter2D** o **OnCollisionEnter2D**. Y que debe agregar un Collider al objeto.
     
-    </aside>
     
 4. Este objeto solo debe identificar cuando el Player entre a la zona. Posiblemente deba crear una nueva Layer para evitar problemas y comportamientos no deseados, por ejemplo, que pasa con los proyectiles que disparamos?
     
-    <aside>
-    🆘 Posiblemente también deba editar la [Matriz de collision](https://docs.unity3d.com/Manual/LayerBasedCollision.html) **2D.**
+    > 🆘 Posiblemente también deba editar la [Matriz de collision](https://docs.unity3d.com/Manual/LayerBasedCollision.html) **2D.**
     
-    </aside>
     
 
 ### Tank Enemy Shoot
@@ -66,19 +58,15 @@
     1. Debe de disparar una bala por cada cañon!
     2. Debe disparar cada X segundos.
     
-    <aside>
-    🆘 Hay varias formas de abordar este problema. Una de ellas, es crear un [Timer](https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/) (seccion ***How to make a timer in Unity (using Time.deltaTime)*** del enlace adjunto**).**
+    > 🆘 Hay varias formas de abordar este problema. Una de ellas, es crear un [Timer](https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/) (seccion ***How to make a timer in Unity (using Time.deltaTime)*** del enlace adjunto**).**
     
-    </aside>
     
 2. Debe crear un nuevo Prefab para este proyectil.
     1. Debe usar un Sprite distinto al del proyectil del Player.
     2. Las balas que dispara el enemigo, **solo** deben de desaparecer cuando estas impacten al *PlayerTanks* o un objeto del escenario. No deben interactuar con nada más.
     
-    <aside>
-    🆘 Posiblemente debe crear una nueva Layer y editar nuevamente la [Matriz de collision](https://docs.unity3d.com/Manual/LayerBasedCollision.html) **2D**.
+    > 🆘 Posiblemente debe crear una nueva Layer y editar nuevamente la [Matriz de collision](https://docs.unity3d.com/Manual/LayerBasedCollision.html) **2D**.
     
-    </aside>
 
 
 ### Fecha de entrega
