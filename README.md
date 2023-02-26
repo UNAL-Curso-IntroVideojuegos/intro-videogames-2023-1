@@ -22,7 +22,7 @@
 	- Inputs (básico)
 	- Proyecto: [Planetas](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-basics-2023-1#clase-2)
 
-- **Clase 2:** Basics & Transform 
+- **Clase 2:** Physics
 	- Physics y Movimiento
 	- RigidBody y Colliders
 	- Prefabs e Instantiate
