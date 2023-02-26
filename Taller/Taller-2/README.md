@@ -12,10 +12,9 @@
         
         ![TankEnemyPoints](./TankEnemyPoints.png)
         
-        <aside>
-        🆘 [Mathf.PingPong](https://stackoverflow.com/questions/61306895/what-does-unitys-mathf-pingpong-actually-do) puede ayudarlo a desarrollar ese movimiento de “ir y venir”. Puede combinar con [Vector3.Lerp](https://docs.unity3d.com/ScriptReference/Vector3.Lerp.html).
         
-        </aside>
+        > 🆘 [Mathf.PingPong](https://stackoverflow.com/questions/61306895/what-does-unitys-mathf-pingpong-actually-do) puede ayudarlo a desarrollar ese movimiento de “ir y venir”. Puede combinar con [Vector3.Lerp](https://docs.unity3d.com/ScriptReference/Vector3.Lerp.html).
+
         
 3. Hacer que cada cañon mire siempre al Jugador (*PlayerTank*).
     
@@ -27,7 +26,7 @@
 
 ### Detector
 
-![PlayerDetector.gif](Tanks%209a6b94e666404d97ba22ea4bdbfb5149/PlayerDetector.gif)
+![PlayerDetector.gif](./PlayerDetector.gif)
 
 1. Actualice el script *TankEnemy* para que, al darle Play, este se apague. 
     1. Haremos que se active cuando el Jugador entre a nuestra zona roja.
