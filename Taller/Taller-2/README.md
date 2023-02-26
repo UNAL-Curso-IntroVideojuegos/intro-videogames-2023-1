@@ -74,7 +74,7 @@ Guía paso a paso en [Notion](https://allie-joe.notion.site/Tanks-9a6b94e666404d
 
 
 ### Fecha de entrega
-> Viernes 03 de Marzoz - 11:59 pm (media noche del viernes).
+> Viernes 03 de Marzo - 11:59 pm (media noche del viernes).
 
 ### Entrega
 - Crear una branch a partir del branch `sessions/homework-2`.
