@@ -52,7 +52,7 @@
 
 ### Tank Enemy Shoot
 
-![TankShoot.gif](Tanks%209a6b94e666404d97ba22ea4bdbfb5149/TankShoot.gif)
+![TankShoot.gif](./TankShoot.gif)
 
 1. Actualice el script *TankEnemy* para que este dispare al Jugador (*PlayerTank*).
     1. Debe de disparar una bala por cada cañon!
@@ -67,6 +67,8 @@
     
     > 🆘 Posiblemente debe crear una nueva Layer y editar nuevamente la [Matriz de collision](https://docs.unity3d.com/Manual/LayerBasedCollision.html) **2D**.
     
+
+---
 
 
 ### Fecha de entrega
