@@ -2,6 +2,8 @@
 
 ## Taller #2
 
+Guía paso a paso en [Notion](https://allie-joe.notion.site/Tanks-9a6b94e666404d97ba22ea4bdbfb5149).
+
 ### Tank Enemy
 
 ![EnemyMovement.gif](./EnemyMovement.gif)
