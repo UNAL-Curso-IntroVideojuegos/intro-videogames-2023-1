@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerTankMovement : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 1;
+    private float _speed = 2;
     [SerializeField]
     private float _turnSpeed = 45;
     

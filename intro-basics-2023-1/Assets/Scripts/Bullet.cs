@@ -33,4 +33,8 @@ public class Bullet : MonoBehaviour
         gameObject.SetActive(false);
         Destroy(gameObject);
     }
+
+    private void OnBecameInvisible() {
+        DestroyProjectile();
+    }
 }
