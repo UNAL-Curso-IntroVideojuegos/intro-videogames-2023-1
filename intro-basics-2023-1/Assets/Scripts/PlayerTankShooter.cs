@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using IntroGames.Planets;
 using UnityEngine;
 
 public class PlayerTankShooter : MonoBehaviour
@@ -10,7 +7,8 @@ public class PlayerTankShooter : MonoBehaviour
 
     [SerializeField]
     private Transform _shootPoint;
-    
+
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))

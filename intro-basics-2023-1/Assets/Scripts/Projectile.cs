@@ -1,5 +1,5 @@
 using UnityEngine;
-public class Bullet : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 7;
@@ -11,7 +11,6 @@ public class Bullet : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _rb.velocity = transform.up * _speed;
     }
-
     private void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Hit with " + col.name);
