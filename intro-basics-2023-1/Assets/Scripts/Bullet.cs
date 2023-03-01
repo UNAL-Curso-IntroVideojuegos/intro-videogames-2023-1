@@ -16,12 +16,6 @@ public class Bullet : MonoBehaviour
         _rb.velocity = transform.up * _speed;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        Debug.Log("Hit with " + other.collider.name);
-        DestroyProjectile();
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Hit with " + other.name);
