@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankEnemy : MonoBehaviour
+public class TankEnemyMovement : MonoBehaviour
 {
 
     [SerializeField]
@@ -18,7 +18,7 @@ public class TankEnemy : MonoBehaviour
 
     void Start()
     {
-        
+        gameObject.SetActive(false);
     }
 
     void Update()
@@ -36,7 +36,7 @@ public class TankEnemy : MonoBehaviour
         foreach (Transform cannon in _cannons) 
         {
           //Cannon Rotation
-          Vector3 aimVector = (_playerTank.position - transform.position).normalized;
+          Vector3 aimVector = (_playerTank.position - cannon.position).normalized;
           float angle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg + 90;
           cannon.rotation = Quaternion.Euler(0,0,angle);
         }
