@@ -23,11 +23,14 @@ public class TankEnemy : MonoBehaviour
     [SerializeField]
     private List<Transform> _shootpoints = new List<Transform>();
 
+    [Space(20)]
+    [SerializeField]
+    private int shootTime = 1;
+
     private float dist;
     private float speed;
     private float time;
-    private float movementTime;
-    private int shootTime = 1;
+    private float movementTime = 0;
 
 
     private void Start()
@@ -70,6 +73,5 @@ public class TankEnemy : MonoBehaviour
     public void changeActive()
     {
         gameObject.SetActive(!gameObject.activeSelf);
-        movementTime = 0;
     }
 }
