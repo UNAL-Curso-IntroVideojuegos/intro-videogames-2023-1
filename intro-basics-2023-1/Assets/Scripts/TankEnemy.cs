@@ -47,11 +47,10 @@ public class TankEnemy : MonoBehaviour
         transform.position = Vector3.Lerp(_initialPos.position, _endPos.position, speed);
 
         // Canons Look
-        Vector3 aimVector = (_playerTank.position - transform.position).normalized;
-        float angle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg + 90;
-
         foreach (Transform t in _canons)
         {
+            Vector3 aimVector = (_playerTank.position - t.position).normalized;
+            float angle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg + 90;
             t.rotation = Quaternion.Euler(0, 0, angle);
         }
 
