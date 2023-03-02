@@ -1198,7 +1198,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &1860417037
 Transform:
   m_ObjectHideFlags: 0
@@ -1239,6 +1239,7 @@ MonoBehaviour:
   _shootpoints:
   - {fileID: 698533940}
   - {fileID: 341489649}
+  shootTime: 1
 --- !u!1 &1867940340
 GameObject:
   m_ObjectHideFlags: 0
