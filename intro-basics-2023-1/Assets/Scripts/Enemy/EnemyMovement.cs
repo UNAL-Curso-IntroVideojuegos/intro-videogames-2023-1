@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
     private int _movementDirection = 1;
     [SerializeField] private float _speed;
     private Rigidbody2D _rb;
+    private Animator _anim;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
     private void OnEnable()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
         ChangeDirection();
     }
 
@@ -29,6 +31,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void ChangeDirection()
     {
+        _anim.SetInteger("DirectionWalk", _movementDirection);
         _movementDirection *= -1;
         _rb.velocity = transform.up * _speed * _movementDirection;
     }

@@ -6,6 +6,7 @@ public class EnemyTankShotter : MonoBehaviour
 {
     [SerializeField] private Transform[] _barrels;
     [SerializeField] private Transform _lookAt;
+    [SerializeField] private Transform[] _shootPoints;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private float _shootTimer;
 
@@ -37,11 +38,11 @@ public class EnemyTankShotter : MonoBehaviour
     public void Disparar()
     {
         Debug.Log("Disparar enemigo");
-        foreach (var barrel in _barrels)
+        foreach (var shotPoint in _shootPoints)
         {
             GameObject bullet = Instantiate(_bulletPrefab);
-            bullet.transform.position = barrel.position;
-            bullet.transform.rotation = barrel.rotation;
+            bullet.transform.position = shotPoint.position;
+            bullet.transform.rotation = shotPoint.rotation;
         }
     }
 
