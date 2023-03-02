@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyTankMovement : MonoBehaviour
 {
-    [SerializeField] private Transform _turret1;
-    [SerializeField] private Transform _turret2;
     [SerializeField] private Transform _startMovPoint;
     [SerializeField] private Transform _endMovPoint;
     private int current = 0;
@@ -16,6 +14,7 @@ public class EnemyTankMovement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
