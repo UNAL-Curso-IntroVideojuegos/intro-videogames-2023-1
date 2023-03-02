@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GroundAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -114257383, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: 1694895502, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: 377750770, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -1776363541, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -155004818, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: 1580844906, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: 525741331, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: 1023528322, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -1084339375, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -1842377691, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -2132427384, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -1775351382, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -1616129695, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -651185837, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: 1154068781, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -1668572812, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -1978339206, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -1386774061, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: 1103588517, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -69043466, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: 481758586, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: 552031782, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -124939295, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: 736017716, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -1553638533, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  - {fileID: -717434097, guid: 0da627ade66f94c46b665b8d750ac08d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - GroundTileMap_21
+  - GroundTileMap_20
+  - GroundTileMap_23
+  - GroundTileMap_22
+  - GroundTileMap_25
+  - GroundTileMap_24
+  - GroundTileMap_1
+  - GroundTileMap_0
+  - GroundTileMap_3
+  - GroundTileMap_2
+  - GroundTileMap_5
+  - GroundTileMap_4
+  - GroundTileMap_7
+  - GroundTileMap_6
+  - GroundTileMap_9
+  - GroundTileMap_8
+  - GroundTileMap_10
+  - GroundTileMap_11
+  - GroundTileMap_12
+  - GroundTileMap_13
+  - GroundTileMap_14
+  - GroundTileMap_15
+  - GroundTileMap_16
+  - GroundTileMap_17
+  - GroundTileMap_18
+  - GroundTileMap_19
+  m_RenderDataMap: {}
+  m_Tag: GroundAtlas
+  m_IsVariant: 0

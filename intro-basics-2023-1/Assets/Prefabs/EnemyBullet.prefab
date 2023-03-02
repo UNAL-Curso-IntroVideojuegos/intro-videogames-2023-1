@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1663531019955294446}
   - component: {fileID: 8130878789624729884}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: shotRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,8 +96,8 @@ GameObject:
   - component: {fileID: 8866089841052106156}
   - component: {fileID: 5339334196805926319}
   - component: {fileID: -8782143853939462422}
-  m_Layer: 6
-  m_Name: Bullet
+  m_Layer: 8
+  m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
