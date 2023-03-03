@@ -25,7 +25,9 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Hit with " + other.name);
-        DestroyProjectile();
+        if(other.gameObject.layer != LayerMask.NameToLayer("DetectionPoint")){
+            DestroyProjectile();
+        }
     }
 
     private void DestroyProjectile()
