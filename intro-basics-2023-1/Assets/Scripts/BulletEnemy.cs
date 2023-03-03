@@ -1,22 +1,22 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BulletEnemy : MonoBehaviour
 {
-    [SerializeField]
-    private float _speed = 7;
-    
+    private float _speed = 5;
     private Rigidbody2D _rb;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        // Una vez es instanciada la bala, se setea su velocidad
-        _rb.velocity = transform.up * _speed;
-    }
-
+        GameObject player = GameObject.Find("PlayerTank");
+        Vector3 direction = (player.transform.position - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg+90;
+        _rb.velocity = (direction * _speed);
+         }
+    // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("Hit with " + other.collider.name);

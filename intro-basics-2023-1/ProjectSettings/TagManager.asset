@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameController
+  - tankEnemy
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - Player
   - Bullet
   - Enemy
-  - 
-  - 
+  - TriggerDetector
+  - BulletEnemy
   - 
   - 
   - 
