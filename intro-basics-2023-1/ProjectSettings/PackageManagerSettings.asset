@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EnablePreReleasePackages: 0
   m_EnablePackageDependencies: 0
-  m_AdvancedSettingsExpanded: 1
+  m_AdvancedSettingsExpanded: 0
   m_ScopedRegistriesSettingsExpanded: 1
   m_SeeAllPackageVersions: 0
   oneTimeWarningShown: 0
@@ -25,20 +25,20 @@ MonoBehaviour:
     m_Scopes: []
     m_IsDefault: 1
     m_Capabilities: 7
-  m_UserSelectedRegistryName: 
+    m_ConfigSource: 0
+  - m_Id: scoped:project:asd
+    m_Name: asd
+    m_Url: https://github.com/Unity-Technologies/Unity.Mathematics.git?path=src
+    m_Scopes:
+    - dsa
+    m_IsDefault: 0
+    m_Capabilities: 0
+    m_ConfigSource: 4
+  m_UserSelectedRegistryName: asd
   m_UserAddingNewScopedRegistry: 0
   m_RegistryInfoDraft:
-    m_ErrorMessage: 
-    m_Original:
-      m_Id: 
-      m_Name: 
-      m_Url: 
-      m_Scopes: []
-      m_IsDefault: 0
-      m_Capabilities: 0
     m_Modified: 0
-    m_Name: 
-    m_Url: 
-    m_Scopes:
-    - 
-    m_SelectedScopeIndex: 0
+    m_ErrorMessage: 
+    m_UserModificationsInstanceId: -844
+    m_OriginalInstanceId: -846
+  m_LoadAssets: 0
