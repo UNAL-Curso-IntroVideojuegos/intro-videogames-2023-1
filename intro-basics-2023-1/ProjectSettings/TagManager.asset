@@ -14,8 +14,8 @@ TagManager:
   - Player
   - Bullet
   - Enemy
-  - 
-  - 
+  - DangerZone
+  - EnemyBullet
   - 
   - 
   - 
