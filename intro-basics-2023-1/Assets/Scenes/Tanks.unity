@@ -642,6 +642,7 @@ GameObject:
   - component: {fileID: 1521815734}
   - component: {fileID: 1521815737}
   - component: {fileID: 1521815738}
+  - component: {fileID: 1521815739}
   m_Layer: 8
   m_Name: EnemyTank
   m_TagString: Untagged
@@ -768,6 +769,21 @@ MonoBehaviour:
   _turret1: {fileID: 1513588090}
   _turret2: {fileID: 2120357953}
   player: {fileID: 30812286}
+--- !u!114 &1521815739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521815733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dde3fa937feaf41a82d47784b36214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootPoint1: {fileID: 1513588090}
+  _shootPoint2: {fileID: 2120357953}
+  _projectilePrefab: {fileID: 6380532396297401872, guid: e8c32e3c748fa414dbfae3393091b53a, type: 3}
 --- !u!1 &1551381664
 GameObject:
   m_ObjectHideFlags: 0
