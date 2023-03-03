@@ -37,10 +37,5 @@ public class TankEnemy : MonoBehaviour
         cannons[0].rotation = Quaternion.Euler(0, 0, angle);
         cannons[1].rotation = Quaternion.Euler(0, 0, angle);
 
-    }   
-
-    private void FixedUpdate()
-    {
-        
     }
 }
