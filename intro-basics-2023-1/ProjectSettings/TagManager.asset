@@ -12,11 +12,11 @@ TagManager:
   - Water
   - UI
   - Player
-  - Bullet
+  - Player Bullet
   - Enemy
-  - 
-  - 
-  - 
+  - Enemy Bullet
+  - Breakpoint
+  - TriggerPoint
   - 
   - 
   - 
