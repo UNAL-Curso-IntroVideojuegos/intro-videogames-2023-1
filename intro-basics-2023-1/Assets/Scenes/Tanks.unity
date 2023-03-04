@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451137aee32b3e346a93d3082b461bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 2502631987480369249, guid: 9c33db704c1add245b29443543255f4e, type: 3}
+  _projectilePrefab: {fileID: -8782143853939462422, guid: 9c33db704c1add245b29443543255f4e, type: 3}
   _shootPoint: {fileID: 640749563}
 --- !u!70 &30812290
 CapsuleCollider2D:
@@ -655,6 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3925da0e6a23542b259740e7233a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <TotalHealthPoints>k__BackingField: 0
   _speed: 1
   _initPos: {fileID: 1141263908}
   _endPos: {fileID: 1898056155}

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Bullet : MonoBehaviour
 {
@@ -18,9 +19,17 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D _rb;
     private float _destructionTime = 0;
 
+    private IObjectPool<Bullet> _parentPool = null;
+
+    public void SetParentPool(IObjectPool<Bullet> parentPool) => _parentPool = parentPool;
+    
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable()
+    {
         _destructionTime = Time.time + _lifeTime;
     }
 
@@ -68,7 +77,14 @@ public class Bullet : MonoBehaviour
     
     private void DestroyProjectile()
     {
-        gameObject.SetActive(false);
-        Destroy(gameObject);
+        if (_parentPool != null)
+        {
+            _parentPool.Release(this);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
     }
 }
