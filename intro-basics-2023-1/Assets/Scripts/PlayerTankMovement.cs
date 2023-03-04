@@ -16,11 +16,18 @@ public class PlayerTankMovement : MonoBehaviour
 
     private float _inputMagnitude;
     private float _rotAngle;
+
+    public bool zonePassed = false;
+    //
+    // [SerializeField] private GameObject _enemyTank;
+    //
+    // [SerializeField] private GameObject detector;
     
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _cam = Camera.main;
+       
     }
     
     void Update()
@@ -56,4 +63,17 @@ public class PlayerTankMovement : MonoBehaviour
         _rb.rotation = Mathf.LerpAngle(_rb.rotation, _rotAngle, _turnSpeed * Mathf.Deg2Rad * Time.fixedDeltaTime);
         _rb.velocity = transform.up * _speed * _inputMagnitude;
     }
+    
+    // void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     
+    //     if (collision.CompareTag("EnemyDetection"))
+    //     {
+    //         _enemyTank.SetActive(true);
+    //         Destroy(collision);
+    //         Destroy(detector);
+    //
+    //     }
+    // }
+    
 }
