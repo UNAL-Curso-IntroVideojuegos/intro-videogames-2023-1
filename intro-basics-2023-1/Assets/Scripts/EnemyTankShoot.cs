@@ -8,13 +8,14 @@ public class EnemyTankShoot : MonoBehaviour
     [SerializeField] private Transform _shootPoint1;
     [SerializeField] private Transform _shootPoint2;
     [SerializeField] private GameObject _projectilePrefab;
-    void Update()
+    void FixedUpdate()
     {
         if (timer > 0)
         {
             timer -= Time.deltaTime;
         }
-        else {
+        else
+        {
             Shoot();
             timer = 1;
         }
@@ -24,10 +25,10 @@ public class EnemyTankShoot : MonoBehaviour
     {
         GameObject projectile = Instantiate(_projectilePrefab);
         projectile.transform.position = _shootPoint1.position;
-        projectile.transform.rotation = _shootPoint1.rotation * Quaternion.Euler(0, 180f, 0);
+        projectile.transform.rotation = _shootPoint1.rotation * Quaternion.Euler(0, 0, 180f);
 
         GameObject projectile2 = Instantiate(_projectilePrefab);
         projectile2.transform.position = _shootPoint2.position;
-        projectile2.transform.rotation = _shootPoint2.rotation * Quaternion.Euler(0, 180f, 0);
+        projectile2.transform.rotation = _shootPoint2.rotation * Quaternion.Euler(0, 0, 180f);
     }
 }
