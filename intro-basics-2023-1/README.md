@@ -45,22 +45,3 @@ Guía paso a paso en [Notion](https://allie-joe.notion.site/Tanks-9a6b94e666404d
 https://user-images.githubusercontent.com/9322009/221334751-fd683c90-462c-448d-ac7a-769c1f5756e2.mp4
 
 ---
-
-## Clase #4
-
-### Temas
-
-- Physics Raycast
-- Interfaz y Sistema de Vida/Daño
-- Animaciones 2D
-- Object Pooling.
-
-### Guía
-
-Guía paso a paso en [Notion](https://allie-joe.notion.site/Tank-2-293b7507760343ae99c2a3eac6bdf24f).
-
-### Recursos
-
-- [Top-down Tanks Redux by Kenney](https://www.kenney.nl/assets/topdown-tanks-redux)
-
----
