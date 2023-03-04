@@ -8,14 +8,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - DangerZone
   - Water
   - UI
   - Player
   - Bullet
   - Enemy
-  - 
-  - 
+  - PlayerDetection
+  - BulletEnemy
   - 
   - 
   - 
