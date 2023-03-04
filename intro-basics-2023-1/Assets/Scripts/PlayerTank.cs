@@ -15,7 +15,7 @@ public class PlayerTank : MonoBehaviour, IDamageable
     {
         if(HealthPoints <= 0)
             return;
-
+    
         HealthPoints--;
         if(HealthPoints <= 0)
             gameObject.SetActive(false);

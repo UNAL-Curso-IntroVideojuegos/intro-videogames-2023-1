@@ -12,6 +12,8 @@ public class Bullet : MonoBehaviour
     
     [SerializeField]
     private float _lifeTime = 3; //sec
+    [SerializeField]
+    private GameObject _hitVFXPrefab;
     
     private Rigidbody2D _rb;
     private float _destructionTime = 0;
@@ -54,6 +56,12 @@ public class Bullet : MonoBehaviour
             }
             
             Debug.Log("Hit with " + hit.collider.name);
+            
+            if (_hitVFXPrefab)
+            {
+                Instantiate(_hitVFXPrefab, _rb.position, Quaternion.identity);
+            }
+            
             DestroyProjectile();
         }
     }

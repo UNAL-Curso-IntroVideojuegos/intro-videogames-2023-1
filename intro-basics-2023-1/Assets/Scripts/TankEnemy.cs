@@ -1,8 +1,13 @@
 using System;
 using UnityEngine;
 
-public class TankEnemy : MonoBehaviour
+public class TankEnemy : MonoBehaviour, IDamageable
 {
+    [field:SerializeField]
+    public int TotalHealthPoints { get; private set; }
+    public int HealthPoints { get; private set; }
+    
+    [Space(20)]
     [SerializeField]
     private float _speed = 1;
     
@@ -28,7 +33,7 @@ public class TankEnemy : MonoBehaviour
 
     private float _fireTimer = 0;
     
-    private void Start()
+    protected void Start()
     {
         gameObject.SetActive(false);
     }
@@ -36,6 +41,7 @@ public class TankEnemy : MonoBehaviour
     private void OnEnable()
     {
         _fireTimer = _timeBetweenBullets;
+        HealthPoints = TotalHealthPoints;
     }
 
     private void Update()
@@ -106,5 +112,15 @@ public class TankEnemy : MonoBehaviour
             transform.position = midPoint;
         }
             
+    }
+    
+    public void TakeHit()
+    {
+        if(HealthPoints <= 0)
+            return;
+    
+        HealthPoints--;
+        if(HealthPoints <= 0)
+            gameObject.SetActive(false);
     }
 }
