@@ -22,11 +22,18 @@
 	- Inputs (básico)
 	- Proyecto: [Planetas](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-basics-2023-1#clase-2)
 
-- **Clase 2:** Physics
+- **Clase 3:** Physics
 	- Physics y Movimiento
 	- RigidBody y Colliders
 	- Prefabs e Instantiate
 	- Proyecto: [Tanks](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-basics-2023-1#clase-3)
+
+- **Clase 4:** Physics
+	- Physics Raycast
+	- Interfaz y Sistema de Vida/Daño
+	- Animaciones 2D
+	- Object Pooling.
+	- Proyecto: [Tanks](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-basics-2023-1#clase-4)
 
 
 ## Talleres semanales
