@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TankEnemy : MonoBehaviour, IDamageable
 {
@@ -11,11 +12,12 @@ public class TankEnemy : MonoBehaviour, IDamageable
     [SerializeField]
     private float _speed = 1;
     
+    [FormerlySerializedAs("_initPos")]
     [Space(20)]
     [SerializeField]
-    private Transform _initPos;
-    [SerializeField]
-    private Transform _endPos;
+    private Transform _initPosTransform;
+    [FormerlySerializedAs("_endPos")] [SerializeField]
+    private Transform _endPosTransform;
 
     [Space(20)]
     [SerializeField]
@@ -31,10 +33,13 @@ public class TankEnemy : MonoBehaviour, IDamageable
     [SerializeField]
     private Transform[] _shootPoints;
 
+    private Vector3 _initPos, _endPos;
     private float _fireTimer = 0;
     
     protected void Start()
     {
+        _initPos = _initPosTransform.position;
+        _endPos = _endPosTransform.position;
         gameObject.SetActive(false);
     }
 
@@ -53,9 +58,9 @@ public class TankEnemy : MonoBehaviour, IDamageable
 
     private void Move()
     {
-        float d = (_initPos.position - _endPos.position).magnitude;
+        float d = (_initPos - _endPos).magnitude;
         float delta = Mathf.PingPong(Time.time * _speed, d);
-        transform.position = Vector3.Lerp(_initPos.position, _endPos.position, delta / d);
+        transform.position = Vector3.Lerp(_initPos, _endPos, delta / d);
     }
 
     private void LookAtTarget()
@@ -94,25 +99,6 @@ public class TankEnemy : MonoBehaviour, IDamageable
             projectile.transform.rotation = s.rotation;
         }
     }
-
-    private void OnDrawGizmos()
-    {
-        if(!_initPos || !_endPos)
-            return;
-        
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(_initPos.position, 0.1f);
-        Gizmos.DrawLine(_initPos.position, _endPos.position);
-        Gizmos.DrawSphere(_endPos.position, 0.1f);
-
-        if (!Application.isPlaying)
-        {
-            Vector3 midPoint = (_initPos.position + _endPos.position) / 2;
-            midPoint.z = 0;
-            transform.position = midPoint;
-        }
-            
-    }
     
     public void TakeHit()
     {
@@ -122,5 +108,24 @@ public class TankEnemy : MonoBehaviour, IDamageable
         HealthPoints--;
         if(HealthPoints <= 0)
             gameObject.SetActive(false);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if(!_initPosTransform || !_endPosTransform)
+            return;
+        
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(_initPosTransform.position, 0.1f);
+        Gizmos.DrawLine(_initPosTransform.position, _endPosTransform.position);
+        Gizmos.DrawSphere(_endPosTransform.position, 0.1f);
+
+        if (!Application.isPlaying)
+        {
+            Vector3 midPoint = (_initPosTransform.position + _endPosTransform.position) / 2;
+            midPoint.z = 0;
+            transform.position = midPoint;
+        }
+            
     }
 }
