@@ -39,6 +39,7 @@
 ## Talleres semanales
 - Tarea #1 (Clase #1): Crear cuenta en GitHub y acceso al repositorio.
 - [Tarea #2](./Taller/Taller-2#taller-2/) (Clase #3): Torreta Enemiga - Detección, Movimiento, Prefabs.
+- [Tarea #3](./Taller/Taller-3#taller-3/) (Clase #4): Objetos lottable y Caja Droppable.
 
 ## Profesor
 - J. Alejandro Álvarez. [![website](https://img.shields.io/badge/Website-46a2f1.svg?&style=flat-square&logo=Google-Chrome&logoColor=white&link=http://www.alejoalvarez.me/)](http://www.alejoalvarez.me/)
