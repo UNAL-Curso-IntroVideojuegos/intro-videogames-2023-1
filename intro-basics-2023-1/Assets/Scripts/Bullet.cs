@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 dir = transform.up;
-        Vector2 movement = dir * _speed * Time.fixedDeltaTime;
+        Vector2 movement = _speed * Time.fixedDeltaTime * dir;
         Vector2 pos = _rb.position + movement;
 
         CheckCollision(movement);
