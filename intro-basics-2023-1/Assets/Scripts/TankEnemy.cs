@@ -126,6 +126,6 @@ public class TankEnemy : MonoBehaviour, IDamageable
             midPoint.z = 0;
             transform.position = midPoint;
         }
-            
+       
     }
 }

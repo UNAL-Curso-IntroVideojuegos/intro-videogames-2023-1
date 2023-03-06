@@ -3,7 +3,9 @@ using UnityEngine;
 public class PlayerTank : MonoBehaviour, IDamageable
 {
     [field:SerializeField]
+    
     public int TotalHealthPoints { get; private set; }
+    
     public int HealthPoints { get; private set; }
     
     private void Start()
