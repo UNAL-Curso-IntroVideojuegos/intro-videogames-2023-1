@@ -61,6 +61,7 @@ public class Bullet : MonoBehaviour
         {
             if (hit.transform.TryGetComponent(out IDamageable targetHit))
             {
+                Debug.Log("Hit with " + hit.collider.name + " is execute");
                 targetHit.TakeHit();
             }
             
