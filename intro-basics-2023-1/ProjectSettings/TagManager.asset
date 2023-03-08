@@ -12,12 +12,12 @@ TagManager:
   - Water
   - UI
   - Player
-  - Bullet
+  - BulletPLayer
   - Enemy
   - Detection
   - BulletEnemy
-  - 
-  - 
+  - Loot
+  - Drops
   - 
   - 
   - 
