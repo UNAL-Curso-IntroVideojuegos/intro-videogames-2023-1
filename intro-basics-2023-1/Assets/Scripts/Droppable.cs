@@ -12,7 +12,7 @@ public class Droppable : MonoBehaviour, IDamageable
     public int HealthPoints { get; private set; }
 
     [SerializeField]
-    private float _probability = 0.8f;
+    private float _probability = 0.1f;
 
     [SerializeField]
     private GameObject[] _lootPrefabs;
@@ -22,22 +22,18 @@ public class Droppable : MonoBehaviour, IDamageable
     {
         HealthPoints = TotalHealthPoints;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void OnDisable()
     {
         float random = Random.value;
-        Vector2 offset = Random.insideUnitCircle;
-        
-        if (random <= _probability) {
-            Instantiate(_lootPrefabs[1], transform.position, Quaternion.identity);
+
+        if (random <= _probability)
+        {
+            int posibleLoot = Random.Range(0, _lootPrefabs.Length);
+            Vector3 positionLoot = Random.insideUnitCircle;
+            positionLoot += transform.position;
+            Instantiate(_lootPrefabs[posibleLoot], positionLoot, Quaternion.identity);
         }
-        
 
     }
 

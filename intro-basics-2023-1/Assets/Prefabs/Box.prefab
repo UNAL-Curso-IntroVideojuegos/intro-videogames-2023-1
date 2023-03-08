@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <TotalHealthPoints>k__BackingField: 5
-  _probability: 0.8
+  _probability: 0.2
   _lootPrefabs:
   - {fileID: 6177709778317764362, guid: 0fd8c76216db9df4baabab47c4c22b70, type: 3}
   - {fileID: 5874545894224143665, guid: 93e8596e04dc72049bc36f681bf9666a, type: 3}
