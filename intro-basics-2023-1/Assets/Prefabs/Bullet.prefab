@@ -181,6 +181,6 @@ MonoBehaviour:
   _speed: 7
   _collisionMaks:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 4353
   _lifeTime: 3
   _hitVFXPrefab: {fileID: 6814368558866804429, guid: 29c56f04ee2514dcea266b77e90095a3, type: 3}
