@@ -14,10 +14,22 @@ TagManager:
   - Player
   - Bullet
   - Enemy
+<<<<<<< Updated upstream
   - Detection
   - BulletEnemy
+=======
+<<<<<<< Updated upstream
+  - Barrera
+  - EnemyBullet
+>>>>>>> Stashed changes
   - 
   - 
+=======
+  - Detection
+  - BulletEnemy
+  - Loot
+  - DropBox
+>>>>>>> Stashed changes
   - 
   - 
   - 
