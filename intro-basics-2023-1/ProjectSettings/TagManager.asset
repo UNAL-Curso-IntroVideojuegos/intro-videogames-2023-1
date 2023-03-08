@@ -12,12 +12,12 @@ TagManager:
   - Water
   - UI
   - Player
-  - Bullet
+  - PlayerBullet
+  - EnemyBullet
   - Enemy
-  - Detection
-  - BulletEnemy
-  - 
-  - 
+  - Enviroment
+  - ActivationMark
+  - LootBox
   - 
   - 
   - 
