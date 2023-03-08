@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private float _speed = 7;
     [SerializeField]
-    private LayerMask _collisionMaks;
+    private LayerMask _collisionMask;
     
     [SerializeField]
     private float _lifeTime = 3; //sec
@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour
     
     private void CheckCollision(Vector2 movement)
     {
-        RaycastHit2D hit = Physics2D.Raycast(_rb.position, transform.up, movement.magnitude, _collisionMaks);
+        RaycastHit2D hit = Physics2D.Raycast(_rb.position, transform.up, movement.magnitude, _collisionMask);
         
         // If it hits something...
         if (hit.collider != null)
