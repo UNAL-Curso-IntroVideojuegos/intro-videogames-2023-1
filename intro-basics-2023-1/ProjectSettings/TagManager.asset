@@ -12,12 +12,12 @@ TagManager:
   - Water
   - UI
   - Player
-  - Fight_zone
+  - Droppable
   - Bullet
   - Enemy
-  - 
-  - 
-  - 
+  - Bullet_Enemy
+  - Projectil
+  - Fight_zone
   - 
   - 
   - 

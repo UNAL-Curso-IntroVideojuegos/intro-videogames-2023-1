@@ -6,10 +6,7 @@ public class activeEnemy : MonoBehaviour
 {
     public GameObject objectToActivate; // Referencia al objeto que se activará
 
-    private void Start()
-    {
-        objectToActivate.SetActive(false); // Desactiva el objeto al inicio
-    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
