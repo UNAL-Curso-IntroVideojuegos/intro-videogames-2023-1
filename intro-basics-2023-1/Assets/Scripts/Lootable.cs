@@ -16,11 +16,8 @@ public class Lootable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "PlayerTank")
-        {
-            Debug.Log("Loot grabbed by Player");
-            gameObject.SetActive(false);
-            Object.Destroy(gameObject);
-        }
+        Debug.Log("Loot grabbed by Player");
+        gameObject.SetActive(false);
+        Object.Destroy(gameObject);
     }
 }

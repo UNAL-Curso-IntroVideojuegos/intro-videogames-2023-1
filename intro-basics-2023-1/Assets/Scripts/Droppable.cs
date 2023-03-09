@@ -30,14 +30,14 @@ public class Droppable : MonoBehaviour, IDamageable
         if (HealthPoints <= 0)
         {
             gameObject.SetActive(false);
+            Object.Destroy(gameObject);
 
             // Soltar Loot
             float r = Random.Range(0.0f, 1.0f);
-            Debug.Log("Random number "+r);
             if (r <= LootProbability)
             {
                 GameObject loot = Instantiate(LootList[Random.Range(0, LootList.Length)]);
-                loot.transform.position = (Vector2) transform.position + Random.insideUnitCircle * 2;
+                loot.transform.position = (Vector2) transform.position + Random.insideUnitCircle;
             }
         }
     }
