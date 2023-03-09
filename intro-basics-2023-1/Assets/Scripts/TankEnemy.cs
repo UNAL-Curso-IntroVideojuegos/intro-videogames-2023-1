@@ -7,6 +7,9 @@ public class TankEnemy : MonoBehaviour, IDamageable
     [field:SerializeField]
     public int TotalHealthPoints { get; private set; }
     public int HealthPoints { get; private set; }
+
+    [SerializeField]
+    private GameObject _deadVFXPrefab;
     
     [Space(20)]
     [SerializeField]
@@ -37,7 +40,7 @@ public class TankEnemy : MonoBehaviour, IDamageable
     private float _fireTimer = 0;
     
     protected void Start()
-    {
+    {   
         _initPos = _initPosTransform.position;
         _endPos = _endPosTransform.position;
         gameObject.SetActive(false);
@@ -106,8 +109,10 @@ public class TankEnemy : MonoBehaviour, IDamageable
             return;
     
         HealthPoints--;
-        if(HealthPoints <= 0)
+        if(HealthPoints <= 0) {
+            Instantiate(_deadVFXPrefab, GetComponent<Transform>().position, Quaternion.identity);
             gameObject.SetActive(false);
+        }
     }
 
     private void OnDrawGizmos()
