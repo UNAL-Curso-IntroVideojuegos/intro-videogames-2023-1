@@ -183,3 +183,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 65
   _lifeTime: 3
+  _hitVFXPrefab: {fileID: 0}
