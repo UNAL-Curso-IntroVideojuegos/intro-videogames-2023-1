@@ -2365,7 +2365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1079bd4fbd93d2047a4f0cfcdb44b4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 2
+  <TotalHealthPoints>k__BackingField: 1
   objectsToDrop:
   - {fileID: 8729354249074065991, guid: e0af528c064b1d04798ec44baeb28e39, type: 3}
   - {fileID: 6507232990121390300, guid: 52d1c1bd6d4316d45bb920ccf77d829c, type: 3}
@@ -2596,7 +2596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1079bd4fbd93d2047a4f0cfcdb44b4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 2
+  <TotalHealthPoints>k__BackingField: 1
   objectsToDrop:
   - {fileID: 8729354249074065991, guid: e0af528c064b1d04798ec44baeb28e39, type: 3}
   - {fileID: 6507232990121390300, guid: 52d1c1bd6d4316d45bb920ccf77d829c, type: 3}
@@ -3281,7 +3281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1079bd4fbd93d2047a4f0cfcdb44b4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 2
+  <TotalHealthPoints>k__BackingField: 1
   objectsToDrop:
   - {fileID: 8729354249074065991, guid: e0af528c064b1d04798ec44baeb28e39, type: 3}
   - {fileID: 6507232990121390300, guid: 52d1c1bd6d4316d45bb920ccf77d829c, type: 3}
@@ -3697,7 +3697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1079bd4fbd93d2047a4f0cfcdb44b4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 2
+  <TotalHealthPoints>k__BackingField: 1
   objectsToDrop:
   - {fileID: 8729354249074065991, guid: e0af528c064b1d04798ec44baeb28e39, type: 3}
   - {fileID: 6507232990121390300, guid: 52d1c1bd6d4316d45bb920ccf77d829c, type: 3}
@@ -4021,7 +4021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1079bd4fbd93d2047a4f0cfcdb44b4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 2
+  <TotalHealthPoints>k__BackingField: 1
   objectsToDrop:
   - {fileID: 8729354249074065991, guid: e0af528c064b1d04798ec44baeb28e39, type: 3}
   - {fileID: 6507232990121390300, guid: 52d1c1bd6d4316d45bb920ccf77d829c, type: 3}
@@ -4310,7 +4310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1079bd4fbd93d2047a4f0cfcdb44b4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 2
+  <TotalHealthPoints>k__BackingField: 1
   objectsToDrop:
   - {fileID: 8729354249074065991, guid: e0af528c064b1d04798ec44baeb28e39, type: 3}
   - {fileID: 6507232990121390300, guid: 52d1c1bd6d4316d45bb920ccf77d829c, type: 3}
@@ -4466,7 +4466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1079bd4fbd93d2047a4f0cfcdb44b4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 2
+  <TotalHealthPoints>k__BackingField: 1
   objectsToDrop:
   - {fileID: 8729354249074065991, guid: e0af528c064b1d04798ec44baeb28e39, type: 3}
   - {fileID: 6507232990121390300, guid: 52d1c1bd6d4316d45bb920ccf77d829c, type: 3}
@@ -6000,7 +6000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1079bd4fbd93d2047a4f0cfcdb44b4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 2
+  <TotalHealthPoints>k__BackingField: 1
   objectsToDrop:
   - {fileID: 8729354249074065991, guid: e0af528c064b1d04798ec44baeb28e39, type: 3}
   - {fileID: 6507232990121390300, guid: 52d1c1bd6d4316d45bb920ccf77d829c, type: 3}

@@ -21,9 +21,14 @@ public class Droppable : MonoBehaviour, IDamageable
             return;
     
         HealthPoints--;
-        if(HealthPoints <= 0)
+        if(HealthPoints <= 0){
+            if(Random.value>dropProbability){
+                DropObject();
+            }
             gameObject.SetActive(false);
-            DropObject();
+        }
+            
+            
     }
     void DropObject()
 {
