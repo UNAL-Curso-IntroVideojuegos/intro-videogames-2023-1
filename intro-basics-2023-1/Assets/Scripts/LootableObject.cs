@@ -27,6 +27,7 @@ public class LootableObject : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         gameObject.SetActive(false);
+        Debug.Log("Loot grabbed by player");
     }
 
     void RotateAround()
