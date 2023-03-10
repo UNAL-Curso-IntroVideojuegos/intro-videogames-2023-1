@@ -64,7 +64,7 @@ public class Bullet : MonoBehaviour
                 targetHit.TakeHit();
             }
             
-            Debug.Log("Hit with " + hit.collider.name);
+            // Debug.Log("Hit with " + hit.collider.name);
             
             if (_hitVFXPrefab)
             {
