@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 30812287}
   - component: {fileID: 30812290}
   - component: {fileID: 30812291}
+  - component: {fileID: 30812292}
   m_Layer: 6
   m_Name: PlayerTank
   m_TagString: Player
@@ -229,7 +230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30812284}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.62, y: 1.61, z: 0}
+  m_LocalPosition: {x: -3.48, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -271,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451137aee32b3e346a93d3082b461bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 2502631987480369249, guid: 9c33db704c1add245b29443543255f4e, type: 3}
+  _projectilePrefab: {fileID: -8782143853939462422, guid: 9c33db704c1add245b29443543255f4e, type: 3}
   _shootPoint: {fileID: 640749563}
 --- !u!70 &30812290
 CapsuleCollider2D:
@@ -309,6 +310,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &30812292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30812284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55349a8614301e4d89fa4a74da2acad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TotalHealthPoints>k__BackingField: 3
 --- !u!1001 &238486634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -442,11 +456,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 77372183593133184, guid: b254efb7b9f0fd04fa4dd20d68deb383, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.63
+      value: 3.72
       objectReference: {fileID: 0}
     - target: {fileID: 77372183593133184, guid: b254efb7b9f0fd04fa4dd20d68deb383, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.77
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 77372183593133184, guid: b254efb7b9f0fd04fa4dd20d68deb383, type: 3}
       propertyPath: m_LocalPosition.z
@@ -745,7 +759,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -8832,6 +8846,7 @@ GameObject:
   - component: {fileID: 794342181}
   - component: {fileID: 794342185}
   - component: {fileID: 794342187}
+  - component: {fileID: 794342188}
   - component: {fileID: 794342186}
   m_Layer: 8
   m_Name: EnemyTank
@@ -8860,7 +8875,7 @@ MonoBehaviour:
   - {fileID: 262761613}
   - {fileID: 345533883}
   _bulletPrefab: {fileID: 2502631987480369249, guid: 84b32ef1ee5715d47bf8b7fbea295af0, type: 3}
-  _shootTimer: 2.5
+  _shootTimer: 2
 --- !u!114 &794342182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9001,6 +9016,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &794342188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794342180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7f4e8614a872947a0fcc603474698c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TotalHealthPoints>k__BackingField: 4
 --- !u!1001 &804588839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18524,6 +18552,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7091534098655465205, guid: 0bd9c8ad54c69254cbc77a96439d6024, type: 3}
   m_PrefabInstance: {fileID: 1160522026335218372}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1334148919136520090
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1334148920809886384, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_Name
+      value: Objeto
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334148920809886391, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334148920809886391, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334148920809886391, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334148920809886391, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334148920809886391, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334148920809886391, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334148920809886391, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334148920809886391, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334148920809886391, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334148920809886391, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334148920809886391, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6334408888474646577, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
 --- !u!1001 &2334939186915069332
 PrefabInstance:
   m_ObjectHideFlags: 0
