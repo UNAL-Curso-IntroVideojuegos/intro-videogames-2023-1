@@ -14,8 +14,7 @@ public class PlayerTankShooter : MonoBehaviour
 
     private void Awake()
     {
-        _projectilePool =
-            new ObjectPool<Bullet>(CreateProjectile, OnGetProjectile, OnRelease, OnDestroyProjectile, false);
+        _projectilePool = new ObjectPool<Bullet>(CreateProjectile, OnGetProjectile, OnRelease, OnDestroyProjectile, false);
     }
 
     void Update()

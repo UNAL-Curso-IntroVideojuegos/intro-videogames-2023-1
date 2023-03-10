@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4568123835986502543}
   - component: {fileID: 2323455064868825138}
   - component: {fileID: 6270825051866830685}
-  m_Layer: 0
+  - component: {fileID: 1466623448963524994}
+  m_Layer: 7
   m_Name: Caja Metalica
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,3 +112,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5608518, y: 0.55954176}
   m_EdgeRadius: 0
+--- !u!114 &1466623448963524994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3563070994336970576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b47ddc067c765040b18b26e7f958fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lootChance: 0.8
+  _lootPrefabs:
+  - {fileID: 1334148920809886384, guid: 73d95454c359fd9429335c03f18c2697, type: 3}
+  - {fileID: 3965483543092289331, guid: cb9ad4835147a3e41b266e49ce9f1e96, type: 3}
+  <TotalHealthPoints>k__BackingField: 2

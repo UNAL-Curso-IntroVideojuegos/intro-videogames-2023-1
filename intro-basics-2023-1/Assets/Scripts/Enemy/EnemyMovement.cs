@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [field: SerializeField]
+    public int TotalHealthPoints { get; private set; }
+    public int HealthPoints { get; private set; }
+
     private int _movementDirection = 1;
     [SerializeField] private float _speed;
     private Rigidbody2D _rb;

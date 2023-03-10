@@ -28,9 +28,10 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-
+        Debug.Log("Entró");
         if (other.transform.TryGetComponent(out IDamageable targetHit))
         {
+            Debug.Log("LLamada");
             targetHit.TakeHit();
         }
 
