@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Caja
   - Water
   - UI
   - Player
@@ -16,7 +16,7 @@ TagManager:
   - Enemy
   - Detection
   - BulletEnemy
-  - 
+  - Loot
   - 
   - 
   - 
