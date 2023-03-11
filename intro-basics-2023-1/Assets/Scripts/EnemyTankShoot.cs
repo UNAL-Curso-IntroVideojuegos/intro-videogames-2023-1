@@ -45,7 +45,7 @@ public class EnemyTankShoot : MonoBehaviour
         foreach (Transform cannon in _cannon)
         {
             Vector3 aimVector = (_player.position - cannon.position).normalized;
-            float angle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg - 90;
+            float angle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg + 90;
             cannon.rotation = Quaternion.Euler(0, 0, angle);
         }
        

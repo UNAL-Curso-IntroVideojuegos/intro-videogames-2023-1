@@ -21,12 +21,12 @@ public class TriggerDetection : MonoBehaviour
     
     
     private void OnTriggerEnter2D(Collider2D col)
-        {
-            if(col.name== "PlayerTank"){
- 		_enemy.SetActive(true);
- 		gameObject.SetActive(false);
- 	 }
-        }
+    {
+        if(col.name== "PlayerTank"){
+ 		    _enemy.SetActive(true);
+ 		    gameObject.SetActive(false);
+ 	    }
+    }
 
      
 }

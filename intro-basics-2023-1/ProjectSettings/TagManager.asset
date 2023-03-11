@@ -14,9 +14,9 @@ TagManager:
   - Player
   - Bullet
   - Enemy
-  - 
-  - 
-  - 
+  - Enemy Bullet
+  - Loot
+  - MetalBoxLoot
   - 
   - 
   - 
