@@ -1,0 +1,34 @@
+using System;
+using UnityEngine;
+using UnityEngine.Serialization;
+
+public class Droppable : MonoBehaviour, IDamageable
+{
+    [field:SerializeField]
+    public int TotalHealthPoints { get; private set; }
+    public int HealthPoints { get; private set; }
+    
+    void start ()
+    {
+
+    }
+    public void TakeHit()
+    {
+        if (HealthPoints <= 0)
+            return;
+            HealthPoints;
+        if (HealthPoints <= 0)
+            gameObject.SetActive(false);
+            DropObject();
+    }
+
+    void DropObject()
+    {
+        if (Random.Range(1f, 0f) <= DropProbability)
+        {
+            int randomIndex = Random.Range(0, objectsToDrop.Length);
+                GameObject droppedObject = Instantiate(objectsToDrop[randomIndex], transform.position, Quaternion.identity);
+                return;
+        }
+    }
+}
