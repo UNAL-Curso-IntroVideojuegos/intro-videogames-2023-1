@@ -301,7 +301,7 @@ MonoBehaviour:
   lootsObject:
   - {fileID: 8012552225285199931, guid: 0be9c48732254c4409e4100f0774625e, type: 3}
   - {fileID: 4856187770216660770, guid: b5b0e2226c0a6154d9984ef4aeba0ede, type: 3}
-  _probability: 0.5
+  _probability: 1
 --- !u!61 &86389428
 BoxCollider2D:
   m_ObjectHideFlags: 0

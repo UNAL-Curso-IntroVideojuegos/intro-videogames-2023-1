@@ -34,7 +34,7 @@ public class Droppable : MonoBehaviour, IDamageable
         }
     }
 
-    public void createLoot()
+    private void createLoot()
     {   
         int indexLoot = Random.Range(0, lootsObject.Length);
         GameObject obj=Instantiate(lootsObject[indexLoot]);
