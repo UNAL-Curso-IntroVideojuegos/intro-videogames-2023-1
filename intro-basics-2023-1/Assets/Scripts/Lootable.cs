@@ -12,10 +12,7 @@ public class Lootable : MonoBehaviour
     {
         
         //Cannon Rotation
-        // Vector3 aimVector = (transform.position).normalized;
-        // float angle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg + 90;
-        //
-        // this.rotation = Quaternion.Euler(0,0,1);
+        
     }
     
     
