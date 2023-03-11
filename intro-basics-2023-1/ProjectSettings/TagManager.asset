@@ -15,9 +15,15 @@ TagManager:
   - Bullet
   - Enemy
   - Detection
+<<<<<<< Updated upstream
+  - Bullet2
+  - 
+  - 
+=======
   - BulletEnemy
-  - 
-  - 
+  - Lootable
+  - Droppable
+>>>>>>> Stashed changes
   - 
   - 
   - 
