@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lootable : MonoBehaviour
+{
+    [SerializeField] private float movenmentspeed = 30f;
+    [SerializeField] private transform center:
+
+    void start ()
+    {
+
+    }
+    voide update ()
+    {
+        
+    }
+}
