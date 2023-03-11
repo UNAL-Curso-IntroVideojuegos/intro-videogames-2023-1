@@ -1363,7 +1363,7 @@ MonoBehaviour:
   _Loot:
   - {fileID: 785228176409498982, guid: 8feb7f99833216b4ab812dba981fa6fa, type: 3}
   - {fileID: 3617424270267400909, guid: 7c4fba741e504f64794dd3b895fb61c9, type: 3}
-  probabilityLoot: 0.8
+  probabilityLoot: 0.5
 --- !u!4 &769119997
 Transform:
   m_ObjectHideFlags: 0

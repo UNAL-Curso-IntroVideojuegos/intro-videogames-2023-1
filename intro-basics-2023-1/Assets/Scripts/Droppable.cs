@@ -14,7 +14,7 @@ public class Droppable : MonoBehaviour, IDamageable
     [SerializeField]
     private GameObject[] _Loot;
     [SerializeField]
-    private float probabilityLoot = 0.8f;
+    private float probabilityLoot = 0.5f;
     void Start()
     {
         HealthPoints = TotalHealthPoints;
