@@ -35,6 +35,13 @@
 	- Object Pooling.
 	- Proyecto: [Tanks](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-basics-2023-1#clase-4)
 
+- **Clase 5:** 3D y Animaciones.
+	- Mesh, Materials, Textures
+	- Shaders (Intro.)
+	- Rigging y Animación.
+	- Animator.
+	- Proyecto: [Wizzards](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-3d-2023-1#clase-5)
+
 
 ## Talleres semanales
 - Tarea #1 (Clase #1): Crear cuenta en GitHub y acceso al repositorio.
