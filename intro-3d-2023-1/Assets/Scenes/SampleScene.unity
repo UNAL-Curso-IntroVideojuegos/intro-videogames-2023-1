@@ -3260,7 +3260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6139729176c804da3f38815d397ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sphere: {fileID: 2118256892}
 --- !u!143 &446917947
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3278,7 +3277,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &446917948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3291,6 +3290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 390f59506632cb04c808df025c29ee47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveSpeed: 2
+  _rotationSpeed: 15
+  _gravity: -15
+  _body: {fileID: 942812555}
 --- !u!1001 &456030447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16878,7 +16881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118256888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5306907, y: 1.6909944, z: -0.18506119}
+  m_LocalPosition: {x: -17.67, y: 1.8, z: 5.59}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
