@@ -12,16 +12,22 @@ public class PlayerController : MonoBehaviour
 
     [Header("Animator")]
     [SerializeField] private Transform _body;
-
-    private float _verticalVelocity;
     
     private CharacterController _controller;
     private PlayerInput _input;
+    private Animator _anim;
+
+    private Vector3 _targetMoveDirection;
+    private float _verticalVelocity;
+    private bool _hasAnimator;
+
+    private const float ANIMATOR_MOVE_DAMP_TIME = 0.07f;
 
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
         _input = GetComponent<PlayerInput>();
+        _hasAnimator = _body.TryGetComponent(out _anim);
     }
 
     private void Update()
@@ -29,6 +35,18 @@ public class PlayerController : MonoBehaviour
         Move();
         LookAt();
 
+        if (_input.TriggerHold)
+        {
+            _anim.SetTrigger("IsAttacking");
+        }
+        
+        if (_hasAnimator)
+        {
+            Vector3 localRotation = Quaternion.Inverse(_body.rotation) * _targetMoveDirection;
+            
+            _anim.SetFloat("MoveX", localRotation.x, ANIMATOR_MOVE_DAMP_TIME, Time.deltaTime);
+            _anim.SetFloat("MoveY", localRotation.z, ANIMATOR_MOVE_DAMP_TIME, Time.deltaTime);
+        }
     }
 
     private void Move()
@@ -39,11 +57,11 @@ public class PlayerController : MonoBehaviour
             targetSpeed = 0.0f;
         }
  
-        Vector3 targetMoveDirection = new Vector3(_input.Move.x, 0.0f, _input.Move.y).normalized;
+        _targetMoveDirection = new Vector3(_input.Move.x, 0.0f, _input.Move.y).normalized;
 
         _verticalVelocity += _gravity * Time.deltaTime;
         
-        _controller.Move((targetMoveDirection * targetSpeed * Time.deltaTime) + 
+        _controller.Move((_targetMoveDirection * targetSpeed * Time.deltaTime) + 
                          Vector3.up * _verticalVelocity * Time.deltaTime);
     }
 

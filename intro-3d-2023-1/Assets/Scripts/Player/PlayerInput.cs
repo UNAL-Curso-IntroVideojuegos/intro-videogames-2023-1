@@ -4,6 +4,8 @@ public class PlayerInput : MonoBehaviour
 {
     public Vector2 Move { get; private set; }
     public Vector3 Look { get; private set; }
+    
+    public bool TriggerHold { get; private set; }
 
     private Camera _cam;
     private Plane _worldPlane;
@@ -22,7 +24,8 @@ public class PlayerInput : MonoBehaviour
     private void DesktopInputs()
     {
         Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        
+        TriggerHold = Input.GetMouseButton(0);
+
         Vector3 mousePos = Input.mousePosition;
         Ray ray = _cam.ScreenPointToRay(mousePos);
 
