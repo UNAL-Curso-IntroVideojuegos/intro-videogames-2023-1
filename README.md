@@ -42,6 +42,13 @@
 	- Animator.
 	- Proyecto: [Wizzards](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-3d-2023-1#clase-5)
 
+- **Clase 5:** 3D y Animaciones.
+	- Character Controller vs RigidBody
+	- Animator Blend Tree
+	- Animator Layers
+	- Avatar Mask
+	- Proyecto: [Wizzards](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-3d-2023-1#clase-6)
+
 
 ## Talleres semanales
 - Tarea #1 (Clase #1): Crear cuenta en GitHub y acceso al repositorio.

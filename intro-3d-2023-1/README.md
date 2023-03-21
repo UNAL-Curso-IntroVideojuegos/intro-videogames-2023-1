@@ -16,3 +16,18 @@
 - Battle Wizard Poly Art from [https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/battle-wizard-poly-art-128097](https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/battle-wizard-poly-art-128097)
 
 ---
+
+## Clase #6
+
+### Temas
+
+- Character Controller vs RigidBody
+- Animator Blend Tree
+- Animator Layers
+- Avatar Mask
+
+### Recursos
+
+- Battle Wizard Poly Art from [https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/battle-wizard-poly-art-128097](https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/battle-wizard-poly-art-128097)
+
+---
