@@ -4,8 +4,10 @@ public class PlayerInput : MonoBehaviour
 {
     public Vector2 Move { get; private set; }
     public Vector3 Look { get; private set; }
+    public Vector3 MouseWorldPosition { get; private set; }
     
     public bool TriggerHold { get; private set; }
+    public bool TriggerRelease { get; private set; }
 
     private Camera _cam;
     private Plane _worldPlane;
@@ -36,11 +38,12 @@ public class PlayerInput : MonoBehaviour
 
         if (_worldPlane.Raycast(ray, out float distance))
         {
-            Vector3 point = ray.GetPoint(distance);
-            Look = (point - transform.position).normalized;
+            MouseWorldPosition = ray.GetPoint(distance);
+            Look = (MouseWorldPosition - transform.position).normalized;
         }
         else
         {
+            MouseWorldPosition = Vector3.zero;
             Look = Vector3.zero;
         }
     }
