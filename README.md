@@ -42,12 +42,18 @@
 	- Animator.
 	- Proyecto: [Wizzards](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-3d-2023-1#clase-5)
 
-- **Clase 5:** 3D y Animaciones.
+- **Clase 6:** 3D y Animaciones.
 	- Character Controller vs RigidBody
 	- Animator Blend Tree
 	- Animator Layers
 	- Avatar Mask
 	- Proyecto: [Wizzards](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-3d-2023-1#clase-6)
+
+- **Clase 7:** PathFidning y Finite-State Machine.
+	- PathFinding
+	- NavMesh
+	- Finite-State Machine
+	- Proyecto: [Wizzards](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-3d-2023-1#clase-7)
 
 
 ## Talleres semanales
