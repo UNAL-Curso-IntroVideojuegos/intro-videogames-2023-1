@@ -35,11 +35,6 @@ public class PlayerController : MonoBehaviour
         Move();
         LookAt();
 
-        if (_input.TriggerHold)
-        {
-            _anim.SetTrigger("IsAttacking");
-        }
-        
         if (_hasAnimator)
         {
             Vector3 localRotation = Quaternion.Inverse(_body.rotation) * _targetMoveDirection;
