@@ -2,8 +2,15 @@
 public class PatrolState : State
 {
     public override StateType Type => StateType.Patrol;
+
+    public PatrolState() : base("Patrol")
+    {
+        AddTransition(StateType.Chase, new FieldOfViewCheck());
+    }
+    
     protected override void OnEnterState(FiniteStateMachine fms)
     {
+        fms.SetMovementSpeed(fms.Config.Speed);
     }
 
     protected override void OnUpdateState(FiniteStateMachine fms, float deltaTime)

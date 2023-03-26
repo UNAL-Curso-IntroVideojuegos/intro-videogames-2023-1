@@ -13,8 +13,11 @@ public class FiniteStateMachine : MonoBehaviour
 
     public Transform Target => _target;
     public NavMeshController NavMeshController => _navMeshController;
+    public EnemyConfig Config => _config;
+
     
     private NavMeshController _navMeshController;
+    private EnemyConfig _config;
     private Dictionary<StateType, State> _statesDic = new();
     private StateType _currentState;
     private float _currentSpeed = 1;
@@ -22,9 +25,12 @@ public class FiniteStateMachine : MonoBehaviour
     void Start()
     {
         _navMeshController = GetComponent<NavMeshController>();
+        _config = GetComponent<EnemyConfig>();
         
         _statesDic.Add(StateType.Patrol, new PatrolState());
-        
+        _statesDic.Add(StateType.Chase, new ChaseState());
+        _statesDic.Add(StateType.Attack, new AttackState());
+
         ToState(_initialState);
     }
     

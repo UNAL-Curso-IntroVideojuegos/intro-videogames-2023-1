@@ -28,14 +28,17 @@ public class NavMeshController : MonoBehaviour
             _waypoints[i] = _waypointObjects[i].position;
             _waypointObjects[i].gameObject.SetActive(false);
         }
+        
     }
+    
 
     public void SetTarget(Transform target) => _target = target;
 
     public void SetSpeed(float speed) => _agent.speed = speed;
     
     public void GoToNextWaypoint(){  
-        _agent.SetDestination(_waypoints[_currentWaypoint]);  
+        _agent.SetDestination(_waypoints[_currentWaypoint]);
+        _agent.isStopped = false;
         _currentWaypoint++;  
         if (_currentWaypoint >= _waypoints.Length)  
             _currentWaypoint = 0;  
