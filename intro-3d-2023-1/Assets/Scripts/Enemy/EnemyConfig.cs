@@ -28,7 +28,7 @@ public class EnemyConfig : MonoBehaviour
     public StateType InitialState;
     public FSMData FSMData;
 
-        private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position + Vector3.up * 0.9f, AttackRange);

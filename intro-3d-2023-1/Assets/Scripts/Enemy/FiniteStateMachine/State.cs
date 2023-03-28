@@ -68,7 +68,7 @@ public abstract class State
         });
     }
     
-    public static State GetState(StateType stateType)
+    public static State CreateState(StateType stateType)
     {
         switch (stateType)
         {

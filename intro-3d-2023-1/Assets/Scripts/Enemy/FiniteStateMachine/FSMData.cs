@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [Serializable]
 public class FSMData
@@ -12,7 +11,7 @@ public class FSMData
 [Serializable]
 public class FSMStateData
 {
-    [FormerlySerializedAs("State")] public StateType StateType;
+    public StateType StateType;
     public FSMTransitionData[] Transition;
 }
 
