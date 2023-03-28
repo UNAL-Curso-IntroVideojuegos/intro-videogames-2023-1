@@ -29,7 +29,7 @@ public class EnemyConfig : MonoBehaviour
         private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, AttackRange);
+        Gizmos.DrawWireSphere(transform.position + Vector3.up * 0.9f, AttackRange);
         
 #if UNITY_EDITOR
         Vector3 fromDirection = Quaternion.Euler(0, -ViewAngle / 2f, 0) * transform.forward;

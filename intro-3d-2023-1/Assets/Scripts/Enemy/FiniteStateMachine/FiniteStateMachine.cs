@@ -60,6 +60,9 @@ public class FiniteStateMachine : MonoBehaviour
     
     public void ToState(StateType newState)
     {
+        if(newState == _currentState)
+            return;
+        
         if (_statesDic.ContainsKey(_currentState))
         {
             _statesDic[_currentState].OnExit(this);
