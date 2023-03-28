@@ -1,4 +1,4 @@
-# Clase 3
+# Clase 7
 
 ## Taller #4
 
@@ -100,20 +100,20 @@ Explicación del diagrama:
         
 
 ### Fecha de entrega
-> Viernes 10 de Marzo - 11:59 pm (media noche del viernes).
+> Martes 4 de Abril - 11:59 pm (media noche del martes).
 
 ### Entrega
-- Crear una branch a partir del branch `sessions/homework-3`.
-  - El nombre de la nueva branch debe tener el siguiente formato: `student/[usuario-unal]/homework-3`
+- Crear una branch a partir del branch `sessions/homework-4`.
+  - El nombre de la nueva branch debe tener el siguiente formato: `student/[usuario-unal]/homework-4`
 ```
- Ejemplo: Si su correo es pedrito@unal.edu.co, la rama para hacer la entrega de la clase 3 debe ser `student/pedrito/homework-3`.
+ Ejemplo: Si su correo es pedrito@unal.edu.co, la rama para hacer la entrega de la tarea 4 debe ser `student/pedrito/homework-4`.
 ```
 - Hacer los commits necesarios para efectuar la solución al taller.
-- Hacer un Pull Request de su branch (`student/[usuario-unal]/homework-3`)
-  - La branch target del PR debe ser `sessions/homework-3`.
-  - El nombre del PR debe seguir el formato `Solución Taller 3 by [usuario-unal]`. 
+- Hacer un Pull Request de su branch (`student/[usuario-unal]/homework-4`)
+  - La branch target del PR debe ser `sessions/homework-4`.
+  - El nombre del PR debe seguir el formato `Solución Taller 4 by [usuario-unal]`. 
 ```
- Ejemplo: Si su correo es pedrito@unal.edu.co, el título del PR debe ser: `Solución Taller 3 by pedrito`.
+ Ejemplo: Si su correo es pedrito@unal.edu.co, el título del PR debe ser: `Solución Taller 4 by pedrito`.
 ```
   - Puede usar la descripción del PR para añadir notas, aclaraciones, preguntas, etc.
 
