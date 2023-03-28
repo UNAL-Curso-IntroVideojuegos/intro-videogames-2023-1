@@ -37,6 +37,9 @@ public class NavMeshController : MonoBehaviour
     public void SetSpeed(float speed) => _agent.speed = speed;
     
     public void GoToNextWaypoint(){  
+        if(_waypoints == null || _waypoints.Length == 0)
+            return;
+        
         _agent.SetDestination(_waypoints[_currentWaypoint]);
         _agent.isStopped = false;
         _currentWaypoint++;  
