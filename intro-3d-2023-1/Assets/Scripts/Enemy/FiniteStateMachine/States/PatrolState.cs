@@ -3,10 +3,7 @@ public class PatrolState : State
 {
     public override StateType Type => StateType.Patrol;
 
-    public PatrolState() : base("Patrol")
-    {
-        AddTransition(StateType.Chase, new FieldOfViewCheck());
-    }
+    public PatrolState() : base("Patrol") { }
     
     protected override void OnEnterState(FiniteStateMachine fms)
     {

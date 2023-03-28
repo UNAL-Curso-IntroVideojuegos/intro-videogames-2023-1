@@ -27,9 +27,7 @@ public class FiniteStateMachine : MonoBehaviour
         _navMeshController = GetComponent<NavMeshController>();
         _config = GetComponent<EnemyConfig>();
         
-        _statesDic.Add(StateType.Patrol, new PatrolState());
-        _statesDic.Add(StateType.Chase, new ChaseState());
-        _statesDic.Add(StateType.Attack, new AttackState());
+        Bind(_config.FSMData);
 
         ToState(_initialState);
     }
@@ -72,6 +70,23 @@ public class FiniteStateMachine : MonoBehaviour
         if (_statesDic.ContainsKey(_currentState))
         {
             _statesDic[_currentState].OnEnter(this);
+        }
+    }
+
+    private void Bind(FSMData fsmData)
+    {
+        foreach (FSMStateData stateData in fsmData.States)
+        {
+            State state = FSMData.GetState(stateData.StateType);
+            if(state == null)
+                continue;
+
+            foreach (FSMTransitionData transitionData in stateData.Transition)
+            {
+                state.AddTransition(transitionData.TargetState, transitionData.Decision);
+            }
+            
+            _statesDic.Add(stateData.StateType, state);
         }
     }
 }

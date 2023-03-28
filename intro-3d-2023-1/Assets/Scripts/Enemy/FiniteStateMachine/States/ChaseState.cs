@@ -9,10 +9,7 @@ public class ChaseState : State
 
     private float _navMeshRefreshTimer = 0;
 
-    public ChaseState() : base("Chase")
-    {
-        AddTransition(StateType.Attack, new InAttackRangeCheck());
-    }
+    public ChaseState() : base("Chase") { }
     
     protected  override void OnEnterState(FiniteStateMachine fms)
     {

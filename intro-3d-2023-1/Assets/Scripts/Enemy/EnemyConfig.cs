@@ -23,7 +23,10 @@ public class EnemyConfig : MonoBehaviour
     public float AttackDuration = 1.5f;
     public int AttackDamage = 1;
 
-    private void OnDrawGizmos()
+    [Header("Finite-State Machine")] 
+    public FSMData FSMData;
+
+        private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, AttackRange);

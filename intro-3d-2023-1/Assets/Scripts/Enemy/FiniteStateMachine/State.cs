@@ -59,7 +59,7 @@ public abstract class State
         _stateDuration = time;
     }
     
-    protected void AddTransition(StateType targetState, StateDecision decision)
+    public void AddTransition(StateType targetState, StateDecision decision)
     {
         _transitions.Add(new StateTransition
         {
