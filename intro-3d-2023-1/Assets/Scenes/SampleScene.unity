@@ -2818,10 +2818,10 @@ MonoBehaviour:
   - {fileID: 1999475581}
   - {fileID: 1232941253}
   _waypoints:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 4.22}
-  - {x: 6.08, y: 0, z: 4.22}
-  - {x: 6.08, y: 0, z: 0.05}
+  - {x: -7.4, y: 0, z: -5.61}
+  - {x: -7.4, y: 0, z: -1.3900003}
+  - {x: -1.3200002, y: 0, z: -1.3900003}
+  - {x: -1.3200002, y: 0, z: -5.56}
 --- !u!195 &343030448
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -18843,15 +18843,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 2
   Speed: 1
-  ChaseSpeed: 2.7
-  NavMeshTimeToRefresh: 1
-  DetectionRange: 5
+  ChaseSpeed: 7
+  NavMeshTimeToRefresh: 0.2
+  DetectionRange: 4
   ViewAngle: 360
   TauntDuration: 2
   AttackRange: 1.5
-  AttackDelay: 0.18
-  AttackDuration: 1.5
-  AttackDamage: 1
+  AttackDelay: 1.2
+  AttackDuration: 1.4
+  AttackDamage: 5
   InitialState: 0
   FSMData:
     States: []
