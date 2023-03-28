@@ -7,21 +7,6 @@ using UnityEngine.Serialization;
 public class FSMData
 {
     public List<FSMStateData> States;
-
-    public static State GetState(StateType stateType)
-    {
-        switch (stateType)
-        {
-            case StateType.Patrol:
-                return new PatrolState();
-            case StateType.Chase:
-                return new ChaseState();
-            case StateType.Attack:
-                return new AttackState();
-        }
-
-        return null;
-    }
 }
 
 [Serializable]

@@ -67,4 +67,19 @@ public abstract class State
             Decision = decision
         });
     }
+    
+    public static State GetState(StateType stateType)
+    {
+        switch (stateType)
+        {
+            case StateType.Patrol:
+                return new PatrolState();
+            case StateType.Chase:
+                return new ChaseState();
+            case StateType.Attack:
+                return new AttackState();
+        }
+
+        return null;
+    }
 }

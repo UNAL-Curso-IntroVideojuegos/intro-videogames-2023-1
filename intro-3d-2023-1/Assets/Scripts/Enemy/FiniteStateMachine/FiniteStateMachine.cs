@@ -78,7 +78,7 @@ public class FiniteStateMachine : MonoBehaviour
     {
         foreach (FSMStateData stateData in fsmData.States)
         {
-            State state = FSMData.GetState(stateData.StateType);
+            State state = State.GetState(stateData.StateType);
             if(state == null)
                 continue;
 
