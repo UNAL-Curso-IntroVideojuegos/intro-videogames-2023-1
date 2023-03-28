@@ -11,6 +11,7 @@ public class EnemyConfig : MonoBehaviour
     [Header("Movement")] 
     public float Speed = 1.0f;
     public float ChaseSpeed = 2.7f;
+    public float NavMeshTimeToRefresh = 1;
 
     [Header("Detection Range")]
     public float DetectionRange = 5.0f;
@@ -23,7 +24,8 @@ public class EnemyConfig : MonoBehaviour
     public float AttackDuration = 1.5f;
     public int AttackDamage = 1;
 
-    [Header("Finite-State Machine")] 
+    [Header("Finite-State Machine")]
+    public StateType InitialState;
     public FSMData FSMData;
 
         private void OnDrawGizmos()

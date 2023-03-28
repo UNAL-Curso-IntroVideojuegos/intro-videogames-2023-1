@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class FiniteStateMachine : MonoBehaviour
 {
-    [SerializeField] private StateType _initialState;
-    
     [Space(10)]
     [SerializeField] private Animator _anim;
     
@@ -29,7 +27,7 @@ public class FiniteStateMachine : MonoBehaviour
         
         Bind(_config.FSMData);
 
-        ToState(_initialState);
+        ToState(_config.InitialState);
     }
     
     void Update()
