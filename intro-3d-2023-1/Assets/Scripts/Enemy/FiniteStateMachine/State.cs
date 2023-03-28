@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum StateType { None, Patrol, Chase, Attack, Taunt }
+public enum StateType { None, Patrol, Chase, Attack, Taunt, Idle, Dead }
 
 public abstract class State
 {

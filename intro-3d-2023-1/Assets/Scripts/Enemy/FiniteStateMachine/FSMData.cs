@@ -18,6 +18,12 @@ public class FSMData
                 return new ChaseState();
             case StateType.Attack:
                 return new AttackState();
+            case StateType.Taunt:
+                return new TauntState();
+            case StateType.Dead:
+                return new DeadState();
+            case StateType.Idle:
+                return new IdleState();
         }
 
         return null;
