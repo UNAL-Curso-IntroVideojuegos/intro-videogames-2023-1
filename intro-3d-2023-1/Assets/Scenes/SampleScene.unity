@@ -2890,11 +2890,11 @@ MonoBehaviour:
         Decision: {fileID: 11400000, guid: de23a80845bb54c529c26bcdf6e3d0ae, type: 2}
     - StateType: 2
       Transition:
-      - TargetState: 2
-        Decision: {fileID: 11400000, guid: a9d3078b92ae642c985f5576f342062b, type: 2}
-    - StateType: 2
-      Transition:
       - TargetState: 3
+        Decision: {fileID: 11400000, guid: a9d3078b92ae642c985f5576f342062b, type: 2}
+    - StateType: 3
+      Transition:
+      - TargetState: 1
         Decision: {fileID: 0}
 --- !u!1001 &365248699
 PrefabInstance:
