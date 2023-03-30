@@ -24,10 +24,13 @@ public class AttackState : State
             _attackDelay -= deltaTime;
             if (_attackDelay <= 0)
             {
-                //Apply Damage
-                if (fms.Target.TryGetComponent(out IDamageable target))
-                {
-                    target.TakeHit(fms.Config.AttackDamage);
+                // Basic Attack
+                if (fms.Config.AttackType == EnemyAttackType.Basic){
+                    BasicAttack(fms);
+                }
+
+                if (fms.Config.AttackType == EnemyAttackType.Explode){
+                    ExplodeAttack(fms);
                 }
             }
         }
@@ -35,5 +38,18 @@ public class AttackState : State
 
     protected override void OnExitState(FiniteStateMachine fms)
     {
+    }
+
+    private void BasicAttack(FiniteStateMachine fms)
+    {
+        if (fms.Target.TryGetComponent(out IDamageable target))
+        {
+            target.TakeHit(fms.Config.AttackDamage);
+        }
+    }
+
+    private void ExplodeAttack(FiniteStateMachine fms)
+    {
+        //Nuevo código de Ataque en área aquí.
     }
 }
