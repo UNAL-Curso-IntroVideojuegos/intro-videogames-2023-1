@@ -9,7 +9,11 @@ public class FiniteStateMachine : MonoBehaviour
     [Space(10)]
     [SerializeField] private Transform _target;
 
+    [Space(10)]
+    [SerializeField] private GameObject _this;
+
     public Transform Target => _target;
+    public GameObject This => _this;
     public NavMeshController NavMeshController => _navMeshController;
     public EnemyConfig Config => _config;
 

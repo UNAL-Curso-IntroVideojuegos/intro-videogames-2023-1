@@ -50,6 +50,14 @@ public class AttackState : State
 
     private void ExplodeAttack(FiniteStateMachine fms)
     {
-        //Nuevo código de Ataque en área aquí.
+        Collider[] hitColliders = Physics.OverlapSphere(fms.This.transform.position, fms.Config.AttackRange);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.TryGetComponent(out IDamageable target))
+            {
+                //Debug.Log("Explosión");
+                target.TakeHit(fms.Config.AttackDamage);
+            }
+        }
     }
 }

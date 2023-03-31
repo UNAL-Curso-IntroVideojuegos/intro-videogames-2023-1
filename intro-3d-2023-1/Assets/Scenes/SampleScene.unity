@@ -881,9 +881,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 2120193039}
     m_Modifications:
     - target: {fileID: 7487410016649246973, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016649246973, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c82377aec863e4e5a9fe7cdf5998f4ad, type: 2}
+    - target: {fileID: 7487410016653510205, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7487410016656463647, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -928,9 +936,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656463651, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.055572305
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656463651, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.059943993
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656463709, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0024758226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656463709, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0014336909
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656624419, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7487410016656624447, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
       propertyPath: m_Name
       value: BeholderPBR
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656624447, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
@@ -2858,6 +2890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anim: {fileID: 1639418917}
   _target: {fileID: 446917945}
+  _this: {fileID: 343030445}
 --- !u!114 &343030450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2881,6 +2914,7 @@ MonoBehaviour:
   AttackDelay: 0.18
   AttackDuration: 1.5
   AttackDamage: 1
+  AttackType: 0
   InitialState: 1
   FSMData:
     States:
@@ -18852,6 +18886,7 @@ MonoBehaviour:
   AttackDelay: 1.2
   AttackDuration: 1.4
   AttackDamage: 5
+  AttackType: 1
   InitialState: 5
   FSMData:
     States:
@@ -18871,6 +18906,10 @@ MonoBehaviour:
       Transition:
       - TargetState: 6
         Decision: {fileID: 0}
+    - StateType: 6
+      Transition:
+      - TargetState: 6
+        Decision: {fileID: 0}
 --- !u!114 &2120193036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18885,6 +18924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anim: {fileID: 150117540}
   _target: {fileID: 446917945}
+  _this: {fileID: 2120193034}
 --- !u!114 &2120193037
 MonoBehaviour:
   m_ObjectHideFlags: 0
