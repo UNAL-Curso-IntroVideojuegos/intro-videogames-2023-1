@@ -100,7 +100,7 @@ Explicación del diagrama:
         
 
 ### Fecha de entrega
-> Martes 4 de Abril - 11:59 pm (media noche del martes).
+> Sábado 8 de Abril - 11:59 pm (media noche del sábado).
 
 ### Entrega
 - Crear una branch a partir del branch `sessions/homework-4`.
