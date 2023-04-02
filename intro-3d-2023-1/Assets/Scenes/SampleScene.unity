@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17944056, g: 0.22468323, b: 0.30632922, a: 1}
+  m_IndirectSpecularColor: {r: 0.17944095, g: 0.22468369, b: 0.3063304, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2870,7 +2870,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134e0628fe7c64e7e9de1e2aeaedcd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathDelay: 3
   Health: 2
+  type: 0
   Speed: 1
   ChaseSpeed: 2.7
   NavMeshTimeToRefresh: 1
@@ -2894,7 +2896,7 @@ MonoBehaviour:
         Decision: {fileID: 11400000, guid: a9d3078b92ae642c985f5576f342062b, type: 2}
     - StateType: 3
       Transition:
-      - TargetState: 1
+      - TargetState: 2
         Decision: {fileID: 0}
 --- !u!1001 &365248699
 PrefabInstance:
@@ -3787,7 +3789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 390f59506632cb04c808df025c29ee47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 2
+  _moveSpeed: 3
   _rotationSpeed: 15
   _gravity: -15
   _body: {fileID: 4463867970847092}
@@ -3820,7 +3822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb20d2c13521f44a83595859f0c3d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 5
+  <TotalHealthPoints>k__BackingField: 15
 --- !u!1001 &456030447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18841,7 +18843,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134e0628fe7c64e7e9de1e2aeaedcd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathDelay: 1
   Health: 2
+  type: 1
   Speed: 1
   ChaseSpeed: 7
   NavMeshTimeToRefresh: 0.2
@@ -18851,10 +18855,30 @@ MonoBehaviour:
   AttackRange: 1.5
   AttackDelay: 1.2
   AttackDuration: 1.4
-  AttackDamage: 5
-  InitialState: 0
+  AttackDamage: 1
+  InitialState: 4
   FSMData:
-    States: []
+    States:
+    - StateType: 4
+      Transition:
+      - TargetState: 5
+        Decision: {fileID: 11400000, guid: a9ca8ed6a15748445842cc49e044eb44, type: 2}
+    - StateType: 5
+      Transition:
+      - TargetState: 2
+        Decision: {fileID: 0}
+    - StateType: 2
+      Transition:
+      - TargetState: 3
+        Decision: {fileID: 11400000, guid: a9d3078b92ae642c985f5576f342062b, type: 2}
+    - StateType: 3
+      Transition:
+      - TargetState: 6
+        Decision: {fileID: 0}
+    - StateType: 6
+      Transition:
+      - TargetState: 6
+        Decision: {fileID: 0}
 --- !u!114 &2120193036
 MonoBehaviour:
   m_ObjectHideFlags: 0
