@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+public enum EnemyAttackType { Basic, Explode }
 public class EnemyConfig : MonoBehaviour
 {
+    [Header("Death")]
+    public float DeathDelay = 3f;
+    
     public int Health = 2;
-
+    public EnemyAttackType type;
     [Header("Movement")] 
     public float Speed = 1.0f;
     public float ChaseSpeed = 2.7f;
@@ -39,4 +43,10 @@ public class EnemyConfig : MonoBehaviour
         Handles.DrawSolidArc(transform.position + Vector3.up * 0.9f, Vector3.up, fromDirection, ViewAngle, DetectionRange);
 #endif
     }
+
+    public void dead()
+    {
+        gameObject.SetActive(false);
+    }
+
 }
