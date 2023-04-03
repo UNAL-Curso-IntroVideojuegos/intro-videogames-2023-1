@@ -19011,24 +19011,24 @@ MonoBehaviour:
   AttackDelay: 1.2
   AttackDuration: 1.4
   AttackDamage: 5
-  InitialState: 5
+  InitialState: 2
   FSMData:
     States:
-    - StateType: 5
-      Transition:
-      - TargetState: 4
-        Decision: {fileID: 11400000, guid: 6a633829ff48b264ebb593600b46206c, type: 2}
-    - StateType: 4
-      Transition:
-      - TargetState: 2
-        Decision: {fileID: 0}
     - StateType: 2
       Transition:
-      - TargetState: 3
+      - TargetState: 1
         Decision: {fileID: 11400000, guid: 6a633829ff48b264ebb593600b46206c, type: 2}
-    - StateType: 3
+    - StateType: 1
       Transition:
-      - TargetState: 0
+      - TargetState: 4
+        Decision: {fileID: 0}
+    - StateType: 4
+      Transition:
+      - TargetState: 5
+        Decision: {fileID: 11400000, guid: 6a633829ff48b264ebb593600b46206c, type: 2}
+    - StateType: 5
+      Transition:
+      - TargetState: 6
         Decision: {fileID: 0}
     - StateType: 6
       Transition: []

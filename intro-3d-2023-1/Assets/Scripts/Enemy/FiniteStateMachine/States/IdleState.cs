@@ -9,7 +9,6 @@ public class IdleState : State
 
     protected override void OnEnterState(FiniteStateMachine fms)
     {
-        fms.TriggerAnimation("Idle");
     }
 
     protected override void OnUpdateState(FiniteStateMachine fms, float deltaTime)
