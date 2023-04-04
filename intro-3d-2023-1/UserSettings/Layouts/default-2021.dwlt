@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 164
+  controlID: 26
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 70
+  controlID: 27
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   - {fileID: 15}
   - {fileID: 16}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 124
+  controlID: 81
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -802,6 +802,7 @@ MonoBehaviour:
     - {fileID: 1107165563465556356, guid: ad18e1e3bc906104699c48eb7dfd95dc, type: 2}
     - {fileID: 1107981439368721152, guid: b39c46279bd53fb45b08d4411d6e8a9a, type: 2}
     - {fileID: 1107165563465556356, guid: 38ac53797872bd443bf33e99beda46e3, type: 2}
+    - {fileID: 1107165563465556356, guid: c82377aec863e4e5a9fe7cdf5998f4ad, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.32060808
       e01: 0
@@ -819,14 +820,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 1.0521252
+    - e00: 0.74210525
       e01: 0
       e02: 0
-      e03: -169.11774
+      e03: -22.105255
       e10: 0
-      e11: 1.0521252
+      e11: 0.74210525
       e12: 0
-      e13: 40.075256
+      e13: 31.76316
       e20: 0
       e21: 0
       e22: 1
@@ -851,14 +852,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.6052632
+    - e00: 0.74210525
       e01: 0
       e02: 0
-      e03: -15.263153
+      e03: -22.105255
       e10: 0
-      e11: 0.6052632
+      e11: 0.74210525
       e12: 0
-      e13: 191.5
+      e13: 80
       e20: 0
       e21: 0
       e22: 1
@@ -883,14 +884,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.9038531
+    - e00: 0.48423406
       e01: 0
       e02: 0
-      e03: -262.28754
+      e03: -18.756943
       e10: 0
-      e11: 0.9038531
+      e11: 0.48423406
       e12: 0
-      e13: -245.08267
+      e13: -26.79889
       e20: 0
       e21: 0
       e22: 1
@@ -899,14 +900,30 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.89244986
+    - e00: 0.77428573
       e01: 0
       e02: 0
-      e03: 34.003815
+      e03: 100.37143
       e10: 0
-      e11: 0.89244986
+      e11: 0.77428573
       e12: 0
-      e13: 37.859863
+      e13: 53.714287
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.5378413
+      e01: 0
+      e02: 0
+      e03: 133.1412
+      e10: 0
+      e11: 0.5378413
+      e12: 0
+      e13: 27.645401
       e20: 0
       e21: 0
       e22: 1
@@ -916,9 +933,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: b39c46279bd53fb45b08d4411d6e8a9a, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 2face805174c5b245bb74994d3bae981, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 1107981439368721152, guid: b39c46279bd53fb45b08d4411d6e8a9a, type: 2}
+  - m_Target: {fileID: 824351365542956492, guid: 2face805174c5b245bb74994d3bae981, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -993,23 +1010,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 26140000
+      m_SelectedIDs: f8090000
       m_LastClickedID: 0
-      m_ExpandedIDs: 38fbffff405d0000
+      m_ExpandedIDs: c6faffff38fbffff405d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Enemy_Octo
-        m_OriginalName: Enemy_Octo
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 23872
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -1060,7 +1077,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Enemy/FiniteStateMachine/States
+    - Assets/Scripts/Enemy/FiniteStateMachine
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -1074,7 +1091,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: fa5a0000
     m_LastClickedID: 23290
-    m_ExpandedIDs: 000000009a6200009c6200009e620000a0620000a2620000a4620000a6620000a8620000aa620000ac620000ae620000b0620000b2620000b4620000b6620000
+    m_ExpandedIDs: 000000009a6200009c6200009e620000a0620000a2620000a4620000a6620000a8620000aa620000ac620000ae620000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1102,18 +1119,18 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000009a620000a0620000a6620000a8620000aa620000ac620000ae620000b0620000b2620000b4620000b6620000
+    m_ExpandedIDs: ffffffff000000009a6200009c6200009e620000a0620000a2620000a4620000a6620000a8620000aa620000ac620000ae620000d6620000e2620000f6620000f8620000986a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: State
-      m_OriginalName: State
+      m_Name: FiniteStateMachine
+      m_OriginalName: FiniteStateMachine
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 2552
+      m_UserData: 5660
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -1193,7 +1210,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 270
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

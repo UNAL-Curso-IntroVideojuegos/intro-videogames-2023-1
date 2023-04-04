@@ -5,13 +5,12 @@ public class DeadState : State
 {
     public override StateType Type => StateType.Dead;
     public DeadState() : base("Dead") { }
-    private GameObject octo = GameObject.Find("Enemy_Octo");
+    [SerializeField] private GameObject enemy = GameObject.Find("Enemy_Octo");
 
-    private float deathDelay = 0;
+    private float deathDelay = 1f;
 
     protected override void OnEnterState(FiniteStateMachine fms)
     {
-        deathDelay = 1;
     }
 
     protected override void OnUpdateState(FiniteStateMachine fms, float deltaTime)
@@ -21,7 +20,7 @@ public class DeadState : State
             deathDelay -= deltaTime;
             if (deathDelay <= 0)
             {
-                octo.SetActive(false);
+                fms.Config.dead();
             }
         }
     }

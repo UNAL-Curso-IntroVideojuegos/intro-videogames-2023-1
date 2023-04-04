@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+public enum EnemyAttackType { Basic, Explode }
 public class EnemyConfig : MonoBehaviour
 {
     public int Health = 2;
+    public EnemyAttackType type;
 
     [Header("Movement")] 
     public float Speed = 1.0f;
@@ -38,5 +40,10 @@ public class EnemyConfig : MonoBehaviour
         Handles.color = new Color(1, 0.92f, 0.016f, 0.3f);
         Handles.DrawSolidArc(transform.position + Vector3.up * 0.9f, Vector3.up, fromDirection, ViewAngle, DetectionRange);
 #endif
+    }
+
+    public void dead()
+    {
+        gameObject.SetActive(false);
     }
 }

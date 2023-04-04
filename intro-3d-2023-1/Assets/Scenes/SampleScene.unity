@@ -19058,16 +19058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5875313483a4f6aad68711c219bdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waypointObjects:
-  - {fileID: 1264554509}
-  - {fileID: 448224518}
-  - {fileID: 1468562782}
-  - {fileID: 760565769}
-  _waypoints:
-  - {x: 10.87161, y: 0.4291693, z: 3.8124855}
-  - {x: 4.96161, y: 0.4291693, z: 3.8024855}
-  - {x: 4.92161, y: 0.4291693, z: -0.6875148}
-  - {x: 10.84161, y: 0.4291693, z: -0.7175145}
+  _waypointObjects: []
+  _waypoints: []
 --- !u!195 &2120193038
 NavMeshAgent:
   m_ObjectHideFlags: 0
