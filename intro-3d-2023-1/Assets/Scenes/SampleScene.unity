@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17944056, g: 0.22468323, b: 0.30632922, a: 1}
+  m_IndirectSpecularColor: {r: 0.17944077, g: 0.22468327, b: 0.30632973, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2871,6 +2871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 2
+  type: 0
   Speed: 1
   ChaseSpeed: 2.7
   NavMeshTimeToRefresh: 1
@@ -2896,6 +2897,7 @@ MonoBehaviour:
       Transition:
       - TargetState: 1
         Decision: {fileID: 0}
+  DeadDelay: 3
 --- !u!1001 &365248699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18842,6 +18844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 2
+  type: 1
   Speed: 1
   ChaseSpeed: 7
   NavMeshTimeToRefresh: 0.2
@@ -18852,9 +18855,26 @@ MonoBehaviour:
   AttackDelay: 1.2
   AttackDuration: 1.4
   AttackDamage: 5
-  InitialState: 0
+  InitialState: 4
   FSMData:
-    States: []
+    States:
+    - StateType: 4
+      Transition:
+      - TargetState: 5
+        Decision: {fileID: 11400000, guid: 6e4ad02293efd0f43a34b856236e3b46, type: 2}
+    - StateType: 5
+      Transition:
+      - TargetState: 2
+        Decision: {fileID: 0}
+    - StateType: 2
+      Transition:
+      - TargetState: 3
+        Decision: {fileID: 11400000, guid: a9d3078b92ae642c985f5576f342062b, type: 2}
+    - StateType: 3
+      Transition:
+      - TargetState: 6
+        Decision: {fileID: 0}
+  DeadDelay: 1
 --- !u!114 &2120193036
 MonoBehaviour:
   m_ObjectHideFlags: 0

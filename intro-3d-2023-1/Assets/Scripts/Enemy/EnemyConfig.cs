@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+public enum EnemyAttackType {Basic, Explode }
+
 public class EnemyConfig : MonoBehaviour
 {
     public int Health = 2;
+    public EnemyAttackType type; /* tipo de ataque */
 
     [Header("Movement")] 
     public float Speed = 1.0f;
@@ -28,6 +31,9 @@ public class EnemyConfig : MonoBehaviour
     public StateType InitialState;
     public FSMData FSMData;
 
+    [Header("Die")] /* tiempo pa desaparecer*/
+    public float DeadDelay = 3f;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -39,4 +45,5 @@ public class EnemyConfig : MonoBehaviour
         Handles.DrawSolidArc(transform.position + Vector3.up * 0.9f, Vector3.up, fromDirection, ViewAngle, DetectionRange);
 #endif
     }
+
 }
