@@ -1,4 +1,5 @@
 
+[System.Serializable]
 public class PatrolState : State
 {
     public override StateType Type => StateType.Patrol;
