@@ -3,10 +3,13 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+public enum EnemyAttackType { Basic, Explode }
 
 public class EnemyConfig : MonoBehaviour
 {
+
     public int Health = 2;
+    public EnemyAttackType type;
 
     [Header("Movement")] 
     public float Speed = 1.0f;
@@ -24,9 +27,21 @@ public class EnemyConfig : MonoBehaviour
     public float AttackDuration = 1.5f;
     public int AttackDamage = 1;
 
+    [Header("Death")]
+    public float DeathDelay = 3f;
+
+    [Header("Victory")]
+    public float victoryDuration = 1.2f;
+
+
     [Header("Finite-State Machine")]
     public StateType InitialState;
     public FSMData FSMData;
+
+    public void dead()
+    {
+        gameObject.SetActive(false);
+    }
 
     private void OnDrawGizmos()
     {

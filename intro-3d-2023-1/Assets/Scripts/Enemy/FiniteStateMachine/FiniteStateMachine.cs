@@ -1,18 +1,20 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class FiniteStateMachine : MonoBehaviour
 {
     [Space(10)]
     [SerializeField] private Animator _anim;
-    
+
     [Space(10)]
     [SerializeField] private Transform _target;
 
     public Transform Target => _target;
     public NavMeshController NavMeshController => _navMeshController;
     public EnemyConfig Config => _config;
-
+   
     
     private NavMeshController _navMeshController;
     private EnemyConfig _config;
@@ -24,12 +26,12 @@ public class FiniteStateMachine : MonoBehaviour
     {
         _navMeshController = GetComponent<NavMeshController>();
         _config = GetComponent<EnemyConfig>();
-        
+
         Bind(_config.FSMData);
 
         ToState(_config.InitialState);
     }
-    
+
     void Update()
     {
         if (_statesDic.ContainsKey(_currentState))
@@ -37,14 +39,14 @@ public class FiniteStateMachine : MonoBehaviour
             _statesDic[_currentState].OnUpdate(this, Time.deltaTime);
             _statesDic[_currentState].CheckTransition(this, Time.deltaTime);
         }
-        
+
         if (_anim)
         {
             _anim.SetBool("IsWalking", _navMeshController.IsMoving);
             _anim.SetFloat("WalkSpeed", 1);
+            _anim.SetBool("IsDead", !_target.gameObject.activeSelf);
         }
     }
-
     public void TriggerAnimation(string animation)
     {
         _anim.SetTrigger(animation);

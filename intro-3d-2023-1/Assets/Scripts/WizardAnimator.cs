@@ -27,5 +27,6 @@ public class WizardAnimator : MonoBehaviour
             _anim.SetTrigger("Attack");
             _isAttacking = false;
         }
+        
     }
 }
