@@ -23,7 +23,7 @@ public class DeadState : State
             deathDelay -= deltaTime;
             if (deathDelay <= 0)
             { 
-                fms.Config.dead();
+                fms.dead();
             }
         }
     }

@@ -90,4 +90,8 @@ public class FiniteStateMachine : MonoBehaviour
             _statesDic.Add(stateData.StateType, state);
         }
     }
+
+    public void dead(){
+        gameObject.SetActive(false);
+    }
 }

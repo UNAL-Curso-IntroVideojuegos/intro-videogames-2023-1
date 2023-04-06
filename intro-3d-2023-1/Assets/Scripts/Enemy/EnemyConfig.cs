@@ -45,7 +45,4 @@ public class EnemyConfig : MonoBehaviour
 #endif
     }
 
-    public void dead(){
-        gameObject.SetActive(false);
-    }
 }
