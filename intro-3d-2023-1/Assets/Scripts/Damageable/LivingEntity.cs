@@ -15,7 +15,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
     
         HealthPoints--;
         OnTakeDamage();
-
+        Debug.Log(HealthPoints--);
         if (HealthPoints <= 0)
         {
             OnDeath();
