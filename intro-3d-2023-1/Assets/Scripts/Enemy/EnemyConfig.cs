@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+public enum EnemyAttackType {Basic, Explode }
+
 public class EnemyConfig : MonoBehaviour
 {
     public int Health = 2;
@@ -19,6 +21,7 @@ public class EnemyConfig : MonoBehaviour
     public float TauntDuration = 2.0f;
     
     [Header("Attack")]
+    public EnemyAttackType attackType;
     public float AttackRange = 1.5f;
     public float AttackDelay = 0.18f;
     public float AttackDuration = 1.5f;

@@ -19,16 +19,32 @@ public class AttackState : State
 
     protected override void OnUpdateState(FiniteStateMachine fms, float deltaTime)
     {
-        if (_attackDelay > 0)
+        if (fms.Config.attackType == EnemyAttackType.Basic)
         {
-            _attackDelay -= deltaTime;
-            if (_attackDelay <= 0)
+            BasicAttack(fms, deltaTime);
+        } else {
+            ExplodeAttack(fms, deltaTime);
+        }
+    }
+
+    private void BasicAttack(FiniteStateMachine fms, float deltaTime)
+    {
+        if (fms.Target.TryGetComponent(out IDamageable target))
+        {
+            target.TakeHit(fms.Config.AttackDamage);
+        }
+    }
+
+    private void ExplodeAttack(FiniteStateMachine fms, float deltaTime)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(fms.transform.position + (Vector3.up * 0.9f), fms.Config.AttackRange);
+
+
+        foreach (Collider hitCollider in hitColliders)
+        {
+            if (hitCollider.TryGetComponent(out IDamageable objective))
             {
-                //Apply Damage
-                if (fms.Target.TryGetComponent(out IDamageable target))
-                {
-                    target.TakeHit(fms.Config.AttackDamage);
-                }
+                objective.TakeHit(fms.Config.AttackDamage);
             }
         }
     }
