@@ -23,6 +23,7 @@ public class EnemyConfig : MonoBehaviour
     public float AttackDelay = 0.18f;
     public float AttackDuration = 1.5f;
     public int AttackDamage = 1;
+    public EnemyAttackType AttackType = EnemyAttackType.Basic;
 
     [Header("Finite-State Machine")]
     public StateType InitialState;

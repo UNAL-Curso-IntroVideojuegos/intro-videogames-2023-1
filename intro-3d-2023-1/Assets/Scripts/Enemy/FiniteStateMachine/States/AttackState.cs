@@ -2,13 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyAttackType
+{
+    Basic,
+    Explode
+}
+
 public class AttackState : State
 {
     
     public override StateType Type { get; }
     
     private float _attackDelay = 0;
-    public AttackState() : base("Attack") { }
+
+    public AttackState() : base("Attack")
+    {
+    }
 
     protected override void OnEnterState(FiniteStateMachine fms)
     {
@@ -24,10 +33,13 @@ public class AttackState : State
             _attackDelay -= deltaTime;
             if (_attackDelay <= 0)
             {
-                //Apply Damage
-                if (fms.Target.TryGetComponent(out IDamageable target))
+                if (fms.Config.AttackType == EnemyAttackType.Basic)
                 {
-                    target.TakeHit(fms.Config.AttackDamage);
+                    BasicAttack(fms);
+                }
+                else if (fms.Config.AttackType == EnemyAttackType.Explode)
+                {
+                    ExplodeAttack(fms);
                 }
             }
         }
@@ -35,5 +47,26 @@ public class AttackState : State
 
     protected override void OnExitState(FiniteStateMachine fms)
     {
+    }
+
+    private void BasicAttack(FiniteStateMachine fms)
+    {
+        //Apply Damage
+        if (fms.Target.TryGetComponent(out IDamageable target))
+        {
+            target.TakeHit(fms.Config.AttackDamage);
+        }
+    }
+
+    private void ExplodeAttack(FiniteStateMachine fms)
+    {
+        Collider[] colliders = Physics.OverlapSphere(fms.transform.position, fms.Config.AttackRange);
+        foreach (var collider in colliders)
+        {
+            if (collider.TryGetComponent(out IDamageable target))
+            {
+                target.TakeHit(fms.Config.AttackDamage);
+            }
+        }
     }
 }
