@@ -3,7 +3,7 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-
+public enum EnemyAttackType { Basic, Explode }
 public class EnemyConfig : MonoBehaviour
 {
     public int Health = 2;
@@ -23,6 +23,7 @@ public class EnemyConfig : MonoBehaviour
     public float AttackDelay = 0.18f;
     public float AttackDuration = 1.5f;
     public int AttackDamage = 1;
+    public EnemyAttackType AttackType;
 
     [Header("Finite-State Machine")]
     public StateType InitialState;

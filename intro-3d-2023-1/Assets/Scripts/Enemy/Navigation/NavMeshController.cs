@@ -17,6 +17,7 @@ public class NavMeshController : MonoBehaviour
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
+      
     }
 
     void Start(){

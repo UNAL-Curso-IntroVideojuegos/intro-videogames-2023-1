@@ -12,7 +12,8 @@ public class FiniteStateMachine : MonoBehaviour
     public Transform Target => _target;
     public NavMeshController NavMeshController => _navMeshController;
     public EnemyConfig Config => _config;
-
+    
+    
     
     private NavMeshController _navMeshController;
     private EnemyConfig _config;
@@ -22,6 +23,7 @@ public class FiniteStateMachine : MonoBehaviour
 
     void Start()
     {
+        
         _navMeshController = GetComponent<NavMeshController>();
         _config = GetComponent<EnemyConfig>();
         
