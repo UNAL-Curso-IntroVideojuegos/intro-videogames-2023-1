@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+public enum EnemyAttackType { Basic, Explode };
+
 public class EnemyConfig : MonoBehaviour
 {
+    public EnemyAttackType type { get; }
     public int Health = 2;
 
     [Header("Movement")] 
@@ -17,12 +20,14 @@ public class EnemyConfig : MonoBehaviour
     public float DetectionRange = 5.0f;
     public float ViewAngle = 95.0f;
     public float TauntDuration = 2.0f;
+    public float TauntDelay = 3f;
     
     [Header("Attack")]
     public float AttackRange = 1.5f;
-    public float AttackDelay = 0.18f;
+    public float AttackDelay = 2f;
     public float AttackDuration = 1.5f;
     public int AttackDamage = 1;
+    public int DeadDelay = 2;
 
     [Header("Finite-State Machine")]
     public StateType InitialState;
@@ -38,5 +43,9 @@ public class EnemyConfig : MonoBehaviour
         Handles.color = new Color(1, 0.92f, 0.016f, 0.3f);
         Handles.DrawSolidArc(transform.position + Vector3.up * 0.9f, Vector3.up, fromDirection, ViewAngle, DetectionRange);
 #endif
+    }
+    public void killEnemy()
+    {
+        gameObject.SetActive(false);
     }
 }
