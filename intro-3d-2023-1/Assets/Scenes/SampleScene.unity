@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17944056, g: 0.22468323, b: 0.30632922, a: 1}
+  m_IndirectSpecularColor: {r: 0.17944095, g: 0.22468369, b: 0.3063304, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -927,6 +927,22 @@ PrefabInstance:
     - target: {fileID: 7487410016656463647, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656463651, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.055572305
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656463651, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.059943993
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656463709, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0024758214
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656463709, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0014336903
       objectReference: {fileID: 0}
     - target: {fileID: 7487410016656624447, guid: 9e6401f8e2320e54797a680db42d218f, type: 3}
       propertyPath: m_Name
@@ -2870,7 +2886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134e0628fe7c64e7e9de1e2aeaedcd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 2
+  Health: 1
   Speed: 1
   ChaseSpeed: 2.7
   NavMeshTimeToRefresh: 1
@@ -2881,6 +2897,7 @@ MonoBehaviour:
   AttackDelay: 0.18
   AttackDuration: 1.5
   AttackDamage: 1
+  AttackType: 1
   InitialState: 1
   FSMData:
     States:
@@ -3820,7 +3837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb20d2c13521f44a83595859f0c3d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 5
+  <TotalHealthPoints>k__BackingField: 1
 --- !u!1001 &456030447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18852,9 +18869,30 @@ MonoBehaviour:
   AttackDelay: 1.2
   AttackDuration: 1.4
   AttackDamage: 5
-  InitialState: 0
+  AttackType: 1
+  InitialState: 5
   FSMData:
-    States: []
+    States:
+    - StateType: 5
+      Transition:
+      - TargetState: 4
+        Decision: {fileID: 11400000, guid: 48ab02d33fb48f34cb8a3f00d2c86cde, type: 2}
+    - StateType: 4
+      Transition:
+      - TargetState: 2
+        Decision: {fileID: 0}
+    - StateType: 2
+      Transition:
+      - TargetState: 3
+        Decision: {fileID: 11400000, guid: a9d3078b92ae642c985f5576f342062b, type: 2}
+    - StateType: 3
+      Transition:
+      - TargetState: 6
+        Decision: {fileID: 0}
+    - StateType: 6
+      Transition:
+      - TargetState: 0
+        Decision: {fileID: 0}
 --- !u!114 &2120193036
 MonoBehaviour:
   m_ObjectHideFlags: 0
