@@ -1,9 +1,9 @@
 
-public class PatrolState : State
+public class IdleState : State
 {
-    public override StateType Type => StateType.Patrol;
+    public override StateType Type => StateType.Idle;
 
-    public PatrolState() : base("Patrol")
+    public IdleState() : base("Idle")
     {
         //AddTransition(StateType.Chase, new FieldOfViewCheck());
     }
@@ -14,12 +14,9 @@ public class PatrolState : State
 
     protected override void OnUpdateState(FiniteStateMachine fms, float deltaTime)
     {
-        if(fms.NavMeshController.IsAtDestination())
-            fms.NavMeshController.GoToNextWaypoint();
     }
 
     protected override void OnExitState(FiniteStateMachine fms)
     {
-        fms.NavMeshController.StopAgent();
     }
 }

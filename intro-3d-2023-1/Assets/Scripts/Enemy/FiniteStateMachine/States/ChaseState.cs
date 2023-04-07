@@ -4,9 +4,11 @@ using UnityEngine;
 public class ChaseState : State
 {
     public override StateType Type => StateType.Chase;
+    
+    [SerializeField] float _navMeshTimeToRefresh = 1;
 
     private float _navMeshRefreshTimer = 0;
-
+    
     public ChaseState() : base("Chase") { }
     
     protected  override void OnEnterState(FiniteStateMachine fms)
@@ -22,7 +24,7 @@ public class ChaseState : State
         if (_navMeshRefreshTimer <= 0)
         {
             fms.NavMeshController.GoToTarget();
-            _navMeshRefreshTimer = fms.Config.NavMeshTimeToRefresh;
+            _navMeshRefreshTimer = _navMeshTimeToRefresh;
         }
     }
 

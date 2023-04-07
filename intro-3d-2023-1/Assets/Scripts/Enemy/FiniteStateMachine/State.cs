@@ -1,23 +1,23 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum StateType { None, Patrol, Chase, Attack, Taunt }
+public enum StateType { None, Patrol, Chase, Attack, Taunt, Idle, Dead }
 
-public abstract class State
+[System.Serializable]
+public abstract class State 
 {
     [HideInInspector] public string name = "Patrol";
-    private List<StateTransition> _transitions = new List<StateTransition>();
+    	private List<StateTransition> _transitions = new List<StateTransition>();
 
     private float _stateDuration;
     private float _stateTimer;
-
-    public State(string name) => this.name = name;
     
     public abstract StateType Type { get; }
     protected abstract void OnEnterState(FiniteStateMachine fms);
     protected abstract void OnUpdateState(FiniteStateMachine fms, float deltaTime);
     protected abstract void OnExitState(FiniteStateMachine fms);
+
+    public State(string name) => this.name = name;
     
     public void OnEnter(FiniteStateMachine fms)
     {
@@ -35,7 +35,7 @@ public abstract class State
         OnExitState(fms);
     }
 
-    public void CheckTransition(FiniteStateMachine fms, float deltaTime)
+     public void CheckTransition(FiniteStateMachine fms, float deltaTime)
     {
         _stateTimer -= deltaTime;
         
@@ -44,6 +44,7 @@ public abstract class State
 
         _stateTimer = 0;
         
+        //TODO: Add transitions
         for (int i = 0; i < _transitions.Count; i++)
         {
             if (_transitions[i].Check(fms))
@@ -54,12 +55,7 @@ public abstract class State
         }
     }
 
-    protected void SetStateDuration(float time)
-    {
-        _stateDuration = time;
-    }
-    
-    public void AddTransition(StateType targetState, StateDecision decision)
+     public void AddTransition(StateType targetState, StateDecision decision)
     {
         _transitions.Add(new StateTransition
         {
@@ -67,7 +63,12 @@ public abstract class State
             Decision = decision
         });
     }
-    
+
+    protected void SetStateDuration(float time)
+    {
+        _stateDuration = time;
+    }
+
     public static State CreateState(StateType stateType)
     {
         switch (stateType)
@@ -78,6 +79,12 @@ public abstract class State
                 return new ChaseState();
             case StateType.Attack:
                 return new AttackState();
+            case StateType.Taunt:
+                return new TauntState();
+            case StateType.Idle:
+                return new IdleState();
+            case StateType.Dead:
+                return new DeadState();
         }
 
         return null;
