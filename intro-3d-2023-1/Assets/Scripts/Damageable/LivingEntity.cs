@@ -13,7 +13,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
         if(HealthPoints <= 0)
             return;
     
-        HealthPoints--;
+        HealthPoints -= damage;
         OnTakeDamage();
 
         if (HealthPoints <= 0)
