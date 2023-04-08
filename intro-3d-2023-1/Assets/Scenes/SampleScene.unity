@@ -2896,6 +2896,7 @@ MonoBehaviour:
       Transition:
       - TargetState: 1
         Decision: {fileID: 0}
+  InitialAtackType: 0
 --- !u!1001 &365248699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18871,6 +18872,11 @@ MonoBehaviour:
       Transition:
       - TargetState: 6
         Decision: {fileID: 0}
+    - StateType: 6
+      Transition:
+      - TargetState: 0
+        Decision: {fileID: 0}
+  InitialAtackType: 0
 --- !u!114 &2120193036
 MonoBehaviour:
   m_ObjectHideFlags: 0
