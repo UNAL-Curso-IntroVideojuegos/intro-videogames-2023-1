@@ -35,24 +35,34 @@ public class AttackState : State
 
     private void BasicAttack(FiniteStateMachine fms, float deltaTime)
     {
-        _attackDelay -= deltaTime;
-        if (_attackDelay <= 0)
+        if (_attackDelay > 0)
         {
-           if (fms.Target.TryGetComponent(out IDamageable target))
-           {
-             target.TakeHit(fms.Config.AttackDamage);
-           }
+            _attackDelay -= deltaTime;
+            if (_attackDelay <= 0)
+            {
+                if (fms.Target.TryGetComponent(out IDamageable target))
+                {
+                    target.TakeHit(fms.Config.AttackDamage);
+                }
+            }
         }
     }
 
     private void ExplodeAttack(FiniteStateMachine fms, float deltaTime)
     {
-        Collider[] collidersInRange = Physics.OverlapSphere(fms.transform.position + Vector3.up * 0.5f, fms.Config.AttackRange);
-        for (int i = 0; i < collidersInRange.Length; i++)
+        if (_attackDelay > 0)
         {
-            if (collidersInRange[i].TryGetComponent(out IDamageable target))
+            _attackDelay -= deltaTime;
+            if (_attackDelay <= 0)
             {
-                target.TakeHit(fms.Config.AttackDamage);
+                Collider[] collidersInRange = Physics.OverlapSphere(fms.transform.position + Vector3.up * 0.5f, fms.Config.AttackRange);
+                for (int i = 0; i < collidersInRange.Length; i++)
+                {
+                    if (collidersInRange[i].TryGetComponent(out IDamageable target))
+                    {
+                        target.TakeHit(fms.Config.AttackDamage);
+                    }
+                }
             }
         }
     }
