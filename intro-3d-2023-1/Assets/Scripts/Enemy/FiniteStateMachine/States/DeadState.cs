@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DeadState : State
+{
+    public override StateType Type => StateType.Dead;
+
+
+    public DeadState() : base("Dead") { }
+
+    protected override void OnEnterState(FiniteStateMachine fms)
+    {
+        fms.Enemy.SetActive(false);
+    }
+
+    protected override void OnUpdateState(FiniteStateMachine fms, float deltaTime)
+    {
+
+    }
+
+    protected override void OnExitState(FiniteStateMachine fms)
+    {
+
+    }
+}
