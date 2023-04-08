@@ -4,36 +4,61 @@ using UnityEngine;
 
 public class AttackState : State
 {
-    
+
     public override StateType Type { get; }
-    
-    private float _attackDelay = 0;
+
+    private float _attackDelay = 0f;
     public AttackState() : base("Attack") { }
 
     protected override void OnEnterState(FiniteStateMachine fms)
     {
         fms.TriggerAnimation("Attack");
-        _attackDelay = fms.Config.AttackDelay;
+        //_attackDelay = fms.Config.AttackDelay;
         SetStateDuration(fms.Config.AttackDuration);
     }
 
     protected override void OnUpdateState(FiniteStateMachine fms, float deltaTime)
     {
-        if (_attackDelay > 0)
+        if (_attackDelay < fms.Config.AttackDelay)
         {
-            _attackDelay -= deltaTime;
-            if (_attackDelay <= 0)
+            _attackDelay += deltaTime;
+        }
+        if (_attackDelay >= fms.Config.AttackDelay)
+        {
+            if (fms.Config.AttackType == EnemyAttackType.Basic)
             {
-                //Apply Damage
-                if (fms.Target.TryGetComponent(out IDamageable target))
-                {
-                    target.TakeHit(fms.Config.AttackDamage);
-                }
+                BasicAttack(fms);
+                _attackDelay = 0f;
             }
+
+            if (fms.Config.AttackType == EnemyAttackType.Explode)
+            {
+                ExplodeAttack(fms);
+            }
+
+        }
+    }
+    protected override void OnExitState(FiniteStateMachine fms)
+    {
+    }
+
+    private void BasicAttack(FiniteStateMachine fms)
+    {
+        if (fms.Target.TryGetComponent(out IDamageable target))
+        {
+            target.TakeHit(fms.Config.AttackDamage);
         }
     }
 
-    protected override void OnExitState(FiniteStateMachine fms)
+    private void ExplodeAttack(FiniteStateMachine fms)
     {
+        Collider[] hitColliders = Physics.OverlapSphere(fms.transform.position, fms.Config.AttackRange);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (fms.Target.TryGetComponent(out IDamageable target))
+            {
+                target.TakeHit(fms.Config.AttackDamage);
+            }
+        }
     }
 }

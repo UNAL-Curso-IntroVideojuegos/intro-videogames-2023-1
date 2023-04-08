@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17944056, g: 0.22468323, b: 0.30632922, a: 1}
+  m_IndirectSpecularColor: {r: 0.17944096, g: 0.22468369, b: 0.3063304, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2877,10 +2877,12 @@ MonoBehaviour:
   DetectionRange: 5
   ViewAngle: 95
   TauntDuration: 2
+  AttackType: 0
   AttackRange: 1.5
-  AttackDelay: 0.18
+  AttackDelay: 1
   AttackDuration: 1.5
   AttackDamage: 1
+  DeadDelay: 1.5
   InitialState: 1
   FSMData:
     States:
@@ -18848,13 +18850,33 @@ MonoBehaviour:
   DetectionRange: 4
   ViewAngle: 360
   TauntDuration: 2
+  AttackType: 1
   AttackRange: 1.5
   AttackDelay: 1.2
   AttackDuration: 1.4
   AttackDamage: 5
-  InitialState: 0
+  DeadDelay: 1.5
+  InitialState: 5
   FSMData:
-    States: []
+    States:
+    - StateType: 5
+      Transition:
+      - TargetState: 4
+        Decision: {fileID: 11400000, guid: 676e379df71918a42b5bc566cb57484b, type: 2}
+    - StateType: 4
+      Transition:
+      - TargetState: 2
+        Decision: {fileID: 0}
+    - StateType: 2
+      Transition:
+      - TargetState: 3
+        Decision: {fileID: 11400000, guid: a9d3078b92ae642c985f5576f342062b, type: 2}
+    - StateType: 3
+      Transition:
+      - TargetState: 6
+        Decision: {fileID: 0}
+    - StateType: 6
+      Transition: []
 --- !u!114 &2120193036
 MonoBehaviour:
   m_ObjectHideFlags: 0

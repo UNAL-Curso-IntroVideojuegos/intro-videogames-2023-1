@@ -3,10 +3,11 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-
+public enum EnemyAttackType { Basic, Explode }
 public class EnemyConfig : MonoBehaviour
 {
     public int Health = 2;
+
 
     [Header("Movement")] 
     public float Speed = 1.0f;
@@ -19,10 +20,14 @@ public class EnemyConfig : MonoBehaviour
     public float TauntDuration = 2.0f;
     
     [Header("Attack")]
+    public EnemyAttackType AttackType = EnemyAttackType.Basic;
     public float AttackRange = 1.5f;
     public float AttackDelay = 0.18f;
     public float AttackDuration = 1.5f;
     public int AttackDamage = 1;
+
+    [Header("Dead")]
+    public float DeadDelay = 1.5f;
 
     [Header("Finite-State Machine")]
     public StateType InitialState;
