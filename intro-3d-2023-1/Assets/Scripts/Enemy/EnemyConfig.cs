@@ -7,6 +7,11 @@ using UnityEditor;
 public class EnemyConfig : MonoBehaviour
 {
     public int Health = 2;
+    public enum EnemyAttackType {Basic, Explode }
+
+    public float timeToDie = 0;
+
+    [SerializeField] public EnemyAttackType AttackType = EnemyAttackType.Basic;
 
     [Header("Movement")] 
     public float Speed = 1.0f;
@@ -23,10 +28,12 @@ public class EnemyConfig : MonoBehaviour
     public float AttackDelay = 0.18f;
     public float AttackDuration = 1.5f;
     public int AttackDamage = 1;
-
+    
     [Header("Finite-State Machine")]
     public StateType InitialState;
     public FSMData FSMData;
+
+    
 
     private void OnDrawGizmos()
     {

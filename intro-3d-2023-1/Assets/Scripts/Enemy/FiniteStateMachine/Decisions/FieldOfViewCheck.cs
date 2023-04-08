@@ -16,4 +16,5 @@ public class FieldOfViewCheck : StateDecision
 
         return false;
     }
+
 }

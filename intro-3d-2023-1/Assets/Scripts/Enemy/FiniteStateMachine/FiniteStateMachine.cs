@@ -48,6 +48,7 @@ public class FiniteStateMachine : MonoBehaviour
     public void TriggerAnimation(string animation)
     {
         _anim.SetTrigger(animation);
+        Debug.Log("Activando animacion");
     }
 
     public void SetMovementSpeed(float speed)
