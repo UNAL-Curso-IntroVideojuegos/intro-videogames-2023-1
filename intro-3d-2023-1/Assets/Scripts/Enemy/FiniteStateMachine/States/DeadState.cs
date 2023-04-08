@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DeadState : State
+{
+    public override StateType Type => StateType.Dead;
+
+    public DeadState() : base("Dead") { }
+
+    protected override void OnEnterState(FiniteStateMachine fms)
+    {
+        Debug.Log("Morir");
+        fms.gameObject.SetActive(false);
+    }
+
+    protected override void OnUpdateState(FiniteStateMachine fms, float deltaTime)
+    {
+    }
+
+    protected override void OnExitState(FiniteStateMachine fms)
+    {
+        fms.NavMeshController.StopAgent();
+    }
+}

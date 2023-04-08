@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class AttackState : State
 {
-    
+
     public override StateType Type { get; }
-    
+
     private float _attackDelay = 0;
     public AttackState() : base("Attack") { }
 
     protected override void OnEnterState(FiniteStateMachine fms)
     {
+        Debug.Log("Atacar");
         fms.TriggerAnimation("Attack");
         _attackDelay = fms.Config.AttackDelay;
         SetStateDuration(fms.Config.AttackDuration);
