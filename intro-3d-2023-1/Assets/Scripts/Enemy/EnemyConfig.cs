@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+//tipo de ataques
+public enum EnemyAttackType {Basic, Explode }
+
 public class EnemyConfig : MonoBehaviour
 {
     public int Health = 2;
@@ -23,10 +26,16 @@ public class EnemyConfig : MonoBehaviour
     public float AttackDelay = 0.18f;
     public float AttackDuration = 1.5f;
     public int AttackDamage = 1;
+    public EnemyAttackType AttackType;
+
+    [Header("Dead")]
+    public float DeadDelay = 1.0f;
 
     [Header("Finite-State Machine")]
     public StateType InitialState;
     public FSMData FSMData;
+
+
 
     private void OnDrawGizmos()
     {
