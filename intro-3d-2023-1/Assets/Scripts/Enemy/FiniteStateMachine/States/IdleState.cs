@@ -6,7 +6,8 @@ public class IdleState : State
 {
     public override StateType Type { get; }
     
-    public IdleState() : base("Idle") { }
+    public IdleState() : base("Idle") {
+     }
 
     protected override void OnEnterState(FiniteStateMachine fms)
     {

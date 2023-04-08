@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TauntState : State
+public class DeadState : State
 {
     public override StateType Type { get; }
     
-    public TauntState() : base("Taunt") {
-        
+    public DeadState() : base("Dead") {
      }
 
     protected override void OnEnterState(FiniteStateMachine fms)
     {
-         fms.TriggerAnimation("Taunt");
-        SetStateDuration(fms.Config.TauntDuration);
+        fms.SelfObject.SetActive(false);
     }
 
     protected override void OnUpdateState(FiniteStateMachine fms, float deltaTime)
