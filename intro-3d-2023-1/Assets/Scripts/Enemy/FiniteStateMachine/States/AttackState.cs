@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyAttackType { Basic, Explode }
+
 public class AttackState : State
 {
     
@@ -23,12 +25,36 @@ public class AttackState : State
         {
             _attackDelay -= deltaTime;
             if (_attackDelay <= 0)
-            {
-                //Apply Damage
-                if (fms.Target.TryGetComponent(out IDamageable target))
-                {
-                    target.TakeHit(fms.Config.AttackDamage);
+            {      
+                EnemyAttackType attackType = fms.Config.AttackType;
+                if (attackType is EnemyAttackType.Basic){
+                    BasicAttack(fms, deltaTime);
+                } else if (attackType is EnemyAttackType.Explode){
+                    ExplodeAttack(fms, deltaTime);
                 }
+            }
+        }
+    }
+
+    private void BasicAttack(FiniteStateMachine fms, float deltaTime)
+    {
+        if (fms.Target.TryGetComponent(out IDamageable target))
+        {
+            target.TakeHit(fms.Config.AttackDamage);
+        }
+    }
+
+    private void ExplodeAttack(FiniteStateMachine fms, float deltaTime)
+    {
+        Collider[] collidersInRange = Physics.OverlapSphere(
+            fms.transform.position + Vector3.up * 0.5f, 
+            fms.Config.AttackRange);
+
+        for (int i = 0; i < collidersInRange.Length; i++)
+        {
+            if (collidersInRange[i].TryGetComponent(out IDamageable target))
+            {
+                target.TakeHit(fms.Config.AttackDamage);
             }
         }
     }
