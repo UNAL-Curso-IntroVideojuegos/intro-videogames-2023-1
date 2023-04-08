@@ -21,8 +21,9 @@ public class EnemyConfig : MonoBehaviour
     [Header("Attack")]
     public float AttackRange = 1.5f;
     public float AttackDelay = 0.18f;
-    public float AttackDuration = 1.5f;
+    public float AttackDuration = 1.5f; 
     public int AttackDamage = 1;
+    public EnemyAttackType TypeAttack = EnemyAttackType.Basic;
 
     [Header("Finite-State Machine")]
     public StateType InitialState;

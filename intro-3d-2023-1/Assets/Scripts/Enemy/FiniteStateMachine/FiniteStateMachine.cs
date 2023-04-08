@@ -15,7 +15,7 @@ public class FiniteStateMachine : MonoBehaviour
 
     
     private NavMeshController _navMeshController;
-    private EnemyConfig _config;
+    public EnemyConfig _config;
     private Dictionary<StateType, State> _statesDic = new();
     private StateType _currentState;
     private float _currentSpeed = 1;
