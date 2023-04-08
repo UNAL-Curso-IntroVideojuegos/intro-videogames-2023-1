@@ -5,6 +5,9 @@ using UnityEngine;
 public class LivingEntity : MonoBehaviour, IDamageable
 {
     [field:SerializeField]
+    public Animator EnemyChest { get; protected set;  }
+    
+    [field:SerializeField]
     public int TotalHealthPoints { get; protected set; }
     public int HealthPoints { get; private set; }
     
@@ -13,7 +16,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
         if(HealthPoints <= 0)
             return;
     
-        HealthPoints--;
+        HealthPoints-=damage;
         OnTakeDamage();
 
         if (HealthPoints <= 0)

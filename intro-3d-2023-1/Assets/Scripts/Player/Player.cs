@@ -14,5 +14,6 @@ public class Player : LivingEntity
         base.OnDeath();
         //TODO: Trigger Death animation
         gameObject.SetActive(false);
+        EnemyChest.SetTrigger("Victory");
     }
 }
