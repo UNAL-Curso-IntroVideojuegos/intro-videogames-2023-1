@@ -3824,8 +3824,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <EnemyChest>k__BackingField: {fileID: 1639418917}
-  <AnimPlayer>k__BackingField: {fileID: 95538263588258884}
-  _body: {fileID: 4463867970847092}
   <TotalHealthPoints>k__BackingField: 5
 --- !u!1001 &456030447
 PrefabInstance:
@@ -18859,7 +18857,7 @@ MonoBehaviour:
   AttackDuration: 1.4
   AttackDamage: 5
   AttackType: 1
-  DeadDelay: 1.5
+  DeadDelay: 0.8
   InitialState: 5
   FSMData:
     States:
