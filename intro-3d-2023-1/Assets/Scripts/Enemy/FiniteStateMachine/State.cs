@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enemy.FiniteStateMachine.States;
 using UnityEngine;
 
-public enum StateType { None, Patrol, Chase, Attack, Taunt }
+public enum StateType { None,Idle, Patrol, Chase, Attack, Taunt }
 
 public abstract class State
 {
@@ -72,6 +73,8 @@ public abstract class State
     {
         switch (stateType)
         {
+            case StateType.Idle:
+                return new IdleState();
             case StateType.Patrol:
                 return new PatrolState();
             case StateType.Chase:
