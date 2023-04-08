@@ -8,12 +8,12 @@ public class LivingEntity : MonoBehaviour, IDamageable
     public int TotalHealthPoints { get; protected set; }
     public int HealthPoints { get; private set; }
     
-    public void TakeHit(int damage = 1)
+    public void TakeHit(int damage)
     {
         if(HealthPoints <= 0)
             return;
     
-        HealthPoints--;
+        HealthPoints -= damage;
         OnTakeDamage();
 
         if (HealthPoints <= 0)

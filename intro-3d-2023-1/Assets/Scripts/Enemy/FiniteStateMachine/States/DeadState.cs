@@ -1,9 +1,6 @@
-using System;
-using UnityEngine;
-
-public class IdleState : State
+public class DeadState : State
 {
-    public IdleState() : base("Idle")
+    public DeadState() : base("Dead")
     {
     }
 
@@ -11,6 +8,7 @@ public class IdleState : State
 
     protected override void OnEnterState(FiniteStateMachine fms)
     {
+        fms.gameObject.SetActive(false);
     }
 
     protected override void OnUpdateState(FiniteStateMachine fms, float deltaTime)
