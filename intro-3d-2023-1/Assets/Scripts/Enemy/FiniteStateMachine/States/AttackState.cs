@@ -29,11 +29,40 @@ public class AttackState : State
                 {
                     target.TakeHit(fms.Config.AttackDamage);
                 }
+
+                if (fms.Config.Type == EnemyAttackType.Basic)
+                {
+                    this.BasicAttack(fms, deltaTime);
+                }
+                else
+                {
+                    this.ExplodeAttack(fms, deltaTime);
+                }
             }
         }
     }
 
     protected override void OnExitState(FiniteStateMachine fms)
     {
+    }
+    
+    private void BasicAttack(FiniteStateMachine fms, float deltaTime)
+    {
+        if (fms.Target.TryGetComponent(out IDamageable target))
+        {
+            target.TakeHit(fms.Config.AttackDamage);
+        }
+    }
+    
+    private void ExplodeAttack(FiniteStateMachine fms, float deltaTime)
+    {
+        Collider[] colliders = Physics.OverlapSphere(fms.transform.position + Vector3.up * 0.35f, fms.Config.AttackRange);
+        for (int i = 0; i < colliders.Length; i ++)
+        {
+            if (colliders[i].TryGetComponent(out IDamageable target))
+            {
+                target.TakeHit(fms.Config.AttackDamage);
+            }
+        }
     }
 }
