@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AttackState : State
 {
-    
+
     public override StateType Type { get; }
-    
+
     private float _attackDelay = 0;
     public AttackState() : base("Attack") { }
 
@@ -25,15 +25,43 @@ public class AttackState : State
             if (_attackDelay <= 0)
             {
                 //Apply Damage
-                if (fms.Target.TryGetComponent(out IDamageable target))
+                if (fms.Config.AttackType == EnemyAttackType.Basic)
                 {
-                    target.TakeHit(fms.Config.AttackDamage);
+                    BasicAttack(fms, deltaTime);
                 }
+                else
+                {
+                    ExplodeAttack(fms, deltaTime);
+                }
+
             }
         }
     }
 
     protected override void OnExitState(FiniteStateMachine fms)
     {
+    }
+
+    private void BasicAttack(FiniteStateMachine fms, float deltaTime)
+    {
+        if (fms.Target.TryGetComponent(out IDamageable target))
+        {
+            target.TakeHit(fms.Config.AttackDamage);
+        }
+    }
+
+    private void ExplodeAttack(FiniteStateMachine fms, float deltaTime)
+    {
+        Collider[] collidersInRange = Physics.OverlapSphere(
+            fms.transform.position + Vector3.up * 0.5f,
+            fms.Config.AttackRange);
+
+        for (int i = 0; i < collidersInRange.Length; i++)
+        {
+            if (collidersInRange[i].TryGetComponent(out IDamageable target))
+            {
+                target.TakeHit(fms.Config.AttackDamage);
+            }
+        }
     }
 }

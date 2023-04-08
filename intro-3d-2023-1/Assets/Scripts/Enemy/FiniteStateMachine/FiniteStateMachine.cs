@@ -5,15 +5,16 @@ public class FiniteStateMachine : MonoBehaviour
 {
     [Space(10)]
     [SerializeField] private Animator _anim;
-    
+
     [Space(10)]
     [SerializeField] private Transform _target;
+   
 
     public Transform Target => _target;
     public NavMeshController NavMeshController => _navMeshController;
     public EnemyConfig Config => _config;
 
-    
+
     private NavMeshController _navMeshController;
     private EnemyConfig _config;
     private Dictionary<StateType, State> _statesDic = new();
@@ -24,12 +25,12 @@ public class FiniteStateMachine : MonoBehaviour
     {
         _navMeshController = GetComponent<NavMeshController>();
         _config = GetComponent<EnemyConfig>();
-        
+
         Bind(_config.FSMData);
 
         ToState(_config.InitialState);
     }
-    
+
     void Update()
     {
         if (_statesDic.ContainsKey(_currentState))
@@ -37,7 +38,7 @@ public class FiniteStateMachine : MonoBehaviour
             _statesDic[_currentState].OnUpdate(this, Time.deltaTime);
             _statesDic[_currentState].CheckTransition(this, Time.deltaTime);
         }
-        
+
         if (_anim)
         {
             _anim.SetBool("IsWalking", _navMeshController.IsMoving);
@@ -55,17 +56,17 @@ public class FiniteStateMachine : MonoBehaviour
         _currentSpeed = speed;
         _navMeshController.SetSpeed(_currentSpeed);
     }
-    
+
     public void ToState(StateType newState)
     {
-        if(newState == _currentState)
+        if (newState == _currentState)
             return;
-        
+
         if (_statesDic.ContainsKey(_currentState))
         {
             _statesDic[_currentState].OnExit(this);
         }
-        
+
         _currentState = newState;
 
         if (_statesDic.ContainsKey(_currentState))
@@ -79,14 +80,14 @@ public class FiniteStateMachine : MonoBehaviour
         foreach (FSMStateData stateData in fsmData.States)
         {
             State state = State.CreateState(stateData.StateType);
-            if(state == null)
+            if (state == null)
                 continue;
 
             foreach (FSMTransitionData transitionData in stateData.Transition)
             {
                 state.AddTransition(transitionData.TargetState, transitionData.Decision);
             }
-            
+
             _statesDic.Add(stateData.StateType, state);
         }
     }
