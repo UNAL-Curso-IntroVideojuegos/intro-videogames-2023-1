@@ -43,6 +43,7 @@ public class FiniteStateMachine : MonoBehaviour
             _anim.SetBool("IsWalking", _navMeshController.IsMoving);
             _anim.SetFloat("WalkSpeed", 1);
         }
+
     }
 
     public void TriggerAnimation(string animation)

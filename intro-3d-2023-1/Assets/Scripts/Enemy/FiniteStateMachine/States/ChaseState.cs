@@ -11,6 +11,7 @@ public class ChaseState : State
     
     protected  override void OnEnterState(FiniteStateMachine fms)
     {
+        Debug.Log("Octo entering Chase State");
         _navMeshRefreshTimer = 0;
         fms.SetMovementSpeed(fms.Config.ChaseSpeed);
         fms.NavMeshController.SetTarget(fms.Target);
@@ -29,5 +30,6 @@ public class ChaseState : State
     protected  override void OnExitState(FiniteStateMachine fms)
     {
         fms.NavMeshController.StopAgent();
+        Debug.Log("Octo leaving Chase State");
     }
 }
