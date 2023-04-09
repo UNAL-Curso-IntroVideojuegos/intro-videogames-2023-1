@@ -12,8 +12,6 @@ public class ScriptBullet : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _rb.velocity = transform.up * _speed;
-        
     }
 
     // Update is called once per frame
@@ -21,14 +19,9 @@ public class ScriptBullet : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        Debug.Log("Hit with " + other.collider.name);
-        DestroyProjectile();
-    }
     private void DestroyProjectile()
     {
         gameObject.SetActive(false);
         Destroy(gameObject);
-    }   
+    }  
 }
