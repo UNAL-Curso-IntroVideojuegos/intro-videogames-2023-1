@@ -7,9 +7,13 @@ public class FiniteStateMachine : MonoBehaviour
     [SerializeField] private Animator _anim;
     
     [Space(10)]
-    [SerializeField] private Transform _target;
+    [SerializeField] 
+    private Transform _target;
+    [SerializeField] 
+    private GameObject _player;
 
     public Transform Target => _target;
+    public GameObject Player => _player;
     public NavMeshController NavMeshController => _navMeshController;
     public EnemyConfig Config => _config;
 
@@ -29,7 +33,7 @@ public class FiniteStateMachine : MonoBehaviour
 
         ToState(_config.InitialState);
     }
-    
+
     void Update()
     {
         if (_statesDic.ContainsKey(_currentState))
@@ -73,7 +77,7 @@ public class FiniteStateMachine : MonoBehaviour
             _statesDic[_currentState].OnEnter(this);
         }
     }
-
+    
     private void Bind(FSMData fsmData)
     {
         foreach (FSMStateData stateData in fsmData.States)
