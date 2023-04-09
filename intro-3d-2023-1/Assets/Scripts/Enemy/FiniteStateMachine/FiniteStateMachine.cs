@@ -4,7 +4,7 @@ using UnityEngine;
 public class FiniteStateMachine : MonoBehaviour
 {
     [Space(10)]
-    [SerializeField] private Animator _anim;
+    [SerializeField] public Animator _anim;
     
     [Space(10)]
     [SerializeField] private Transform _target;
@@ -43,6 +43,14 @@ public class FiniteStateMachine : MonoBehaviour
             _anim.SetBool("IsWalking", _navMeshController.IsMoving);
             _anim.SetFloat("WalkSpeed", 1);
         }
+    }
+
+    public void DestroyGameObject(GameObject gameObject, float delay = 0f)
+    {
+        if (delay > 0)
+            Destroy(gameObject, delay);
+        else
+            Destroy(gameObject);
     }
 
     public void TriggerAnimation(string animation)
@@ -87,7 +95,16 @@ public class FiniteStateMachine : MonoBehaviour
                 state.AddTransition(transitionData.TargetState, transitionData.Decision);
             }
             
-            _statesDic.Add(stateData.StateType, state);
+            //_statesDic.Add(stateData.StateType, state);
+            
+            if (state.Type == StateType.Dead)
+            {
+                _statesDic.Add(state.Type, new DeadState());
+            }
+            else
+            {
+                _statesDic.Add(state.Type, state);
+            }
         }
     }
 }

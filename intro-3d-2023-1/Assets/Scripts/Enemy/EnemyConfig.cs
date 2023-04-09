@@ -27,6 +27,10 @@ public class EnemyConfig : MonoBehaviour
     [Header("Finite-State Machine")]
     public StateType InitialState;
     public FSMData FSMData;
+    
+    public float DestroyDelay = 2.0f;
+    
+    public bool CanBeDestroyed = true;
 
     private void OnDrawGizmos()
     {

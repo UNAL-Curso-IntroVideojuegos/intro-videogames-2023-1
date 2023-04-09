@@ -2881,21 +2881,31 @@ MonoBehaviour:
   AttackDelay: 0.18
   AttackDuration: 1.5
   AttackDamage: 1
-  InitialState: 1
+  InitialState: 5
   FSMData:
     States:
-    - StateType: 1
+    - StateType: 5
+      Transition:
+      - TargetState: 4
+        Decision: {fileID: 11400000, guid: 40503476286015c4caf0501645b63d64, type: 2}
+    - StateType: 4
       Transition:
       - TargetState: 2
-        Decision: {fileID: 11400000, guid: de23a80845bb54c529c26bcdf6e3d0ae, type: 2}
+        Decision: {fileID: 0}
     - StateType: 2
       Transition:
       - TargetState: 3
         Decision: {fileID: 11400000, guid: a9d3078b92ae642c985f5576f342062b, type: 2}
     - StateType: 3
       Transition:
-      - TargetState: 1
+      - TargetState: 6
         Decision: {fileID: 0}
+    - StateType: 6
+      Transition:
+      - TargetState: 6
+        Decision: {fileID: 0}
+  DestroyDelay: 2
+  CanBeDestroyed: 1
 --- !u!1001 &365248699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3820,7 +3830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb20d2c13521f44a83595859f0c3d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 5
+  <TotalHealthPoints>k__BackingField: 500
 --- !u!1001 &456030447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18852,9 +18862,31 @@ MonoBehaviour:
   AttackDelay: 1.2
   AttackDuration: 1.4
   AttackDamage: 5
-  InitialState: 0
+  InitialState: 5
   FSMData:
-    States: []
+    States:
+    - StateType: 5
+      Transition:
+      - TargetState: 4
+        Decision: {fileID: 11400000, guid: 40503476286015c4caf0501645b63d64, type: 2}
+    - StateType: 4
+      Transition:
+      - TargetState: 2
+        Decision: {fileID: 0}
+    - StateType: 2
+      Transition:
+      - TargetState: 3
+        Decision: {fileID: 11400000, guid: a9d3078b92ae642c985f5576f342062b, type: 2}
+    - StateType: 3
+      Transition:
+      - TargetState: 6
+        Decision: {fileID: 0}
+    - StateType: 6
+      Transition:
+      - TargetState: 6
+        Decision: {fileID: 11400000, guid: a9d3078b92ae642c985f5576f342062b, type: 2}
+  DestroyDelay: 2
+  CanBeDestroyed: 1
 --- !u!114 &2120193036
 MonoBehaviour:
   m_ObjectHideFlags: 0
