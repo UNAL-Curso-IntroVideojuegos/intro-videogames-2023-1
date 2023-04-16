@@ -14,5 +14,9 @@ public class Player : LivingEntity
         base.OnDeath();
         //TODO: Trigger Death animation
         gameObject.SetActive(false);
+        
+        Debug.Log(GameManager.Instance.Inventory.amount);
+        
+        GameManager.Instance.GoToMenu();
     }
 }

@@ -3760,7 +3760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb20d2c13521f44a83595859f0c3d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TotalHealthPoints>k__BackingField: 5
+  <TotalHealthPoints>k__BackingField: 1
 --- !u!1001 &456030447
 PrefabInstance:
   m_ObjectHideFlags: 0
