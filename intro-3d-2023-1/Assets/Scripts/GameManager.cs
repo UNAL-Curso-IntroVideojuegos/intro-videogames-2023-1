@@ -1,17 +1,11 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameObject _loadingPanel;
-    
-    public Inventory Inventory = new Inventory();
-    
+
     private void Awake()
     {
         if (Instance == null)
@@ -37,11 +31,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GoToMenu()
+    public void GameOver()
     {
-        HandleMenu();
+        Debug.Log("Game over");
     }
-    
+
     void HandleMenu()
     {
         Debug.Log("Loading Menu...");
@@ -51,39 +45,23 @@ public class GameManager : MonoBehaviour
     void HandleGameplay()
     {
         Debug.Log("Loading Gameplay...");
-        StartCoroutine(LoadGameplayAsyncScene());
+        StartCoroutine(LoadGameplayAsyncScene("Gameplay"));
     }
     
-    IEnumerator LoadGameplayAsyncScene()
-    { 
-        _loadingPanel.SetActive(true);
-
-        //Test
-        yield return new WaitForSeconds(3f);
-        
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("SampleScene");
+    IEnumerator LoadGameplayAsyncScene(string scene)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
+        
+        yield return new WaitForSeconds(3f);
+
+        //TODO: Start Game
     }
 
-    IEnumerator FakeUpdate()
-    {
-        while (true)
-        {
-            
-            yield return new WaitForSeconds(3);
-            
-        }
-    }
 
-}
-
-
-public class Inventory
-{
-    public int amount;
 }

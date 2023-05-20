@@ -24,7 +24,7 @@ public class FiniteStateMachine : MonoBehaviour
     {
         _navMeshController = GetComponent<NavMeshController>();
         _config = GetComponent<EnemyConfig>();
-        
+
         Bind(_config.FSMData);
 
         ToState(_config.InitialState);

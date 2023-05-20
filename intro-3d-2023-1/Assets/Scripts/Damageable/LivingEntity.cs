@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class LivingEntity : MonoBehaviour, IDamageable
 {
-    [field:SerializeField]
-    public int TotalHealthPoints { get; protected set; }
+    [field: SerializeField] public int TotalHealthPoints { get; protected set; } = 1;
     public int HealthPoints { get; private set; }
     
     public void TakeHit(int damage = 1)

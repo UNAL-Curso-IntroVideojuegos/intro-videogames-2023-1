@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class Player : LivingEntity
 {
@@ -9,14 +6,18 @@ public class Player : LivingEntity
         InitHealth();
     }
 
+    protected override void OnTakeDamage()
+    {
+        base.OnTakeDamage();
+        //TODO: Communicate new health
+    }
+
     protected override void OnDeath()
     {
         base.OnDeath();
         //TODO: Trigger Death animation
         gameObject.SetActive(false);
-        
-        Debug.Log(GameManager.Instance.Inventory.amount);
-        
-        GameManager.Instance.GoToMenu();
+
+        //GameManager.Instance.GoToMenu();
     }
 }

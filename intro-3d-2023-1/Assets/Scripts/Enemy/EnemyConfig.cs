@@ -8,7 +8,7 @@ public enum EnemyAttackType {Basic, Explode }
 
 public class EnemyConfig : MonoBehaviour
 {
-    public int Health = 2;
+    public int Points = 1;
 
     [Header("Movement")] 
     public float Speed = 1.0f;
@@ -27,6 +27,9 @@ public class EnemyConfig : MonoBehaviour
     public int AttackDamage = 1;
     public EnemyAttackType AttackType = EnemyAttackType.Basic;
 
+    [Header("Dead")] 
+    public float DeathDuration = 3;
+    
     [Header("Finite-State Machine")]
     public StateType InitialState;
     public FSMData FSMData;
