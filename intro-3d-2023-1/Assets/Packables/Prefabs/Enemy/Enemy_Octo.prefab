@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134e0628fe7c64e7e9de1e2aeaedcd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 2
+  Points: 1
   Speed: 1
   ChaseSpeed: 7
   NavMeshTimeToRefresh: 0.2
@@ -125,6 +125,10 @@ MonoBehaviour:
   AttackDuration: 1.4
   AttackDamage: 3
   AttackType: 1
+  AttackLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  DeathDuration: 3
   InitialState: 5
   FSMData:
     States:

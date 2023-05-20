@@ -23,7 +23,29 @@ public class EnemySpawner : MonoBehaviour
     private bool IsWaveSpawnCompleted => _spawnCountThisWave >= _enemyWaves[_currentWaveIndex].NumberOfSpawns;
     private bool AreEnemiesPendingToSpawn => _pendingEnemiesToSpawn > 0;
     private bool AreEnemiesAliveOnThisWave => _spawnedAliveEnemies.Count == 0;
+
+
+    private void OnEnable()
+    {
+        GameEvents.OnStartGameEvent += OnGameStart;
+        GameEvents.OnEnemyDeath += OnEnemyDeath;
+        
+        //EventManager.Instance.AddListener<EnemyDeathEvent>(OnEnemyDeathEvent);
+    }
+
+    // void OnEnemyDeathEvent(EnemyDeathEvent evt)
+    // {
+    //     //evt.EnemyDeath
+    //     //evt.Points
+    // }
     
+    private void OnDestroy()
+    {
+        GameEvents.OnStartGameEvent -= OnGameStart;
+        GameEvents.OnEnemyDeath -= OnEnemyDeath;
+        
+        //EventManager.Instance.RemoveListener<EnemyDeathEvent>(OnEnemyDeathEvent);
+    }
 
     private void Update()
     {
@@ -80,7 +102,7 @@ public class EnemySpawner : MonoBehaviour
         _timeToNextSpawn -= Time.deltaTime;
     }
 
-    private void OnGameStart()
+    public void OnGameStart()
     {
         _shouldSpawn = true;
         _currentWaveIndex = 0;

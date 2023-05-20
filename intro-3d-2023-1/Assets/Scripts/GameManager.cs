@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,21 +21,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    private void Start()
+    {
+        HandleMenu();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            HandleGameplay();
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             HandleMenu();
         }
     }
 
+    public void StartGame()
+    {
+        HandleGameplay();
+    }
+    
     public void GameOver()
     {
         Debug.Log("Game over");
+        HandleMenu();
     }
 
     void HandleMenu()
@@ -51,7 +61,7 @@ public class GameManager : MonoBehaviour
     IEnumerator LoadGameplayAsyncScene(string scene)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
-
+        
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {
@@ -59,8 +69,10 @@ public class GameManager : MonoBehaviour
         }
         
         yield return new WaitForSeconds(3f);
-
-        //TODO: Start Game
+        
+        // if(GameEvents.OnStartGameEvent != null)
+        //     GameEvents.OnStartGameEvent.Invoke();
+        GameEvents.OnStartGameEvent?.Invoke();
     }
 
 

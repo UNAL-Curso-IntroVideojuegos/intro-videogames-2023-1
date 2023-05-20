@@ -47,7 +47,9 @@ public class AttackState : State
 
     private void ExplodeAttack(FiniteStateMachine fms, float deltaTime)
     {
-        Collider[] collidersInRange = Physics.OverlapSphere(fms.transform.position + Vector3.up * 0.5f, fms.Config.AttackRange);
+        Collider[] collidersInRange = 
+            Physics.OverlapSphere(fms.transform.position + Vector3.up * 0.5f, 
+                fms.Config.AttackRange, fms.Config.AttackLayer);
 
         for (int i = 0; i < collidersInRange.Length; i++)
         {
@@ -56,5 +58,7 @@ public class AttackState : State
                 target.TakeHit(fms.Config.AttackDamage);
             }
         }
+        
+        GameEvents.OnEnemyDeath?.Invoke(fms.GetComponent<Enemy>(), 0);
     }
 }

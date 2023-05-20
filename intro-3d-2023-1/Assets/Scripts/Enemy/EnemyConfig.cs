@@ -26,6 +26,7 @@ public class EnemyConfig : MonoBehaviour
     public float AttackDuration = 1.5f;
     public int AttackDamage = 1;
     public EnemyAttackType AttackType = EnemyAttackType.Basic;
+    public LayerMask AttackLayer;
 
     [Header("Dead")] 
     public float DeathDuration = 3;

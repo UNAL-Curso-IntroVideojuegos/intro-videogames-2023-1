@@ -1,4 +1,6 @@
 ﻿
+using UnityEngine;
+
 public class Enemy : LivingEntity
 {
     private FiniteStateMachine _fms;
@@ -17,6 +19,12 @@ public class Enemy : LivingEntity
         base.OnDeath();
         _fms.ToState(StateType.Dead);
         
-        //TODO: Communicate Enemy death
+        GameEvents.OnEnemyDeath?.Invoke(this, _config.Points);
+        
+        // EventManager.Instance.Dispatch(new EnemyDeathEvent
+        // {
+        //     EnemyDeath = this,
+        //     Points = _config.Points
+        // });
     }
 }

@@ -25,8 +25,10 @@ public class FiniteStateMachine : MonoBehaviour
         _navMeshController = GetComponent<NavMeshController>();
         _config = GetComponent<EnemyConfig>();
 
-        Bind(_config.FSMData);
+        if (!_target) //_target == null
+            _target = GameObject.FindWithTag("Player").transform;
 
+        Bind(_config.FSMData);
         ToState(_config.InitialState);
     }
     

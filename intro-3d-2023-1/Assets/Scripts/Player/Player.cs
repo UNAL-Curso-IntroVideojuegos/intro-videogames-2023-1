@@ -18,6 +18,6 @@ public class Player : LivingEntity
         //TODO: Trigger Death animation
         gameObject.SetActive(false);
 
-        //GameManager.Instance.GoToMenu();
+        GameManager.Instance.GameOver();
     }
 }
