@@ -54,6 +54,16 @@
 	- NavMesh
 	- Finite-State Machine
 	- Proyecto: [Wizzards](https://github.com/UNAL-Curso-IntroVideojuegos/intro-videogames-2023-1/tree/main/intro-3d-2023-1#clase-7)
+- **Clase 8:** Invitado: Cristian Mazo.
+- **Clase 9:** Game Manager y Asesoria
+	- Game Manager
+	- Cambio de escena
+	- Coroutinas
+- **Clase 10:** Game Manager, Eventos y UI
+	- Game Manager
+	- Obersvable Pattern y Eventos
+	- Intro. UI y UX
+	- Canvas y RectTransfrom
 
 
 ## Talleres semanales
