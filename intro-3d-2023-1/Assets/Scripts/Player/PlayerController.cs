@@ -44,6 +44,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ToDeathState()
+    {
+        if (_hasAnimator)
+        {
+            _anim.SetTrigger("Death");
+            _anim.SetLayerWeight(1, 0);
+        }
+
+        enabled = false;
+    }
+    
     private void Move()
     {
         float targetSpeed = _moveSpeed;

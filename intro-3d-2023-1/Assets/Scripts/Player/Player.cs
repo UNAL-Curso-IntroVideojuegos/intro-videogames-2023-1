@@ -1,6 +1,10 @@
 
+using UnityEngine;
+
 public class Player : LivingEntity
 {
+    private Animator _anim;
+    
     void Start()
     {
         InitHealth();
@@ -15,8 +19,12 @@ public class Player : LivingEntity
     protected override void OnDeath()
     {
         base.OnDeath();
-        //TODO: Trigger Death animation
-        gameObject.SetActive(false);
+        
+        if(TryGetComponent<PlayerController>(out var controller))
+            controller.ToDeathState();
+        if (TryGetComponent<PlayerInput>(out var input))
+            input.enabled = false;
+        
 
         GameManager.Instance.GameOver();
     }

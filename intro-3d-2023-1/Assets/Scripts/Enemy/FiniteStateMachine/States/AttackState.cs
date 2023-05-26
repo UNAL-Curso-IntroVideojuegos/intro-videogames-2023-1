@@ -59,6 +59,6 @@ public class AttackState : State
             }
         }
         
-        GameEvents.OnEnemyDeath?.Invoke(fms.GetComponent<Enemy>(), 0);
+        GameEvents.OnEnemyDeathEvent?.Invoke(fms.GetComponent<Enemy>(), 0);
     }
 }

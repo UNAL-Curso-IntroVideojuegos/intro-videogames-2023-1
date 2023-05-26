@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.OnStartGameEvent += OnGameStart;
-        GameEvents.OnEnemyDeath += OnEnemyDeath;
+        GameEvents.OnEnemyDeathEvent += OnEnemyDeath;
         
         //EventManager.Instance.AddListener<EnemyDeathEvent>(OnEnemyDeathEvent);
     }
@@ -42,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
     private void OnDestroy()
     {
         GameEvents.OnStartGameEvent -= OnGameStart;
-        GameEvents.OnEnemyDeath -= OnEnemyDeath;
+        GameEvents.OnEnemyDeathEvent -= OnEnemyDeath;
         
         //EventManager.Instance.RemoveListener<EnemyDeathEvent>(OnEnemyDeathEvent);
     }

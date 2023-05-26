@@ -8,5 +8,5 @@ public static class GameEvents
     //Points update
     //Player health update
     
-    public static Action<Enemy, int> OnEnemyDeath; //enemy, points
+    public static Action<Enemy, int> OnEnemyDeathEvent; //enemy, points
 }

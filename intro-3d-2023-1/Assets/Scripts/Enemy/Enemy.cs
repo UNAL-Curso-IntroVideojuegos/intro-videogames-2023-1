@@ -19,7 +19,7 @@ public class Enemy : LivingEntity
         base.OnDeath();
         _fms.ToState(StateType.Dead);
         
-        GameEvents.OnEnemyDeath?.Invoke(this, _config.Points);
+        GameEvents.OnEnemyDeathEvent?.Invoke(this, _config.Points);
         
         // EventManager.Instance.Dispatch(new EnemyDeathEvent
         // {
