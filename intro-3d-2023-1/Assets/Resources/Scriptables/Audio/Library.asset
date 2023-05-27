@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47f0724641a0a648a95ac1ea254e09f, type: 3}
+  m_Name: Library
+  m_EditorClassIdentifier: 
+  music:
+  - MusicType: 0
+    Clip: {fileID: 8300000, guid: d721526938e5e5041851582a35e9ef3c, type: 3}
+  - MusicType: 1
+    Clip: {fileID: 8300000, guid: 93d8422f2caa11749ad26d24f0b9fdf7, type: 3}
+  soundGroups:
+  - groupID: EnemyAttack
+    clips:
+    - {fileID: 8300000, guid: 58072ca13262d274484892475e274cab, type: 3}
+  - groupID: PlayerShoot
+    clips:
+    - {fileID: 8300000, guid: ccdf5ed92fdc29845990f053f6bd7c3a, type: 3}
+  - groupID: BulletImpact
+    clips:
+    - {fileID: 8300000, guid: c649b9dc0073b6747b86a61bc9e33530, type: 3}
+    - {fileID: 8300000, guid: 619a3c71cab4f3346bf255ec559957bf, type: 3}

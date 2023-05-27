@@ -14,7 +14,10 @@ public abstract class Weapon : MonoBehaviour
     private float _nextAttackTimer = 0.0f;
     private float _attackDelayTimer = 0.0f;
 
-    protected abstract void Attack();
+    protected virtual void Attack()
+    {
+        AudioManager.Instance.PlaySound2D("PlayerShoot");
+    }
 
     public void SetMouseWorldPosition(Vector3 mouseWorldPosition) => _mouseWorldPosition = mouseWorldPosition;
     

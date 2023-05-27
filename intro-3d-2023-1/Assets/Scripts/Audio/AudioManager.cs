@@ -155,7 +155,7 @@ public class AudioManager : MonoBehaviour
 
     private void Load()
     {
-        AudioLibrary library = Resources.Load<AudioLibrary>("Scriptable/Audio/Library");
+        AudioLibrary library = Resources.Load<AudioLibrary>("Scriptables/Audio/Library");
         
         foreach (AudioMusicClip music in library.music)
         {

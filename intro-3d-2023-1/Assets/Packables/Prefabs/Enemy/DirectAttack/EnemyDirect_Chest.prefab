@@ -221,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5606675058048365755, guid: 43d34eb613b1f694d9adedb3359bd427, type: 3}
       propertyPath: <TotalHealthPoints>k__BackingField
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8646296450735194916, guid: 43d34eb613b1f694d9adedb3359bd427, type: 3}
       propertyPath: ViewAngle

@@ -14,6 +14,8 @@ public class WeaponBasicProjectile : Weapon
 
     protected override void Attack()
     {
+        base.Attack();
+        
         Projectile newProjectile = Instantiate(_projectilePrefab, _shootSpawnPoint.position, _shootSpawnPoint.rotation);
         newProjectile.SetSpeed(_projectileSpeed);
         newProjectile.SetDamage(_projectileDamage);

@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    //Gameplay
+    private int _score = 0;
+    private int _level = 0;
+    private int _time = 0;
+    
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -26,6 +31,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         HandleMenu();
+
+        GameEvents.OnEnemyDeathEvent += OnEnemyDeath;
+    }
+
+    private void OnDestroy()
+    {
+        GameEvents.OnEnemyDeathEvent -= OnEnemyDeath;
     }
 
     void Update()
@@ -51,11 +63,15 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Loading Menu...");
         SceneManager.LoadScene("Menu");
+        AudioManager.Instance.PlayMusic(AudioMusicType.Menu);
     }
     
     void HandleGameplay()
     {
         Debug.Log("Loading Gameplay...");
+
+        _score = 0;
+        
         StartCoroutine(LoadGameplayAsyncScene("Gameplay"));
     }
     
@@ -74,6 +90,14 @@ public class GameManager : MonoBehaviour
         // if(GameEvents.OnStartGameEvent != null)
         //     GameEvents.OnStartGameEvent.Invoke();
         GameEvents.OnStartGameEvent?.Invoke();
+        AudioManager.Instance.PlayMusic(AudioMusicType.Gameplay);
+    }
+
+
+    private void OnEnemyDeath(Enemy enemy, int points)
+    {
+        _score += points;
+        GameEvents.OnPlayerScoreChangeEvent?.Invoke(_score);
     }
 
 

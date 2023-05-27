@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class Player : LivingEntity
@@ -13,7 +12,7 @@ public class Player : LivingEntity
     protected override void OnTakeDamage()
     {
         base.OnTakeDamage();
-        //TODO: Communicate new health
+        GameEvents.OnPlayerHealthChangeEvent?.Invoke(HealthPoints);
     }
 
     protected override void OnDeath()

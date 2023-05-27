@@ -183,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLAY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 780f3c6eb03083c40b25268de47f14a9, type: 2}
+  m_sharedMaterial: {fileID: -7253103747180534394, guid: 780f3c6eb03083c40b25268de47f14a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1157,7 +1157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1788916212
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: acbc974976e58784287ababc57ea802f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1276,8 +1276,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: WIZZARD FIGHT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 780f3c6eb03083c40b25268de47f14a9, type: 2}
+  m_sharedMaterial: {fileID: -7253103747180534394, guid: 780f3c6eb03083c40b25268de47f14a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1288,10 +1288,10 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 0.90588236, g: 0.57254905, b: 0.39607844, a: 1}
-    topRight: {r: 0.90588236, g: 0.57254905, b: 0.39607844, a: 1}
-    bottomLeft: {r: 0.9490196, g: 1, b: 0.105882354, a: 1}
-    bottomRight: {r: 0.9490196, g: 1, b: 0.105882354, a: 1}
+    topLeft: {r: 1, g: 0.87698734, b: 0.2679245, a: 1}
+    topRight: {r: 1, g: 0.87698734, b: 0.2679245, a: 1}
+    bottomLeft: {r: 0.9433962, g: 0.5574492, b: 0.20825914, a: 1}
+    bottomRight: {r: 0.9433962, g: 0.5574492, b: 0.20825914, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1823,11 +1823,11 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0.674
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.6
 --- !u!222 &1064879932588475389
 CanvasRenderer:
   m_ObjectHideFlags: 0

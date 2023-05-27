@@ -44,6 +44,7 @@ public class Projectile : MonoBehaviour
                 targetHit.TakeHit(_damage);
             }
             
+            AudioManager.Instance.PlaySound2D("BulletImpact");
             DestroyProjectile();
         }
     }
