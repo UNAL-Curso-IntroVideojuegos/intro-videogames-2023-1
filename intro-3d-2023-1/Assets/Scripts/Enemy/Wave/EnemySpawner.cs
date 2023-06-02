@@ -71,7 +71,8 @@ public class EnemySpawner : MonoBehaviour
             {
                 _initialDelay = _enemyWaves[_currentWaveIndex].DelayToSpawn;
                 canSpawn = true;
-                //TODO: Communicate new level
+                
+                GameEvents.OnLevelProgressEvent?.Invoke(_currentWaveIndex);
                 // AudioManager.Instance.PlaySound2D("LevelCompleted");
             }
             //In case we don't have more ways -> Game Ends

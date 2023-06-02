@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     //Gameplay
     private int _score = 0;
     private int _level = 0;
-    private int _time = 0;
+    private float _time = 0;
     
     private void Awake()
     {
@@ -30,33 +30,42 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        HandleMenu();
+        MainMenu();
 
         GameEvents.OnEnemyDeathEvent += OnEnemyDeath;
+        GameEvents.OnLevelProgressEvent += OnLevelProgress;
     }
 
     private void OnDestroy()
     {
         GameEvents.OnEnemyDeathEvent -= OnEnemyDeath;
+        GameEvents.OnLevelProgressEvent -= OnLevelProgress;
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            HandleMenu();
-        }
-    }
+    
 
     public void StartGame()
     {
         HandleGameplay();
     }
     
+    public void MainMenu()
+    {
+        HandleMenu();
+    }
+    
     public void GameOver()
     {
         Debug.Log("Game over");
-        HandleMenu();
+        _time = Time.time - _time;
+        int maxScore = PlayerPrefs.GetInt("MaxScore", 0);
+        if (_score > maxScore)
+        {
+            PlayerPrefs.SetInt("MaxScore", _score);
+        }
+        
+        GameEvents.OnGameOverEvent?.Invoke(_score, _score > maxScore, _time, _level);
+        
+        //TODO: Music end
     }
 
     void HandleMenu()
@@ -100,5 +109,9 @@ public class GameManager : MonoBehaviour
         GameEvents.OnPlayerScoreChangeEvent?.Invoke(_score);
     }
 
+    void OnLevelProgress(int level)
+    {
+        _level = level + 1;
+    }
 
 }
