@@ -6,7 +6,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
     [field: SerializeField] public int TotalHealthPoints { get; protected set; } = 1;
     public int HealthPoints { get; private set; }
 
-    public Action<int, int> OnHealthChange;
+    public Action<int, int, int> OnHealthChange;
 
     public void TakeHit(int damage = 1)
     {
@@ -16,7 +16,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
         HealthPoints -= damage;
         OnTakeDamage();
 
-        OnHealthChange?.Invoke(HealthPoints, TotalHealthPoints);
+        OnHealthChange?.Invoke(HealthPoints, TotalHealthPoints, damage);
         
         if (HealthPoints <= 0)
         {

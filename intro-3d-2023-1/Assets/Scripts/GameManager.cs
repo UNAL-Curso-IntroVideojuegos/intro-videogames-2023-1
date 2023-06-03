@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         
         // if(GameEvents.OnStartGameEvent != null)
         //     GameEvents.OnStartGameEvent.Invoke();

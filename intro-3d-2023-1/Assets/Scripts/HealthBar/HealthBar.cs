@@ -36,7 +36,7 @@ public class HealthBar : MonoBehaviour
             _container.SetActive(false);
     }
 
-    private void UpdateHealthBar(int health, int totalHealth)
+    private void UpdateHealthBar(int health, int totalHealth, int damage)
     {
         Vector3 scale = _healthMask.localScale;
         scale.x = health / (float) totalHealth;
