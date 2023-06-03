@@ -641,6 +641,7 @@ MonoBehaviour:
         Decision: {fileID: 0}
     - StateType: 6
       Transition: []
+  DeathVFX: {fileID: 4363618136153406058, guid: 50acafd41f91aa743bbb60c8a4903428, type: 3}
 --- !u!136 &171946832212799945
 CapsuleCollider:
   m_ObjectHideFlags: 0

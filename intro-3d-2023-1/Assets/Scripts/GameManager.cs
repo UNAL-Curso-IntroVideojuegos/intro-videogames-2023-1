@@ -95,7 +95,8 @@ public class GameManager : MonoBehaviour
         }
         
         yield return new WaitForSeconds(1f);
-        
+
+        _time = Time.time;
         // if(GameEvents.OnStartGameEvent != null)
         //     GameEvents.OnStartGameEvent.Invoke();
         GameEvents.OnStartGameEvent?.Invoke();

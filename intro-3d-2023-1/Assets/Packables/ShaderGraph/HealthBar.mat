@@ -34,12 +34,12 @@ Material:
     - _AlphaValue: 1
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _CurrentValue: 2
-    - _DamageValue: 1
-    - _MaxValue: 3
+    - _CurrentValue: 80
+    - _DamageValue: 10
+    - _MaxValue: 100
     - _TickAlpha: 0.44
     - _TickEvery: 10
-    - _TickWidth: 0
+    - _TickWidth: 2
     m_Colors:
     - _DamageColor: {r: 1, g: 0.77108335, b: 0, a: 1}
     - _PrimaryColor: {r: 1, g: 0.42745098, b: 0.42745098, a: 1}

@@ -20,7 +20,13 @@ public class Enemy : LivingEntity
         _fms.ToState(StateType.Dead);
         
         GameEvents.OnEnemyDeathEvent?.Invoke(this, _config.Points);
-        
+
+        if (_config.DeathVFX)
+        {
+            GameObject vfx = Instantiate(_config.DeathVFX, transform.position, Quaternion.identity);
+            Destroy(vfx, 5);
+        }
+
         // EventManager.Instance.Dispatch(new EnemyDeathEvent
         // {
         //     EnemyDeath = this,

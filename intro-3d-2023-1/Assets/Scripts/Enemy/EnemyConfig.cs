@@ -35,6 +35,9 @@ public class EnemyConfig : MonoBehaviour
     public StateType InitialState;
     public FSMData FSMData;
 
+    [Header("VFX")]
+    public GameObject DeathVFX;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

@@ -101,7 +101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &638716087
 Transform:
   m_ObjectHideFlags: 0
@@ -362,7 +362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8121001709648393252
 Transform:
   m_ObjectHideFlags: 0
@@ -772,6 +772,7 @@ MonoBehaviour:
       Transition:
       - TargetState: 1
         Decision: {fileID: 0}
+  DeathVFX: {fileID: 4363618136153406058, guid: 50acafd41f91aa743bbb60c8a4903428, type: 3}
 --- !u!136 &7737185846695576788
 CapsuleCollider:
   m_ObjectHideFlags: 0

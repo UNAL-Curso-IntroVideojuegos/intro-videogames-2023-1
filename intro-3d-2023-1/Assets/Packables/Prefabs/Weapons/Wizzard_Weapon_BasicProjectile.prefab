@@ -99,6 +99,6 @@ MonoBehaviour:
   _timeBetweenShoots: 0.8
   _attackDelay: 0.25
   _animationTrigger: Attack1
-  _projectilePrefab: {fileID: -1731933801909759960, guid: 4045f1217aefdf344a192897f652447d, type: 3}
+  _projectilePrefab: {fileID: 4399542268635351532, guid: f7aa5a1c65c2ebf4e90850a7d0413a6e, type: 3}
   _projectileSpeed: 11
   _projectileDamage: 1
