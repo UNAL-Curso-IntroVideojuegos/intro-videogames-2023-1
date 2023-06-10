@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -115,4 +116,39 @@ public class GameManager : MonoBehaviour
         _level = level + 1;
     }
 
+    public Rank rank;
+    [ContextMenu("Save rank")]
+    public void SaveRank()
+    {
+        string rankData = JsonUtility.ToJson(rank, true);
+        Debug.Log(rankData);
+        PlayerPrefs.SetString("Rank", rankData);
+    }
+
+    [ContextMenu("Load rank")]
+    public void LoadRank()
+    {
+        string rankData = PlayerPrefs.GetString("Rank");
+        rank = JsonUtility.FromJson<Rank>(rankData);
+    }
+
+}
+
+[Serializable]
+public class Rank
+{
+    public List<RankUser> users;
+}
+
+[Serializable]
+public class RankUser
+{
+    public int score;
+    public string name;
+}
+
+
+public class WallDetector : CollisionDetector
+{
+    public bool isRight;
 }
