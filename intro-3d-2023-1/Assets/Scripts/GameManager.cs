@@ -124,17 +124,35 @@ public class GameManager : MonoBehaviour
         _level = level + 1;
     }
 
-    [Serializable]
-    public class Rank
+
+    public Rank rank;
+
+    [ContextMenu("Save rank")]
+    public void SaveRank()
     {
-        public string name;
-        public int score;
-    }
-    
-    [Serializable]
-    public class RankData
-    {
-        public List<Rank> rank;
+        string rankData = JsonUtility.ToJson(rank, true);
+        Debug.Log(rankData);
+        PlayerPrefs.SetString("Rank", rankData);
     }
 
+    [ContextMenu("Load rank")]
+    public void LoadRank()
+    {
+        string rankData = PlayerPrefs.GetString("Rank");
+        rank = JsonUtility.FromJson<Rank>(rankData);
+    }
+
+}
+
+[Serializable]
+public class Rank
+{
+    public List<RankUser> users;
+}
+
+[Serializable]
+public class RankUser
+{
+    public int score;
+    public string name;
 }
