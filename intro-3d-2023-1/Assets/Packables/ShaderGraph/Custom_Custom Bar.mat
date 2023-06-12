@@ -27,15 +27,15 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 1
-    - _DamagedValue: 0
+    - _DamagedValue: 20
     - _MaxValue: 100
     - _ShieldValue: 0
-    - _TickEvery: 100
-    - _TickWidth: 0.012
-    - _Value: 100
+    - _TickEvery: 12.37
+    - _TickWidth: 4.5
+    - _Value: 70
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DamagedColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Color: {r: 1, g: 0.48490566, b: 0.48490566, a: 1}
+    - _DamagedColor: {r: 1, g: 0.8425083, b: 0, a: 1}
     - _ShadowColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
     - _ShieldColor: {r: 0, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []

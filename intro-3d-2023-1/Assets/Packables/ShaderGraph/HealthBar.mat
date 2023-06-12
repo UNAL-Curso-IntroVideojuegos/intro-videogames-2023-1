@@ -35,7 +35,7 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _CurrentValue: 80
-    - _DamageValue: 10
+    - _DamageValue: 1.34
     - _MaxValue: 100
     - _TickAlpha: 0.44
     - _TickEvery: 10

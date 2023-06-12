@@ -34,12 +34,21 @@ public class GameManager : MonoBehaviour
 
         GameEvents.OnEnemyDeathEvent += OnEnemyDeath;
         GameEvents.OnLevelProgressEvent += OnLevelProgress;
+
+        string rankData = PlayerPrefs.GetString("Rank");
+        Debug.Log(rankData);
+        loadRank = JsonUtility.FromJson<RankData>(rankData);
     }
+
+    public RankData loadRank;
 
     private void OnDestroy()
     {
         GameEvents.OnEnemyDeathEvent -= OnEnemyDeath;
         GameEvents.OnLevelProgressEvent -= OnLevelProgress;
+        
+        string rankData = JsonUtility.ToJson(loadRank);
+        PlayerPrefs.SetString("Rank", rankData);
     }
     
 
@@ -113,6 +122,19 @@ public class GameManager : MonoBehaviour
     void OnLevelProgress(int level)
     {
         _level = level + 1;
+    }
+
+    [Serializable]
+    public class Rank
+    {
+        public string name;
+        public int score;
+    }
+    
+    [Serializable]
+    public class RankData
+    {
+        public List<Rank> rank;
     }
 
 }

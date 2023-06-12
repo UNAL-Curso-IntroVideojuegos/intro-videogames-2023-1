@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,8 +35,34 @@ public class HUDPlayerHealth : MonoBehaviour
             }
             else
             {
-                _hearts[i].color = new Color(0.3f, 0.3f, 0.3f, 1);
+                AnimateDamage(_hearts[i]);
             }
         }
+    }
+
+    [ContextMenu("test")]
+    public void TestAnimation()
+    {
+        AnimateDamage(_hearts[^1]);
+    }
+
+    // public float scaleTarget = 1.1f;
+    // public float scaleDuration = 0.8f;
+    // public float scaleDownDuration = 0.8f;
+    // public Ease scaleEase;
+    // public Ease scaleDownEase;
+    private void AnimateDamage(Image heart)
+    {
+        Color c = new Color(0.3f, 0.3f, 0.3f, 1);
+        // heart.DOColor(c, 0.5f).SetEase(Ease.InCubic);
+        // heart.rectTransform.DOScale(Vector3.one * 1.3f, .3f).SetEase(Ease.InCubic).OnComplete(() =>
+        // {
+        //     heart.rectTransform.DOScale(Vector3.one, .4f).SetEase(Ease.OutBounce);
+        // });
+
+        Sequence s = DOTween.Sequence();
+        s.Insert(0,heart.DOColor(c, 0.5f).SetEase(Ease.InCubic));
+        s.Insert(0, heart.rectTransform.DOScale(Vector3.one * 1.3f, .3f).SetEase(Ease.InCubic));
+        s.Append(heart.rectTransform.DOScale(Vector3.one, .4f).SetEase(Ease.OutBounce));
     }
 }

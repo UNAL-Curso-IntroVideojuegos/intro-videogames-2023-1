@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using DG.Tweening;
 
 public class HUDPlayerScore : MonoBehaviour
 {
@@ -16,9 +17,12 @@ public class HUDPlayerScore : MonoBehaviour
         GameEvents.OnPlayerScoreChangeEvent -= OnPlayerScoreChange;
     }
 
-
+    
     private void OnPlayerScoreChange(int score)
     {
         _scoreText.text = $"SCORE: {score}";
+        Vector2 anchorPos = _scoreText.rectTransform.anchoredPosition;
+        _scoreText.rectTransform.DOJumpAnchorPos(anchorPos, 25, 1, 0.5f);
     }
+    
 }
