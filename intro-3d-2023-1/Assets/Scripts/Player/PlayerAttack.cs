@@ -44,6 +44,7 @@ public class PlayerAttack : MonoBehaviour
     
     public void EquippedGun(Weapon gunToEquip)
     {
+        
         if (equippedWeapon)
         {
             equippedWeapon.OnAnimationAction -= OnWeaponAnimationAction;
