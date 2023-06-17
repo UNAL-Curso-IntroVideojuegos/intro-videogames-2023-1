@@ -1,13 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Pool;
 
 
 namespace SpaceShipNetwork.Gameplay
 {
-    public class Projectile : MonoBehaviour
+    public class Projectile : NetworkBehaviour
     {
         [SerializeField] private float _lifeTime = 3; //sec
         [SerializeField] private LayerMask _collisionMask;
@@ -34,6 +32,9 @@ namespace SpaceShipNetwork.Gameplay
 
         private void Update()
         {
+            if(!IsOwner)
+                return;
+            
             if (Time.time > _destructionTime)
             {
                 DestroyProjectile();
@@ -45,6 +46,9 @@ namespace SpaceShipNetwork.Gameplay
 
         private void FixedUpdate()
         {
+            if(!IsOwner)
+                return;
+            
             Vector3 movement = transform.position - lastPosition;
             CheckCollision(movement);
             lastPosition = transform.position;

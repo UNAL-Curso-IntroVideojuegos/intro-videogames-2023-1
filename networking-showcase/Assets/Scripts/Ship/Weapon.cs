@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace SpaceShipNetwork.Gameplay
 {
-    public class Weapon : MonoBehaviour
+    public class Weapon : NetworkBehaviour
     {
         public enum FireMod { Auto, Burst, Single};
         [SerializeField] FireMod _fireMod;
@@ -64,10 +65,7 @@ namespace SpaceShipNetwork.Gameplay
                         break;
 
                     _projectilesRemainingInMag--;
-                    Projectile newProjectile = Instantiate(_projectile, _projectileSpawn[i].position, _projectileSpawn[i].rotation);
-                    newProjectile.SetSpeed(_projectileVelocity);
-                    newProjectile.SetDamage(_damage);
-                    newProjectile.SetShipOwner(_shipOwner);
+                    SpawnProjectileServerRPC(_projectileSpawn[i].position, _projectileSpawn[i].rotation);
                 }
             }
         }
@@ -123,6 +121,30 @@ namespace SpaceShipNetwork.Gameplay
             _triggerReleasedSinceLastShoot = true;
             _shotsRemainingInBurst = _burstCount;
         }
+
+#region Server
+        private void SpawnProjectile(Vector3 position, Quaternion rotation)
+        {
+            if(!IsServer)
+                return;
+            
+            Projectile newProjectile = Instantiate(_projectile, position, rotation);
+            newProjectile.SetSpeed(_projectileVelocity);
+            newProjectile.SetDamage(_damage);
+            newProjectile.SetShipOwner(_shipOwner);
+            
+            NetworkObject spawnedNetObject = newProjectile.GetComponent<NetworkObject>();
+            spawnedNetObject.Spawn(true);
+        }
+#endregion
+        
+ #region RPCs
+        [ServerRpc(RequireOwnership = false)]
+        private void SpawnProjectileServerRPC(Vector3 position, Quaternion rotation)
+        {
+            SpawnProjectile(position, rotation);
+        }
+ #endregion
 
     }
 }

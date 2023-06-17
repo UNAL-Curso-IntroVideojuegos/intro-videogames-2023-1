@@ -9,7 +9,12 @@ namespace SpaceShipNetwork.Gameplay
     {
         public Transform weaponHold;
         [SerializeField] Weapon equippedWeapon;
-        
+
+        private void Start()
+        {
+            if(equippedWeapon)
+                equippedWeapon.SetShipOwner(this);
+        }
 
         public void EquipGun(Weapon weaponToEquip)
         {
