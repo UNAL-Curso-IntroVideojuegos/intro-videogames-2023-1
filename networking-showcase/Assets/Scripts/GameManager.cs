@@ -10,6 +10,7 @@ namespace SpaceShipNetwork.Gameplay
 {
     public enum GameState
     {
+        ConnectToServer,
         WaitingToStart,
         GamePlaying,
         GameOver
@@ -35,6 +36,8 @@ namespace SpaceShipNetwork.Gameplay
             GameDelegates.LocalPlayerSpawned += OnLocalPlayerReady;
 
             UIDelegates.StartGameButtonPressed += OnStartGameButtonPressed;
+            UIDelegates.QuitButtonPressed += OnQuitButtonPressed;
+            UIDelegates.RestartGameButtonPressed += OnRestartButtonPressed;
         }
 
         public override void OnNetworkSpawn()
@@ -47,8 +50,9 @@ namespace SpaceShipNetwork.Gameplay
                 return;
             
             NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+            NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnect;
         }
-        
+
         private void Update()
         {
             if(!IsServer)
@@ -56,8 +60,8 @@ namespace SpaceShipNetwork.Gameplay
 
             switch (State.Value)
             {
+                case GameState.ConnectToServer:
                 case GameState.WaitingToStart:
-                    HandleWaitingToStart();
                     break;
                 case GameState.GamePlaying:
                     HandleGamePlaying();
@@ -69,15 +73,31 @@ namespace SpaceShipNetwork.Gameplay
                     break;
             }
         }
-
-        private void HandleWaitingToStart()
-        {
-            
-        }
+        
         private void HandleGamePlaying()
         {
             if (CheckGameOver())
+            {
+                
+                foreach (ulong clientID in NetworkManager.Singleton.ConnectedClientsIds)
+                {
+                    SpaceShip playerShip;
+                    if (!_playersShipDict.TryGetValue(clientID, out playerShip) || !playerShip)
+                        continue;
+                
+                    ClientRpcParams clientRpcParams = new ClientRpcParams
+                    {
+                        Send = new ClientRpcSendParams
+                        {
+                            TargetClientIds = new ulong[]{clientID}
+                        }
+                    };
+                    SetWinnerClientRpc(playerShip.HealthPoints > 0, clientRpcParams);
+
+                }
+                
                 State.Value = GameState.GameOver;
+            }
         }
         private void HandleGameOver()
         {
@@ -106,6 +126,17 @@ namespace SpaceShipNetwork.Gameplay
             SetPlayerReadyServerRpc();
         }
 
+        private void OnRestartButtonPressed()
+        {
+            State.Value = GameState.WaitingToStart;
+        }
+        
+        private void OnQuitButtonPressed()
+        {
+            NetworkManager.Singleton.Shutdown();
+            State.Value = GameState.ConnectToServer;
+        }
+
         private void OnLocalPlayerReady(SpaceShip player)
         {
         }
@@ -125,6 +156,10 @@ namespace SpaceShipNetwork.Gameplay
             }
         }
         
+        private void OnClientDisconnect(ulong obj)
+        {
+        }
+        
 #endregion
 
 #region RPCs
@@ -142,6 +177,15 @@ namespace SpaceShipNetwork.Gameplay
 
             if (NetworkManager.Singleton.ConnectedClientsIds.Count > 1 && allClientsReady)
                 State.Value = GameState.GamePlaying;
+        }
+
+        [ClientRpc]
+        private void SetWinnerClientRpc(bool winner, ClientRpcParams clientRpcParams = default)
+        {
+            if(IsOwner)
+                return;
+            
+            GameDelegates.EmitGameOverWinner(winner);
         }
 #endregion
     }
