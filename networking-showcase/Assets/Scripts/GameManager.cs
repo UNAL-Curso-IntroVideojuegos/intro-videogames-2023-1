@@ -21,6 +21,7 @@ namespace SpaceShipNetwork.Gameplay
         
         private NetworkVariable<GameState> State = new NetworkVariable<GameState>(WaitingToStart);
         private Dictionary<ulong, bool> _playerReadyDict;
+        private Dictionary<ulong, SpaceShip> _playersShipDict;
 
         public bool IsGamePlaying => State.Value == GameState.GamePlaying;
 
@@ -29,6 +30,7 @@ namespace SpaceShipNetwork.Gameplay
             Instance = this;
             State.Value = GameState.WaitingToStart;
             _playerReadyDict = new Dictionary<ulong, bool>();
+            _playersShipDict = new Dictionary<ulong, SpaceShip>();
 
             GameDelegates.LocalPlayerSpawned += OnLocalPlayerReady;
 
@@ -40,6 +42,11 @@ namespace SpaceShipNetwork.Gameplay
             base.OnNetworkSpawn();
 
             State.OnValueChanged += OnStateChanged;
+
+            if(!IsServer)
+                return;
+            
+            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
         }
         
         private void Update()
@@ -69,17 +76,30 @@ namespace SpaceShipNetwork.Gameplay
         }
         private void HandleGamePlaying()
         {
-            
+            if (CheckGameOver())
+                State.Value = GameState.GameOver;
         }
         private void HandleGameOver()
         {
             
         }
 
-        private void OnStateChanged(GameState previousvalue, GameState newvalue)
+        private bool CheckGameOver()
         {
-            GameDelegates.EmitGameStateChanged(newvalue);
+            int shipsAlive = 0;
+            foreach (ulong clientID in NetworkManager.Singleton.ConnectedClientsIds)
+            {
+                SpaceShip playerShip;
+                if (!_playersShipDict.TryGetValue(clientID, out playerShip))
+                    continue;
+                
+                if(playerShip && playerShip.HealthPoints > 0)
+                    shipsAlive++;
+            }
+            
+            return shipsAlive <= 1;
         }
+        
         
         private void OnStartGameButtonPressed()
         {
@@ -89,6 +109,23 @@ namespace SpaceShipNetwork.Gameplay
         private void OnLocalPlayerReady(SpaceShip player)
         {
         }
+
+#region NetCallbacks
+        private void OnStateChanged(GameState previousvalue, GameState newvalue)
+        {
+            GameDelegates.EmitGameStateChanged(newvalue);
+        }
+        
+        private void OnClientConnected(ulong clientID)
+        { 
+            NetworkClient client = NetworkManager.Singleton.ConnectedClients[clientID];
+            if (client.PlayerObject.TryGetComponent(out SpaceShip playerShip))
+            {
+                _playersShipDict[clientID] = playerShip;
+            }
+        }
+        
+#endregion
 
 #region RPCs
         [ServerRpc(RequireOwnership = false)]
@@ -103,7 +140,7 @@ namespace SpaceShipNetwork.Gameplay
                     allClientsReady = false;
             }
 
-            if (allClientsReady)
+            if (NetworkManager.Singleton.ConnectedClientsIds.Count > 1 && allClientsReady)
                 State.Value = GameState.GamePlaying;
         }
 #endregion
