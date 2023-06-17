@@ -20,7 +20,17 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
+#if DEBUG_WIZZARD
+        Debug.Log("Holi");
+#endif
+       
+        
+#if UNITY_IOS || UNITY_ANDROID
+        //TODO: Inputs for mobile
+        //MobileInputs();
+#else
         DesktopInputs();
+#endif
     }
 
     private void DesktopInputs()
