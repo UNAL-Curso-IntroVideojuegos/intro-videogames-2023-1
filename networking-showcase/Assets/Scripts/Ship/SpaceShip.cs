@@ -34,6 +34,9 @@ namespace SpaceShipNetwork.Gameplay
         
         void Update()
         {
+            if (!IsOwner)
+                return;
+            
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
             bool shooting = Input.GetMouseButton(0) || Input.GetMouseButtonDown(0);
