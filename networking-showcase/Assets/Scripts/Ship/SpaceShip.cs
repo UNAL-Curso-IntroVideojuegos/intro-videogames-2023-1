@@ -1,11 +1,11 @@
-
+using Unity.Netcode;
 using UnityEngine;
 
 namespace SpaceShipNetwork.Gameplay
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(ShipWeaponController))]
-    public class SpaceShip : MonoBehaviour, IDamageable
+    public class SpaceShip : NetworkBehaviour, IDamageable
     {
         [field: SerializeField] public int TotalHealthPoints { get; private set; } = 10;
         [field: SerializeField] public int HealthPoints { get; private set; }
