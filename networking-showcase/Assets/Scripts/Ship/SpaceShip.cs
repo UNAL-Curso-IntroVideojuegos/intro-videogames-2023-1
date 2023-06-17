@@ -39,6 +39,7 @@ namespace SpaceShipNetwork.Gameplay
             
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
+            Vector2 input  = new Vector2(horizontal, vertical);
             bool shooting = Input.GetMouseButton(0) || Input.GetMouseButtonDown(0);
             
             Vector3 aimPoint = _cam.ScreenToWorldPoint(Input.mousePosition);
@@ -47,31 +48,22 @@ namespace SpaceShipNetwork.Gameplay
                 _weaponController.Aim(aimPoint);
             Debug.DrawLine(transform.position, aimPoint);
             
-            Vector2 dir  = new Vector2(horizontal, vertical);
-            dir.Normalize();
-
-            if (dir.sqrMagnitude > 0)
-            {
-                _rotAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
-                _speed += _acceleration * Time.deltaTime;
-            }
-            else
-            {
-                _speed -= _desacceleration * Time.deltaTime;
-                _rotAngle = _rb.rotation;
-            }
-            
-            _speed = Mathf.Clamp(_speed, 0, _maxSpeed);
-            
             if(shooting)
                 _weaponController.OnTriggerHold();
             else if(isShooting)
                 _weaponController.OnTriggerRelease();
             isShooting = shooting;
+            
+            //Server Auth movement
+            HandleMovementServerRPC(input.normalized);
         }
     
         private void FixedUpdate()
         {
+            //Server Auth Movement
+            if (!IsServer)
+                return;
+            
             _rb.rotation = Mathf.LerpAngle(_rb.rotation, _rotAngle, _turnSpeed * Mathf.Deg2Rad * Time.fixedDeltaTime);
             _rb.velocity = transform.up * _speed;
         }
@@ -102,6 +94,32 @@ namespace SpaceShipNetwork.Gameplay
         {
             HealthPoints = TotalHealthPoints;
         }
+
+#region Server
+        private void ProcessInput(Vector2 input)
+        {
+            if (input.sqrMagnitude > 0)
+            {
+                _rotAngle = Mathf.Atan2(input.y, input.x) * Mathf.Rad2Deg - 90;
+                _speed += _acceleration * Time.deltaTime;
+            }
+            else
+            {
+                _speed -= _desacceleration * Time.deltaTime;
+                _rotAngle = _rb.rotation;
+            }
+            
+            _speed = Mathf.Clamp(_speed, 0, _maxSpeed);
+        }
+#endregion
+
+#region RPCs
+        [ServerRpc(RequireOwnership = false)]
+        private void HandleMovementServerRPC(Vector2 input)
+        {
+           ProcessInput(input);
+        }
+#endregion
     }
     
 }
