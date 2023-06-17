@@ -16,6 +16,7 @@ namespace SpaceShipNetwork.Gameplay
         private int _damage = 3; //sec
         private float _destructionTime = 0;
         private Vector3 lastPosition;
+        private Vector3? targetCollisionPoint;
 
         private IObjectPool<Projectile> _parentPool = null;
         
@@ -32,21 +33,27 @@ namespace SpaceShipNetwork.Gameplay
 
         private void Update()
         {
-            if(!IsOwner)
+            if (!IsServer)
+            {
+                if (targetCollisionPoint.HasValue && (transform.position - targetCollisionPoint.Value).magnitude < .3f)
+                {
+                    DestroyProjectile();
+                    SpawnHitVFX();
+                }
                 return;
-            
+            }
+
             if (Time.time > _destructionTime)
             {
                 DestroyProjectile();
                 return;
             }
-
             transform.position += transform.up * _speed * Time.deltaTime;
         }
 
         private void FixedUpdate()
         {
-            if(!IsOwner)
+            if(!IsServer)
                 return;
             
             Vector3 movement = transform.position - lastPosition;
@@ -66,31 +73,43 @@ namespace SpaceShipNetwork.Gameplay
                     return;
                 }
                 
-                if (hit.transform.TryGetComponent(out IDamageable targetHit))
-                {
-                    targetHit.TakeHit(_damage, hit.point);
-                }
-                
-                if (_hitVFXPrefab)
-                {
-                    Instantiate(_hitVFXPrefab, transform.position, Quaternion.identity);
-                }
-
+                OnCollisionDetectionClientRPC(hit.point);
                 DestroyProjectile();
             }
         }
 
         private void DestroyProjectile()
         {
-            if (_parentPool != null)
-            {
-                _parentPool.Release(this);
-            }
-            else
-            {
-                gameObject.SetActive(false);
-                Destroy(gameObject);
-            }
+            gameObject.SetActive(false);
+            if(IsServer)
+                Destroy(gameObject, 1.5f);
+
+
+            // if (_parentPool != null)
+            // {
+            //     _parentPool.Release(this);
+            // }
+            // else
+            // {
+            //     gameObject.SetActive(false);
+            //     Destroy(gameObject);
+            // }
         }
+
+        private void SpawnHitVFX()
+        {
+            if (_hitVFXPrefab)
+                Instantiate(_hitVFXPrefab, targetCollisionPoint ?? transform.position, Quaternion.identity);
+        }
+        
+        #region RPCs
+        [ClientRpc]
+        private void OnCollisionDetectionClientRPC(Vector3 point)
+        {
+            targetCollisionPoint = point;
+            if (IsServer)
+                SpawnHitVFX();
+        }
+        #endregion
     }
 }
