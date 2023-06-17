@@ -1,3 +1,4 @@
+using SpaceShipNetwork.Events;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -24,6 +25,20 @@ namespace SpaceShipNetwork.Gameplay
         private bool isShooting;
 
         private void Start()
+        {
+            Initialize();
+        }
+
+        public override void OnNetworkSpawn()
+        {
+            Initialize();
+            
+            base.OnNetworkSpawn();
+            
+            GameDelegates.EmitLocalPlayerSpawned(this);
+        }
+
+        private void Initialize()
         {
             _rb = GetComponent<Rigidbody2D>();
             _weaponController = GetComponent<ShipWeaponController>();
