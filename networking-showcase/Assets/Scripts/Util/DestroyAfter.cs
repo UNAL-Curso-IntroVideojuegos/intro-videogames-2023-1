@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AllieJoe.Util
+namespace SpaceShipNetwork.Util
 {
     public class DestroyAfter : MonoBehaviour
     {

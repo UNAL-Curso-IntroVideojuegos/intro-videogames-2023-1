@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AllieJoe.Gameplay
+namespace SpaceShipNetwork.Gameplay
 {
     public class ShipWeaponController : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AllieJoe.Gameplay
+namespace SpaceShipNetwork.Gameplay
 {
     public interface IDamageable
     {

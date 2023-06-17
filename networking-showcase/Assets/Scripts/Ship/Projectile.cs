@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Pool;
 
 
-namespace AllieJoe.Gameplay
+namespace SpaceShipNetwork.Gameplay
 {
     public class Projectile : MonoBehaviour
     {

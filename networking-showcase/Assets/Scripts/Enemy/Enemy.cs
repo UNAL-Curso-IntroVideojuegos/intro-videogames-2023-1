@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AllieJoe.Gameplay
+namespace SpaceShipNetwork.Gameplay
 {
     public class Enemy : MonoBehaviour, IDamageable
     {

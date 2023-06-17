@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace AllieJoe.Gameplay
+namespace SpaceShipNetwork.Gameplay
 {
     public class Weapon : MonoBehaviour
     {

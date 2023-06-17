@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-namespace AllieJoe.Gameplay
+namespace SpaceShipNetwork.Gameplay
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(ShipWeaponController))]
