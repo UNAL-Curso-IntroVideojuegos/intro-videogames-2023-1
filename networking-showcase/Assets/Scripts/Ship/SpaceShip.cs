@@ -16,6 +16,9 @@ namespace SpaceShipNetwork.Gameplay
         [SerializeField] private float _maxSpeed = 1.6f;
         [SerializeField] private float _turnSpeed = 45;
 
+        private NetworkVariable<int> NetworkHealth = new NetworkVariable<int>(default, NetworkVariableReadPermission.Everyone,
+            NetworkVariableWritePermission.Server);
+
         private Rigidbody2D _rb;
         private ShipWeaponController _weaponController;
         private Camera _cam;
@@ -35,9 +38,16 @@ namespace SpaceShipNetwork.Gameplay
             
             base.OnNetworkSpawn();
             
+            NetworkHealth.OnValueChanged += OnNetworkHealthChanged;
+            
             GameDelegates.EmitLocalPlayerSpawned(this);
         }
 
+        public override void OnNetworkDespawn()
+        {
+            NetworkHealth.OnValueChanged -= OnNetworkHealthChanged;
+        }
+        
         private void Initialize()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -45,10 +55,15 @@ namespace SpaceShipNetwork.Gameplay
             _cam = Camera.main;
 
             HealthPoints = TotalHealthPoints;
+            if (IsServer)
+                NetworkHealth.Value = HealthPoints;
         }
         
         void Update()
         {
+            if(!GameManager.Instance.IsGamePlaying)
+                return;
+            
             if (!IsOwner)
                 return;
             
@@ -82,17 +97,26 @@ namespace SpaceShipNetwork.Gameplay
             _rb.rotation = Mathf.LerpAngle(_rb.rotation, _rotAngle, _turnSpeed * Mathf.Deg2Rad * Time.fixedDeltaTime);
             _rb.velocity = transform.up * _speed;
         }
-
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-        }
-
+        
         public void TakeHit(int damage, Vector3 position)
         {
             if(HealthPoints <= 0)
                 return;
     
             HealthPoints -= damage;
+            if (IsServer)
+                NetworkHealth.Value = HealthPoints;
+            
+            if (HealthPoints <= 0)
+            {
+                HealthPoints = 0;
+                Death();
+            }
+        }
+
+        private void OnNetworkHealthChanged(int previous, int current)
+        {
+            HealthPoints = current;
             if (HealthPoints <= 0)
             {
                 HealthPoints = 0;

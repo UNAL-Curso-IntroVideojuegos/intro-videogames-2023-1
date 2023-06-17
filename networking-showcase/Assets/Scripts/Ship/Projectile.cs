@@ -73,6 +73,11 @@ namespace SpaceShipNetwork.Gameplay
                     return;
                 }
                 
+                if (hit.transform.TryGetComponent(out IDamageable targetHit))
+                {
+                    targetHit.TakeHit(_damage, hit.point);
+                }
+                
                 OnCollisionDetectionClientRPC(hit.point);
                 DestroyProjectile();
             }
